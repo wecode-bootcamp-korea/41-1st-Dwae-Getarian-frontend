@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Main from './pages/Main/Main';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './pages/Main/Main';
 import ProductList from './pages/Main/Components/ProductList/ProductList';
+import './styles/common.scss';
+import './styles/reset.scss';
+import './styles/variables.scss';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    chilren: [
+    children: [
       { index: true, path: '/', element: <Main /> },
       { path: '/products', element: <ProductList /> },
       { path: '/recipe', element: <Recipe /> },
