@@ -1,0 +1,45 @@
+.recipe-wrapper {
+  font-family: 'Noto Sans', sans-serif;
+  .recipe-top-visualbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://wallpapersmug.com/download/2560x1440/2dd8e7/tomato-vegetables-4k.jpg');
+    height: 290px;
+
+    .recipe-top-name {
+      font-size: 38px;
+      color: white;
+    }
+  }
+
+  .recipe-nav-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 26px;
+    border: 1px solid rgba(189, 189, 189, 0.635);
+    .recipe-nav-items {
+      .img-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5px;
+        p {
+          text-align: center;
+          color: #8d8d8d;
+        }
+      }
+      .item1 {
+        width: 50px;
+        height: 50px;
+        margin: 0 8px 0 8px;
+      }
+      .item2 {
+        width: 50px;
+        height: 50px;
+        margin: 0 8px 0 8px;
+      }
+    }
+  }
+}

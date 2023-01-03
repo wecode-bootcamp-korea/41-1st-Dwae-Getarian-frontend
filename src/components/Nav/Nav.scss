@@ -1,36 +1,124 @@
 .nav-wrapper {
-  font-family: 'Noto Sans';
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 30px;
-  font-size: 13px;
-  padding: 10px 10px 10px 0px;
-
-  .nav-left-box {
-    .nav-left-box-main-btn {
-      font-size: 30px;
-      margin-right: 25px;
-      font-family: 'Righteous';
-    }
-
-    .nav-left-box-product-btn {
-      margin-right: 40px;
-    }
-
-    .nav-left-box-recipe-btn {
-      margin-right: 40px;
-    }
-
-    .nav-left-box-review-btn {
-      margin-right: 40px;
-    }
-
-    .nav-left-box-brand-btn {
-      margin-right: 40px;
-    }
+  background-color: rgba($color: black, $alpha: 0.2);
+  &:hover {
+    background-color: white;
+    color: black;
   }
+  .nav {
+    font-family: 'Noto Sans';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px 0px 25px;
+    font-size: 12px;
+    padding: 9px 9px 9px 0px;
 
-  .nav-right-box {
+    .nav-left-box {
+      display: flex;
+      align-items: center;
+      color: white;
+
+      .nav-left-box-btns {
+        margin-top: 8px;
+        font-weight: 550;
+      }
+
+      .nav-left-box-main-btn {
+        font-size: 28px;
+        margin-right: 25px;
+        font-family: 'Righteous';
+        color: white;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+
+      .nav-left-box-product-btn {
+        margin-right: 50px;
+        color: white;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+
+      .nav-left-box-recipe-btn {
+        margin-right: 50px;
+        color: white;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+
+      .nav-left-box-review-btn {
+        margin-right: 50px;
+        color: white;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+
+      .nav-left-box-brand-btn {
+        margin-right: 50px;
+        color: rgb(255, 255, 255);
+        &:hover {
+          color: #6c801a;
+        }
+      }
+    }
+
+    .nav-right-box {
+      display: flex;
+      align-items: center;
+      margin-top: 6px;
+
+      .nav-right-box-icons {
+        font-size: large;
+        margin-right: 30px;
+
+        .nav-right-box-icons-search {
+          color: white;
+          margin-right: 10px;
+          &:hover {
+            color: #6c801a;
+          }
+        }
+
+        .nav-right-box-icons-cart {
+          color: white;
+          margin-right: 10px;
+          &:hover {
+            color: #6c801a;
+          }
+        }
+
+        .nav-right-box-icons-truck {
+          color: white;
+          margin-right: 10px;
+          &:hover {
+            color: #6c801a;
+          }
+        }
+      }
+
+      .nav-right-box-login {
+        color: white;
+        margin-right: 8px;
+        font-size: 10px;
+        font-weight: bold;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+
+      .nav-right-box-signup {
+        color: white;
+        margin-left: 6px;
+        font-size: 10px;
+        font-weight: bold;
+        &:hover {
+          color: #6c801a;
+        }
+      }
+    }
   }
 }
