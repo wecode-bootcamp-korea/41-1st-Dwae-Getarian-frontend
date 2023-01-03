@@ -26,20 +26,22 @@ export default function Login() {
           <span>아이디로 로그인해주세요.</span>
         </div>
         <form className="login-box">
-          <input
-            type="text"
-            className="login-id"
-            placeholder="아이디 입력"
-          ></input>
+          <input type="text" className="login-id" placeholder="아이디 입력" />
           <input
             type="password"
             className="login-pw"
             placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
-          ></input>
+          />
           <div className="save-id">
-            <button type="button" className="save-id-btn">
+            {/* <button type="button" className="save-id-btn">
               저장
-            </button>
+            </button> */}
+            <label htmlFor="chk">
+              <input type="checkbox">
+                {/* <i className="circle" />
+                  <span className="text">아이디 저장하기</span> */}
+              </input>
+            </label>
             <span>아이디 저장</span>
           </div>
           <div className="login-btn-box">
@@ -48,15 +50,24 @@ export default function Login() {
             </button>
           </div>
         </form>
-
         <hr />
-        <div className="login-search-box">
-          <a href="/">아이디 찾기</a>
-          <span>|</span>
-          <a href="/">비밀번호 찾기</a>
-          <span>|</span>
-          <a href="/">비회원 주문/조회</a>
-        </div>
+        <ul className="login-search-box">
+          <li>
+            <a href="/" className="login-search-list">
+              아이디 찾기 |
+            </a>
+          </li>
+          <li>
+            <a href="/" className="login-search-list">
+              비밀번호 찾기 |
+            </a>
+          </li>
+          <li>
+            <a href="/" className="login-search-list">
+              비회원 주문/조회
+            </a>
+          </li>
+        </ul>
         <button className="is-member">
           <span className="is-member-text">아직 회원이 아니세요?</span>
           <em>회원가입</em>
