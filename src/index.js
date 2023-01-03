@@ -10,6 +10,8 @@ import ProductList from './pages/Main/Components/ProductList/ProductList';
 import './styles/common.scss';
 import './styles/reset.scss';
 import './styles/variables.scss';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,8 @@ const router = createBrowserRouter([
       { path: '/recipe', element: <Recipe /> },
       { path: '/review', element: <Review /> },
       { path: '/brand', element: <Brand /> },
+      { path: '/login', element: <Login /> },
+      { path: '/signup', element: <SignUp /> },
     ],
   },
 ]);
