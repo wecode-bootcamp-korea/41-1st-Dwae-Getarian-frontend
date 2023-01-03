@@ -1,0 +1,36 @@
+.nav-wrapper {
+  font-family: 'Noto Sans';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  font-size: 13px;
+  padding: 10px 10px 10px 0px;
+
+  .nav-left-box {
+    .nav-left-box-main-btn {
+      font-size: 30px;
+      margin-right: 25px;
+      font-family: 'Righteous';
+    }
+
+    .nav-left-box-product-btn {
+      margin-right: 40px;
+    }
+
+    .nav-left-box-recipe-btn {
+      margin-right: 40px;
+    }
+
+    .nav-left-box-review-btn {
+      margin-right: 40px;
+    }
+
+    .nav-left-box-brand-btn {
+      margin-right: 40px;
+    }
+  }
+
+  .nav-right-box {
+  }
+}
