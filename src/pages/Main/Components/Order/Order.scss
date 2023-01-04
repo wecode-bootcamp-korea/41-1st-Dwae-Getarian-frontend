@@ -1,0 +1,108 @@
+.orderPage {
+  width: 100%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+  .infoInput {
+    width: 60%;
+    .labelStyle {
+      width: 10%;
+      display: inline-block;
+    }
+
+    .paymentTitle {
+      font-size: 28px;
+    }
+    .orderClientInfo {
+      border-top: 2px solid black;
+      padding: 20px 20px;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .shipmentInfo {
+      border-top: 1px solid gray;
+      padding: 20px 20px;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      .userInfoSame {
+        height: 32px;
+        width: 20%;
+      }
+    }
+    .shippingInput {
+      margin-top: 30px;
+      margin-top: 10px;
+      .recipient {
+        .recipientInput {
+          width: 89.2%;
+          height: 40px;
+        }
+      }
+    }
+    .phoneNum {
+      margin-top: 10px;
+      .phoneNumSelect {
+        width: 30%;
+        height: 40px;
+      }
+      .hypen {
+        width: 1%;
+      }
+      .phoneNumInput {
+        width: 57%;
+        height: 40px;
+      }
+    }
+    .addressContainer {
+      margin-top: 10px;
+      .addressLabelInfo {
+        .addressInput {
+          width: 30%;
+          height: 40px;
+          padding: 0 20px;
+        }
+      }
+      .addressDetail {
+        width: 90%;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10%;
+      }
+    }
+    .checkBox {
+      display: inline-block;
+      margin-left: 10%;
+    }
+    .delivery {
+      background-color: #f6f6f6;
+      .deliveryTitle {
+        font-size: 14px;
+        margin-left: 3%;
+      }
+
+      .deliveryRequest {
+        width: 90%;
+        margin-left: 3%;
+        height: 40px;
+      }
+    }
+  }
+  .orderNav {
+    width: 20%;
+    display: fixed;
+    border: 2px solid black;
+    border-radius: 8px;
+    .totalPaymentFont {
+      border-bottom: 1px solid #f6f6f6;
+      margin-top: 3%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      :nth-child(4) {
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
+  }
+}
