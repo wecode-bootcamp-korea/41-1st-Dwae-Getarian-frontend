@@ -37,10 +37,7 @@ export default function Login() {
               저장
             </button> */}
             <label htmlFor="chk">
-              <input type="checkbox">
-                {/* <i className="circle" />
-                  <span className="text">아이디 저장하기</span> */}
-              </input>
+              <input type="checkbox" />
             </label>
             <span>아이디 저장</span>
           </div>
@@ -52,25 +49,25 @@ export default function Login() {
         </form>
         <hr />
         <ul className="login-search-box">
-          <li>
-            <a href="/" className="login-search-list">
-              아이디 찾기 |
+          <li className="login-search-box-li">
+            <a href="/" className="login-search-list-id">
+              아이디 찾기
             </a>
           </li>
-          <li>
-            <a href="/" className="login-search-list">
-              비밀번호 찾기 |
+          <li className="login-search-box-li">
+            <a href="/" className="login-search-list-find-pw">
+              비밀번호 찾기
             </a>
           </li>
-          <li>
-            <a href="/" className="login-search-list">
+          <li className="login-search-box-li">
+            <a href="/" className="login-search-list-order-check">
               비회원 주문/조회
             </a>
           </li>
         </ul>
         <button className="is-member">
           <span className="is-member-text">아직 회원이 아니세요?</span>
-          <em>회원가입</em>
+          <em className="is-member-em">회원가입</em>
         </button>
       </section>
     </>

@@ -41,7 +41,6 @@
 }
 
 .container {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   width: 520px;
@@ -64,44 +63,61 @@
     color: #000;
   }
 
-  .login-id {
-    width: 100%;
-    height: 50px;
-  }
+  .login-box {
+    // margin-bottom: 20px;
 
-  .login-pw {
-    width: 100%;
-    height: 50px;
-  }
+    .login-id {
+      border: solid 1px #d3d3d3;
+      font-size: 16px;
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      line-height: 1.5;
+      letter-spacing: -0.7px;
+      vertical-align: middle;
+      word-spacing: 0px;
+      padding: 0 12px 0 12px;
+    }
 
-  .login-btn {
-    border: solid 1px #d3d3d3;
-    width: 100%;
-    height: 54px;
-    background-color: #f0f0f0;
-    border-color: #f0f0f0;
-    color: #c6c6c6;
-    border-radius: 6px;
-    font-size: 16px;
-  }
+    .login-pw {
+      border: solid 1px #d3d3d3;
+      font-size: 16px;
+      width: 100%;
+      height: 50px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      line-height: 1.5;
+      letter-spacing: -0.7px;
+      vertical-align: middle;
+      word-spacing: 0px;
+      padding: 0 12px 0 12px;
+    }
 
-  .login-search-list {
-    display: block;
-    margin: 20px 9px;
-    font-size: 13px;
-    color: #898989;
-    letter-spacing: -0.65px;
-  }
+    .save-id {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
 
-  .is-member {
-    border: solid 1px #d3d3d3;
-    width: 100%;
-    height: 44px;
-    background-color: #ffffff;
-    border-radius: 6px;
-    padding: 0 20px;
-    font-size: 14px;
-    margin-top: 15px;
+      .checkbox {
+        font-size: 1em;
+        width: 1.25em; /* 너비 설정 */
+        height: 1.25em; /* 높이 설정 */
+        vertical-align: middle;
+      }
+    }
+
+    .login-btn {
+      border: solid 1px #d3d3d3;
+      width: 100%;
+      height: 54px;
+      background-color: #f0f0f0;
+      border-color: #f0f0f0;
+      color: #c6c6c6;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   }
 
   .login-search-box {
@@ -110,14 +126,85 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #898989;
 
-    .login-search-list {
-      display: inline-block;
-      font-size: 15px;
-      line-height: 22.5px;
-      height: 22.5px;
-      margin: 20px 9px 20px 9px;
-      cursor: pointer;
+    .login-search-box-li {
+      margin: 20px 9px;
+      color: #898989;
+    }
+
+    .login-search-box-li a {
+      color: #898989;
+    }
+
+    .login-search-list-id::after {
+      float: right;
+      color: #898989;
+      content: '|';
+      margin-right: -15px;
+    }
+
+    .login-search-list-find-pw {
+      margin: 0 10px 0 10px;
+    }
+
+    .login-search-list-find-pw::after {
+      float: right;
+      color: #898989;
+      content: '|';
+      margin-right: -5px;
     }
   }
+
+  .is-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 0 20px;
+    height: 44px;
+    font-size: 14px;
+    letter-spacing: -0.7px;
+    border: solid 1px #d3d3d3;
+    background-color: #fff;
+    border-radius: 6px;
+
+    .is-member-text {
+      cursor: pointer;
+    }
+
+    .is-member-em::after {
+      content: ' >';
+    }
+  }
+
+  .form-action {
+    .checkbox {
+      border-radius: 10px;
+    }
+  }
+
+  input[type='checkbox'] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    appearance: none;
+  }
+  input[type='checkbox'] label {
+    // display: inline-block;
+    cursor: pointer;
+    display: none;
+
+    background: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
+  }
+
+  input[type='checkbox']:checked {
+    background-image: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
+  }
 }
+
+// 실제 체크박스 Display none 으로 숨기고 true/false를 이용하여 Img 나타내기
