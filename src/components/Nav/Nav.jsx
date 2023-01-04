@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Nav.scss';
 
 export default function Nav() {
   return (
     <div>
       <Link to="/">Main</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/recipe">Recipe</Link>
-      <Link to="/review">Review</Link>
-      <Link to="/brand">Brand</Link>
+      <Link to="/main/product">product</Link>
+      <Link to="/main/recipe">recipe</Link>
+      <Link to="/main/review">review</Link>
+      <Link to="/main/brand">brand</Link>
     </div>
   );
 }
