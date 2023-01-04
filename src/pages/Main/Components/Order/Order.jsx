@@ -48,7 +48,7 @@ export default function Order() {
                 주소
               </label>
               <input className="addressInput" id="address" />
-              <button>우편번호 찾기</button>
+              <button className="addressBtn">우편번호 찾기</button>
             </div>
             <input className="addressDetail" type="text" />
             <input
@@ -66,30 +66,47 @@ export default function Order() {
           <select className="deliveryRequest" value="배송 요청사항 선택">
             <option>경비실에 맡겨주세요</option>
             <option>배송전에 미리 연락 주세요</option>
-            <option>직접입력</option>
+            <option className="myself">직접입력</option>
           </select>
-          <input className="deliveryRequest" type="text" />
+          <input className="deliveryRequest displayNone" type="text" />
         </div>
 
         <div className="orderedBox">
+          <div className="discountTitle">
+            <span>할인/포인트</span>
+            <span>-9500원</span>
+          </div>
           <div className="discountAndPoints">
             <div className="discount">
-              <span>상품할인</span>
-              <input placeholder="0개 상품 할인 혜택(-0원)" />
-              <button>할인적용</button>
+              <p>상품할인</p>
+              <input
+                className="discountInput"
+                placeholder="0개 상품 할인 혜택(-0원)"
+              />
+              <button className="btnWidth">할인적용</button>
             </div>
             <div className="coupon">
-              <span>쿠폰</span>
-              <span>보유쿠폰 {}장</span>
-              <input className="couponInput" />
-              <button className="couponBtn">쿠폰조회</button>
+              <div>
+                <span>쿠폰</span>
+                <span>보유쿠폰 {}장</span>
+              </div>
+              <input className="discountInput " />
+              <button className="btnWidth">쿠폰조회</button>
             </div>
             <div className="beautyPoints">
-              <span>뷰티포인트</span>
-              <span>보유포인트 {}P</span>
-              <input className="beautyPoints" />
-              <button className="beautyBtn">모두 사용</button>
+              <div>
+                <span>뷰티포인트</span>
+                <span>보유포인트 {}P</span>
+              </div>
+              <input className="discountInput" />
+              <button className="btnWidth">모두 사용</button>
             </div>
+          </div>
+        </div>
+        <div className="orderedBox">
+          <div className="discountTitle">
+            <span>결제 수단 선택</span>
+            <span>신용카드</span>
           </div>
         </div>
       </div>
@@ -110,10 +127,11 @@ export default function Order() {
           <span>배송비</span>
           <span>2,500원</span>
         </div>
-        <div>
+        <div className="finalPrice">
           <span>최종결제 금액</span>
           <span>31,500원</span>
         </div>
+        <button className="paymentBtn">결제하기</button>
       </div>
     </div>
   );
