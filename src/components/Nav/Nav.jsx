@@ -6,10 +6,10 @@ export default function Nav() {
   return (
     <div>
       <Link to="/">Main</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/recipe">Recipe</Link>
-      <Link to="/review">Review</Link>
-      <Link to="/brand">Brand</Link>
+      <Link to="/main/product">Products</Link>
+      <Link to="/main/recipe">Recipe</Link>
+      <Link to="/main/review">Review</Link>
+      <Link to="/main/brand">Brand</Link>
     </div>
   );
 }
