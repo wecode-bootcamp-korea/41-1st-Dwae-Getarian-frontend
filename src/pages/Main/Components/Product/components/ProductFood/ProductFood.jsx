@@ -1,6 +1,22 @@
 import React from 'react';
 import ProductCompo from '../ProductCompo/ProductCompo';
 import './ProductFood.scss';
+
+export default function ProductFood() {
+  return (
+    <div className="productFood">
+      <ProductCompo
+        content="Vegeterian Food"
+        name="productFoodImg"
+        title="Food"
+        quantity="100"
+        heart="10"
+        bubble="787"
+        img={productListItem}
+      />
+    </div>
+  );
+}
 const productListItem = [
   {
     id: 1,
@@ -39,38 +55,23 @@ const productListItem = [
   },
   {
     id: 6,
-    name: 'name5',
+    name: 'name6',
     img: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1290&q=80',
-    price: '27,000',
+    price: '87,000',
     type: ' Pesco',
   },
   {
     id: 7,
-    name: 'name5',
+    name: 'name7',
     img: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1290&q=80',
-    price: '27000',
+    price: '15,700',
     type: 'Flexitarian',
   },
   {
     id: 8,
-    name: 'name5',
+    name: 'name8',
     img: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1290&q=80',
-    price: '27,000',
+    price: '73,200',
     type: 'Vegan',
   },
 ];
-export default function ProductFood() {
-  return (
-    <div className="productFood">
-      <ProductCompo
-        content="Vegeterian Food"
-        name="productFoodImg"
-        title="Food"
-        quantity="100"
-        heart="10"
-        bubble="787"
-        img={productListItem}
-      />
-    </div>
-  );
-}
