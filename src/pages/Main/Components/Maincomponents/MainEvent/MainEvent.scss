@@ -1,0 +1,57 @@
+.collection {
+  background-color: #f6f6f6;
+  height: 100%;
+  .eventBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 80px;
+    padding: 8%;
+    .todayDiscount {
+      background-color: green;
+      // width: 530.5px;
+      height: 569.594px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .todayDiscountImg {
+        display: block;
+      }
+      .todayDiscountTitle {
+        background-color: red;
+        display: flex;
+        width: 225px;
+        justify-content: space-between;
+      }
+    }
+    .attendanceStory {
+      margin-left: 20px;
+      .checkAttendence {
+        height: 273.734px;
+        width: 579.953px;
+        background-color: blue;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .attendencePeriodBox {
+          display: flex;
+          flex-direction: column;
+          margin-left: px;
+          .month {
+            font-size: 26px;
+          }
+        }
+      }
+      .brandStory {
+        height: 273.734px;
+        width: 579.953px;
+        background-color: yellow;
+        background-image: url('https://www.strivehealth.co.uk/wp-content/uploads/2020/08/Food-1160x772.jpg');
+        background-size: cover;
+        margin-top: 21.5px;
+      }
+    }
+  }
+}

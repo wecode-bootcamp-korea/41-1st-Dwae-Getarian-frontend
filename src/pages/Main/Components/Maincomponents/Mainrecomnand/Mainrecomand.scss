@@ -1,0 +1,40 @@
+.main-recomand {
+  margin: 30px 0;
+
+  display: flex;
+
+  .lineBreak {
+    font-size: 28px;
+  }
+  .recomand-btn {
+    display: flex;
+    margin-left: 30px;
+    .best-btn {
+      height: 36px;
+      width: 71.9609px;
+      border-radius: 150px;
+      border: none;
+      padding: 0 16px;
+    }
+    .weekly-btn {
+      height: 36px;
+      width: 134.438px;
+      border-radius: 150px;
+      border: none;
+      margin-left: 8px;
+      padding: 0 16px;
+    }
+  }
+}
+.main-recomand-list {
+  display: flex;
+  flex-direction: column;
+  .main-thumb {
+    width: 200px;
+  }
+  .more-btn {
+    height: 48px;
+    width: 179.148px;
+    margin: 0 auto;
+  }
+}
