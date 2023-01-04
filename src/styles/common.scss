@@ -6,12 +6,37 @@ a {
   text-decoration: none;
 }
 
-@font-face {
+@mixin font-main {
   font-family: 'Noto Sans', sans-serif;
   src: url(../asset/fonts/Noto_Sans/NotoSans-Regular.ttf);
 }
 
-@font-face {
+@mixin font-title {
   font-family: 'Righteous';
   src: url(../asset/fonts/Righteous/Righteous-Regular.ttf);
+}
+
+@mixin signup-box {
+  border: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+  height: 50px;
+  cursor: text;
+  font-size: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  letter-spacing: -0.7px;
+  vertical-align: middle;
+  word-spacing: 0px;
+  padding: 0 12px 0 12px;
+}
+
+@mixin signup-choose-box {
+  border: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+  height: 50px;
+  cursor: text;
+  font-size: 14px;
+  border-radius: 6px;
+  color: #767171;
+  padding: 0 12px 0 12px;
 }
