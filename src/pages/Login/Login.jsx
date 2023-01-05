@@ -3,12 +3,36 @@ import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
 
 export default function Login() {
-  const [form, setForm] = useState({ id: '', pw: '' });
+  const [idValue, setId] = useState('');
+  const [pwValue, setPw] = useState('');
 
-  const handleLogin = e => {
-    setForm(e.target.value);
+  const saveUserId = event => {
+    // console.log(event);
+    setId(event.target.value);
+    console.log(event.target.value);
   };
-  console.log(form);
+
+  const saveUserPw = event => {
+    setPw(event.target.value);
+    console.log(event.target.value);
+  };
+
+  //---------------------------------------
+  // const [form, setForm] = useState({ id: '', pw: '' });
+
+  // const saveUserLogin = e => {
+  //   setForm(e.target.value);
+  // };
+
+  // const handleChange = e => {
+  //   setForm({ ...form });
+  // };
+
+  // console.log(form);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   const handleClick = e => {
     fetch('http://10.58.52.134:3000/user/login', {
@@ -18,8 +42,8 @@ export default function Login() {
         Authorization: localStorage.getItem('login-token'),
       },
       body: JSON.stringify({
-        email: form.id,
-        password: form.pw,
+        email: idValue,
+        password: pwValue,
       }),
     })
       .then(response => response.json())
@@ -55,20 +79,22 @@ export default function Login() {
           <br />
           <span>아이디로 로그인해주세요.</span>
         </div>
-        <form className="login-box">
+        <form action="" className="login-box" onSubmit={handleSubmit}>
           <input
             type="text"
             className="login-id"
+            name="name"
             placeholder="아이디 입력"
-            value={form.id}
-            onChange={handleLogin}
+            value={idValue}
+            onChange={saveUserId}
           />
           <input
             type="password"
             className="login-pw"
+            name="password"
             placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
-            value={form.pw}
-            onChange={handleLogin}
+            value={pwValue}
+            onChange={saveUserPw}
           />
           <div className="save-id">
             <label htmlFor="chk">
@@ -77,7 +103,7 @@ export default function Login() {
             <span>아이디 저장</span>
           </div>
           <div className="login-btn-box">
-            <button type="button" className="login-btn">
+            <button type="button" className="login-btn" onClick={handleClick}>
               로그인
             </button>
           </div>
