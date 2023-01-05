@@ -1,7 +1,38 @@
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
+import { useState } from 'react';
 
 export default function Login() {
+  const [form, setForm] = useState({ id: '', pw: '' });
+
+  const handleLogin = e => {
+    setForm(e.target.value);
+  };
+  console.log(form);
+
+  const handleClick = e => {
+    fetch('', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('login-token'),
+      },
+      body: JSON.stringify({
+        email: '다경',
+        password: '1234',
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (data.accessToken) {
+          localStorage.setItem('token', data.accessToken);
+        }
+      });
+  };
+
+  console.log(localStorage.getItem('token'));
+
   return (
     <>
       <header className="header">
@@ -26,16 +57,21 @@ export default function Login() {
           <span>아이디로 로그인해주세요.</span>
         </div>
         <form className="login-box">
-          <input type="text" className="login-id" placeholder="아이디 입력" />
+          <input
+            type="text"
+            className="login-id"
+            placeholder="아이디 입력"
+            value={form.id}
+            onChange={handleLogin}
+          />
           <input
             type="password"
             className="login-pw"
             placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
+            value={form.pw}
+            onChange={handleLogin}
           />
           <div className="save-id">
-            {/* <button type="button" className="save-id-btn">
-              저장
-            </button> */}
             <label htmlFor="chk">
               <input type="checkbox" />
             </label>
@@ -65,7 +101,7 @@ export default function Login() {
             </a>
           </li>
         </ul>
-        <button className="is-member">
+        <button className="is-member" onClick={handleClick}>
           <span className="is-member-text">아직 회원이 아니세요?</span>
           <em className="is-member-em">회원가입</em>
         </button>
