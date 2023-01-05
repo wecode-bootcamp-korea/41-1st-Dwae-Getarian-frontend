@@ -152,4 +152,21 @@
       height: 50px;
     }
   }
+  .cartBox {
+    padding: 24px 20px 24px;
+    .cartBoxTitle {
+      display: flex;
+      justify-content: space-between;
+    }
+    .cartBoxDetail {
+      .cartBuy {
+        width: 96px;
+        height: 107px;
+      }
+      .cartBuyContent {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
 }
