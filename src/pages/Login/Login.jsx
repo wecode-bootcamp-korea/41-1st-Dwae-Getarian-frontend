@@ -11,15 +11,15 @@ export default function Login() {
   console.log(form);
 
   const handleClick = e => {
-    fetch('', {
+    fetch('http://10.58.52.134:3000/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('login-token'),
       },
       body: JSON.stringify({
-        email: '다경',
-        password: '1234',
+        email: form.id,
+        password: form.pw,
       }),
     })
       .then(response => response.json())
@@ -45,7 +45,6 @@ export default function Login() {
               ap-click-area="로그인"
             >
               <TfiClose />
-              {/* span class=blind 확인 */}
             </button>
           </div>
         </div>
