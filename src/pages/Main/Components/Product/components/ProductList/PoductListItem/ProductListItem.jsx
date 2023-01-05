@@ -7,21 +7,16 @@ import './ProductListItem.scss';
 export default function ProductListItem({ img, heart, bubble }) {
   const navigate = useNavigate();
 
+  const navi = item => {
+    navigate('/productDetail', { state: { ...item } });
+  };
   return (
     <div className="productListItems">
       {img.map(item => {
         return (
           <div key={item.id} className="productListItemsBox">
             <div className="productListItemsImg">
-              <img
-                src={item.img}
-                alt="img"
-                onClick={() =>
-                  navigate('/productDetail', {
-                    state: { ...item },
-                  })
-                }
-              />
+              <img src={item.img} alt="img" onClick={navi(item)} />
             </div>
             <div className="productListItemsName">{item.name}</div>
             <div className="productListItemsPrice">{item.price}</div>
