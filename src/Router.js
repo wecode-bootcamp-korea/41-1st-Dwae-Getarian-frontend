@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Main from './pages/Main/Main';
@@ -9,11 +10,13 @@ import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+
       {
         index: true,
         path: '/',
@@ -40,8 +43,10 @@ const router = createBrowserRouter([
         path: 'main/brand',
         element: <Brand />,
       },
+
     ],
     errorElement: <NotFound />,
   },
 ]);
+
 export default router;
