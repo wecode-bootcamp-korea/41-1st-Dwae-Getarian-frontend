@@ -34,7 +34,7 @@ export default function SignUp() {
   const fillIn = e => {
     const { value } = e.target;
     setFilledInput(e.target.value);
-    if (filledInput.include(value)) {
+    if (filledInput.includes(e.target.value)) {
       setDisabled(false);
     }
   };
