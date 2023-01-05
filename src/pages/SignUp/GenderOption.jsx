@@ -9,7 +9,7 @@ export default function GenderOption({ setGender }) {
 
   return (
     <select className="signin_gender" onChange={handleSelect}>
-      <option className="signin-gender-title">성별을 선택하세요</option>
+      <option className="signin-gender-title">성별</option>
       <option value={1}>남성</option>
       <option value={2}>여성</option>
       <option value={3}>그외</option>
