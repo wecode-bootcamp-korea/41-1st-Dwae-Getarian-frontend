@@ -5,10 +5,14 @@ export default function Nav() {
   return (
     <div>
       <Link to="/">Main</Link>
-      <Link to="main/product">product</Link>
-      <Link to="main/recipe">recipe</Link>
-      <Link to="main/review">review</Link>
-      <Link to="main/brand">brand</Link>
+
+      <Link to="/main/product">Products</Link>
+      <Link to="/main/recipe">Recipe</Link>
+      <Link to="/main/review">Review</Link>
+      <Link to="/main/brand">Brand</Link>
+      <Link to="/main/login">login</Link>
+      <Link to="/main/signup">signup</Link>
+
     </div>
   );
 }

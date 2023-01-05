@@ -1,0 +1,36 @@
+.header-box {
+  width: 1470px;
+  height: 55px;
+  border-bottom: 1px solid #f0f0f0;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  font-size: 16px;
+  margin: 0;
+
+  .page-tit {
+    width: 520px;
+    height: 54px;
+    text-align: center;
+    line-height: 54px;
+    font-size: 18px;
+    letter-spacing: -0.8px;
+  }
+
+  .header-box-btn {
+    position: absolute;
+    left: 460px;
+    display: block;
+    width: 60px;
+    height: 54px;
+    cursor: pointer;
+  }
+}
+
+.header-box-btn {
+  position: absolute;
+  left: 460px;
+  display: block;
+  width: 60px;
+  height: 54px;
+  cursor: pointer;
+}

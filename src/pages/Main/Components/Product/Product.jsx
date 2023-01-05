@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductDetail from './components/ProductDetail/ProductDetail';
 
 export default function Product() {
@@ -7,4 +8,5 @@ export default function Product() {
       <ProductDetail />
     </div>
   );
+
 }
