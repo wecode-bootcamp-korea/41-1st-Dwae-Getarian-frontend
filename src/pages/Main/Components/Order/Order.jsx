@@ -1,12 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import './Order.scss';
 export default function Order() {
-  const [isOpen, setCart] = useState(false);
-  const toggle = () => {
-    setCart(!isOpen);
-  };
+  // const [isOpen, setCart] = useState(false);
+  const [form, setForm] = useState({
+    payment: {
+      payment_type: 'voucher',
+      total_cost: 10000.0,
+    },
+
+    delivery_address: {
+      address: '위코드',
+      phone_number: '123456789',
+    },
+
+    products: [
+      {
+        id: 2,
+        name: '채시익식단',
+        price: 5500.0,
+        quantity: 1,
+      },
+
+      {
+        id: 3,
+        name: '채식식단',
+        price: 5000.0,
+        quantity: 1,
+      },
+    ],
+  });
   const onChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = e => {
     e.prevent.Defalut();
+    fetch('http://10.58.52.134:3000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(form),
+    })
+      //요청
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem('token', data.accessToken);
+        console.log(data);
+      });
   };
   return (
     <div className="orderPage">
@@ -20,7 +63,7 @@ export default function Order() {
             <img src="https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png" />
           </div>
 
-          <form onChange={onChange} className="shippingInput">
+          <form className="shippingInput" onSubmit={e => handleSubmit(e)}>
             <div className="recipient">
               <label className="labelStyle" for="Recipient">
                 이름
@@ -54,6 +97,7 @@ export default function Order() {
               </select>
               <span className="hypen"> - </span>
               <input
+                onChange={onChange}
                 className="phoneNumInput"
                 id="phone"
                 placeholder="'-'없이 휴대번호 입력"
@@ -76,7 +120,7 @@ export default function Order() {
           <button className="userInfoSame">주문 고객과 동일</button>
         </div>
 
-        <form onChange={onChange} className="shippingInput">
+        <form className="shippingInput">
           <div className="recipient">
             <label className="labelStyle" for="Recipient">
               받는 분
