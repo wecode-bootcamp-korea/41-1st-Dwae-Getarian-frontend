@@ -126,7 +126,7 @@ export default function Login() {
             </a>
           </li>
         </ul>
-        <button className="is-member" onClick={handleClick}>
+        <button className="is-member">
           <span className="is-member-text">아직 회원이 아니세요?</span>
           <em className="is-member-em">회원가입</em>
         </button>
