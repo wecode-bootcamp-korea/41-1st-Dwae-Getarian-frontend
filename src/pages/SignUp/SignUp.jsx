@@ -13,7 +13,9 @@ export default function SignUp() {
     mobile_number: '',
   });
 
-  const [startDate, setState] = useState({ date_of_birth: '' });
+  const [whatGender, setGender] = useState(0);
+
+  const [startDate, setState] = useState('');
 
   console.log(form);
   console.log(startDate);
@@ -27,29 +29,29 @@ export default function SignUp() {
     setForm({ ...form, [name]: value });
   };
 
+  console.log(whatGender);
+
   const handleClick = () => {
-    fetch('', {
+    fetch('http://10.58.52.134:3000/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('login-token'),
       },
+      // body: JSON.stringify(form),
       body: JSON.stringify({
-        name: '다경',
-        email: 'jdk1234@',
-        password: '1234',
-        address: '서울특별시',
-        mobile_number: '010',
-        gender: '1',
-        date_of_birth: '2023-01-05',
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        address: form.address,
+        postcode: '',
+        phone_number: form.mobile_number,
+        gender_id: whatGender,
+        date_of_birth: startDate,
       }),
     })
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        if (data.accessToken) {
-          localStorage.setItem('token', data.accessToken);
-        }
       });
   };
 
@@ -109,11 +111,11 @@ export default function SignUp() {
             value={form.mobile_number}
             onChange={handleChange}
           />
-          <GenderOption />
+          <GenderOption setGender={setGender} />
           <input
             type="date"
             className="signin-birth"
-            onChange={e => setState({ startDate: e.target.value })}
+            onChange={e => setState(e.target.value)}
           />
           <div className="signin-btn-box">
             <button type="button" className="signin-btn" onClick={handleClick}>
