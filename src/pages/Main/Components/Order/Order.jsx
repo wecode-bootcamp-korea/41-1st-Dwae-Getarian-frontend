@@ -147,6 +147,7 @@ export default function Order() {
         </div>
         {/* <div className="orderedBox">
           <div className="discountTitle">
+          
             <span>할인/포인트</span>
             <span>-9500원</span>
           </div>
@@ -202,6 +203,7 @@ export default function Order() {
         <button className="paymentBtn">결제하기</button>
       </div> */}
       </div>
+      <div>결제창</div>
     </div>
   );
 }
