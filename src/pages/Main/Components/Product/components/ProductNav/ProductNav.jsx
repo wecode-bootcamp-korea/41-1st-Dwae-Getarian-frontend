@@ -13,7 +13,7 @@ export default function ProductNav() {
       Product
       <li className="productNavList hover1" onMouseOver={toggleMenu}>
         {' '}
-        <Link to="/productFood" className="productNavListA">
+        <Link to="/main/productFood" className="productNavListA">
           음식
         </Link>
         <ul className="vegetarianType">
