@@ -17,9 +17,6 @@ export default function SignUp() {
 
   const [startDate, setState] = useState('');
 
-  console.log(form);
-  console.log(startDate);
-
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -29,15 +26,12 @@ export default function SignUp() {
     setForm({ ...form, [name]: value });
   };
 
-  console.log(whatGender);
-
   const handleClick = () => {
     fetch('http://10.58.52.134:3000/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
-      // body: JSON.stringify(form),
       body: JSON.stringify({
         name: form.name,
         email: form.email,
@@ -55,11 +49,9 @@ export default function SignUp() {
       });
   };
 
-  console.log(localStorage.getItem('token'));
-
   return (
     <>
-      <div className="header">
+      <div className="signup">
         <div className="header-box">
           <div className="header-box-inner">
             <h1 className="header-box-login-title">회원가입</h1>

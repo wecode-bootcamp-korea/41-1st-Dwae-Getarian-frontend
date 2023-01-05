@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 
 export default function GenderOption({ setGender }) {
   // eslint-disable-next-line no-undef

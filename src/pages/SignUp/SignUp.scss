@@ -1,6 +1,7 @@
 @import '../../styles/common.scss';
+@import '../../styles/mixin.scss';
 
-.header {
+.signup {
   height: 55px;
 }
 
@@ -54,30 +55,15 @@
     display: flex;
     flex-direction: column;
 
-    .signin-full-name {
-      @include signup-box;
-    }
-
-    .signin-email {
-      @include signup-box;
-    }
-
-    .signin-pw {
-      @include signup-box;
-    }
-
-    .signin-address {
-      @include signup-box;
-    }
-
+    .signin-full-name,
+    .signin-email,
+    .signin-pw,
+    .signin-address,
     .signin-phone {
       @include signup-box;
     }
 
-    .signin_gender {
-      @include signup-choose-box;
-    }
-
+    .signin_gender,
     .signin-birth {
       @include signup-choose-box;
     }
@@ -100,7 +86,7 @@
     }
   }
   &:focus {
-    border-color: blue;
+    border-color: #0000ff;
     color: #252525;
   }
 }
