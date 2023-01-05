@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
           <div className="column">
             <GiCabbage className="abcd" />
-            <p>멥버십</p>
+            <p>멤버십</p>
           </div>
           <div className="column">
             <BsQuestionCircle className="abcd" />
