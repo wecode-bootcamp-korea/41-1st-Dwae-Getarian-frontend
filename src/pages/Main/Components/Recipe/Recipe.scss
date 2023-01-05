@@ -144,3 +144,19 @@
     width: 100%;
   }
 }
+
+.slideshowDots {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0px;
+}
+.slideshowDot {
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  background-color: #c4c4c4;
+}

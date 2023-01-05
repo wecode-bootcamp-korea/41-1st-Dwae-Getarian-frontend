@@ -29,17 +29,6 @@ function ImageSlider({ slides }) {
 
   return (
     <div className="slideshow">
-      <div
-        className="slideshowSlider"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-      >
-        {slides.map((slideImage, index) => (
-          <div className="slide" key={index} style={{ slideImage }}>
-            <img src={slideImage.image} alt="슬라이드 이미지" />
-          </div>
-        ))}
-      </div>
-
       <div className="slideshowDots">
         {slides.map((_, idx) => (
           <div
@@ -49,6 +38,16 @@ function ImageSlider({ slides }) {
               setIndex(idx);
             }}
           />
+        ))}
+      </div>
+      <div
+        className="slideshowSlider"
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+      >
+        {slides.map((slideImage, index) => (
+          <div className="slide" key={index} style={{ slideImage }}>
+            <img src={slideImage.image} alt="슬라이드 이미지" />
+          </div>
         ))}
       </div>
     </div>
