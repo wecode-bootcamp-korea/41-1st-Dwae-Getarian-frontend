@@ -103,11 +103,44 @@
 .swiper-container {
   position: relative;
   list-style: none;
-  z-index: 1;
 }
 
-img {
+.recipe-circles {
   width: 45px;
   height: auto;
   vertical-align: top;
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 500px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 500px;
+}
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+  img {
+    width: 100%;
+  }
 }

@@ -1,5 +1,7 @@
 import React from 'react';
+import { SliderData } from './SliderData';
 import './Recipe.scss';
+import ImageSlider from './ImageSlider';
 
 export default function Recipe() {
   return (
@@ -17,6 +19,7 @@ export default function Recipe() {
                     <div className="img-box">
                       <div className="img">
                         <img
+                          className="recipe-circles"
                           src="https://www.osulloc.com/upload/kr/ko/adminImage/ON/LI/20220518005721019DU.png"
                           alt="레시피 추천"
                         />
@@ -30,6 +33,7 @@ export default function Recipe() {
                     <div className="img-box">
                       <div className="img">
                         <img
+                          className="recipe-circles"
                           src="https://www.osulloc.com/upload/kr/ko/adminImage/ZB/DD/20220518005819370VJ.png"
                           alt="베스트"
                         />
@@ -43,6 +47,7 @@ export default function Recipe() {
                     <div className="img-box">
                       <div className="img">
                         <img
+                          className="recipe-circles"
                           src="https://www.osulloc.com/upload/kr/ko/adminImage/ZH/XS/20220518005913180YI.png"
                           alt="부담없는 선물"
                         />
@@ -56,6 +61,7 @@ export default function Recipe() {
                     <div className="img-box">
                       <div className="img">
                         <img
+                          className="recipe-circles"
                           src="https://www.osulloc.com/upload/kr/ko/adminImage/OJ/OD/20220913101158486TY.png"
                           alt="티웨어 세트"
                         />
@@ -80,6 +86,7 @@ export default function Recipe() {
               </p>
             </div>
             <div className="prd-list-wrap">
+              <ImageSlider slides={SliderData} />
               <img
                 className="prd-recommend-image1"
                 src="https://www.osulloc.com/upload/kr/ko/adminImage/IE/EF/304_20220120172110895WE_pc_large.png?quality=80"
