@@ -1,11 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Order.scss';
 export default function Order() {
+  const onChange = e => {
+    e.prevent.Defalut();
+  };
   return (
     <div className="orderPage">
       <div className="infoInput">
         <div className="paymentTitle">
           <span>결제하기</span>
+        </div>
+        <div className="MyInfo">
+          <div className="orderClientInfo">
+            <span>주문고객정보</span>
+            <span>이름/000-0000-0000</span>
+          </div>
+
+          <form onChange={onChange} className="shippingInput">
+            <div className="recipient">
+              <label className="labelStyle" for="Recipient">
+                받는 분
+              </label>
+              <input className="recipientInput" type="text" id="Recipient" />
+            </div>
+            <div className="phoneNum">
+              <label className="labelStyle" for="phone">
+                연락처
+              </label>
+              <select className="phoneNumSelect" id="phone">
+                <option value="010">010</option>
+                <option value="011">011</option>
+                <option value="016">016</option>
+                <option value="017">017</option>
+                <option value="018">018</option>
+                <option value="019">019</option>
+              </select>
+              <span className="hypen"> - </span>
+              <input
+                className="phoneNumInput"
+                id="phone"
+                placeholder="'-'없이 휴대번호 입력"
+              />
+            </div>
+            <div className="phoneNum">
+              <label className="labelStyle" for="phone">
+                연락처
+              </label>
+              <select className="phoneNumSelect" id="phone">
+                <option value="010">010</option>
+                <option value="011">011</option>
+                <option value="016">016</option>
+                <option value="017">017</option>
+                <option value="018">018</option>
+                <option value="019">019</option>
+              </select>
+              <span className="hypen"> - </span>
+              <input
+                className="phoneNumInput"
+                id="phone"
+                placeholder="'-'없이 휴대번호 입력"
+              />
+            </div>
+            <div className="recipient">
+              <label className="labelStyle" for="Recipient">
+                받는 분
+              </label>
+              <input className="recipientInput" type="text" id="Recipient" />
+            </div>
+          </form>
         </div>
         <div className="orderClientInfo">
           <span>주문고객정보</span>
@@ -16,7 +78,7 @@ export default function Order() {
           <button className="userInfoSame">주문 고객과 동일</button>
         </div>
 
-        <form className="shippingInput">
+        <form onChange={onChange} className="shippingInput">
           <div className="recipient">
             <label className="labelStyle" for="Recipient">
               받는 분
@@ -71,7 +133,7 @@ export default function Order() {
           <input className="deliveryRequest displayNone" type="text" />
         </div>
 
-        <div className="orderedBox">
+        {/* <div className="orderedBox">
           <div className="discountTitle">
             <span>할인/포인트</span>
             <span>-9500원</span>
@@ -102,13 +164,8 @@ export default function Order() {
               <button className="btnWidth">모두 사용</button>
             </div>
           </div>
-        </div>
-        <div className="orderedBox">
-          <div className="discountTitle">
-            <span>결제 수단 선택</span>
-            <span>신용카드</span>
-          </div>
-        </div>
+        </div> */}
+        <div className="orderedBox" />
       </div>
       <div className="orderNav">
         <div className="totalPaymentFont">
