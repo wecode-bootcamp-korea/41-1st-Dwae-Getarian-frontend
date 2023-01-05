@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './Order.scss';
 export default function Order() {
+  const [isOpen, setCart] = useState(false);
+  const toggle = () => {
+    setCart(!isOpen);
+  };
   const onChange = e => {
     e.prevent.Defalut();
   };
@@ -13,7 +17,7 @@ export default function Order() {
         <div className="MyInfo">
           <div className="orderClientInfo">
             <span>주문고객정보</span>
-            <span>이름/000-0000-0000</span>
+            <img src="https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png" />
           </div>
 
           <form onChange={onChange} className="shippingInput">
