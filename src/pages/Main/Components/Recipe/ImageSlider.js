@@ -1,10 +1,11 @@
 import React from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const delay = 2500;
 
 function ImageSlider({ slides }) {
-  const [index, setIndex] = React.useState(0);
-  const timeoutRef = React.useRef(null);
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -12,7 +13,7 @@ function ImageSlider({ slides }) {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
