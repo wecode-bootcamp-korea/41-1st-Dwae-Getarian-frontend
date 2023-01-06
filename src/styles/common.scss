@@ -6,12 +6,12 @@ a {
   text-decoration: none;
 }
 
-@font-face {
+@mixin font-main {
   font-family: 'Noto Sans', sans-serif;
   src: url(../asset/fonts/Noto_Sans/NotoSans-Regular.ttf);
 }
 
-@font-face {
+@mixin font-title {
   font-family: 'Righteous';
   src: url(../asset/fonts/Righteous/Righteous-Regular.ttf);
 }
