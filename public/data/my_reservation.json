@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "order_reservation": 16,
+    "payment_complete": 3,
+    "ready_to_order": 1,
+    "delivery": 5,
+    "delivery_complete": 164
+  },
+  {
+    "id": 2,
+    "order_reservation": 8,
+    "payment_complete": 10,
+    "ready_to_order": 32,
+    "delivery": 90,
+    "delivery_complete": 181
+  }
+]
