@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CiSearch } from 'react-icons/ci';
-import { CiShoppingCart } from 'react-icons/ci';
-import { CiDeliveryTruck } from 'react-icons/ci';
+import { CiSearch, CiShoppingCart, CiDeliveryTruck } from 'react-icons/ci';
 import './Nav.scss';
 
 export default function Nav() {
@@ -12,8 +10,15 @@ export default function Nav() {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
   useEffect(() => {
-    window.addEventListener('scroll', updateScroll);
-  });
+    let lock = false;
+    if (!lock) {
+      window.addEventListener('scroll', updateScroll);
+    }
+    return () => {
+      // Clean up
+      lock = true;
+    };
+  }, []);
 
   return (
     <div className="nav-header">
@@ -22,13 +27,16 @@ export default function Nav() {
           <div className="nav-wrapper">
             <div className="nav">
               <div className="nav-left-box">
-                <Link className="nav-left-box-main-btn" to="/">
+                <Link className="nav-left-box-main-btn nav-btns" to="/">
                   Lechou
                 </Link>
                 <div className="nav-left-box-btn">
                   <ul className="nav-list-dep1">
                     <li className="nav-dep1-item">
-                      <Link className="nav-left-box-btns" to="/main/product">
+                      <Link
+                        className="nav-left-box-btns nav-btns"
+                        to="/main/product"
+                      >
                         제품
                       </Link>
                       <div class="nav-list-dep2-box">
@@ -57,17 +65,26 @@ export default function Nav() {
                       </div>
                     </li>
                     <li className="nav-dep1-item">
-                      <Link className="nav-left-box-btns" to="/main/recipe">
+                      <Link
+                        className="nav-left-box-btns nav-btns"
+                        to="/main/recipe"
+                      >
                         레시피
                       </Link>
                     </li>
                     <li className="nav-dep1-item">
-                      <Link className="nav-left-box-btns" to="/main/review">
+                      <Link
+                        className="nav-left-box-btns nav-btns"
+                        to="/main/review"
+                      >
                         리뷰
                       </Link>
                     </li>
                     <li className="nav-dep1-item">
-                      <Link className="nav-left-box-btns" to="/main/brand">
+                      <Link
+                        className="nav-left-box-btns nav-btns"
+                        to="/main/brand"
+                      >
                         브랜드
                       </Link>
                     </li>
@@ -77,31 +94,39 @@ export default function Nav() {
               <div className="nav-right-box">
                 <div className="nav-right-box-icons">
                   <Link
-                    className="nav-right-box-icons-search nav-right-box-icon-group"
+                    className="nav-right-box-icons-search nav-right-box-icon-group nav-btns"
                     Link
                     to="/search"
                   >
                     <CiSearch />
                   </Link>
                   <Link
-                    className="nav-right-box-icons-cart nav-right-box-icon-group"
+                    className="nav-right-box-icons-cart nav-right-box-icon-group nav-btns"
                     Link
                     to="/cart"
                   >
                     <CiShoppingCart />
                   </Link>
                   <Link
-                    className="nav-right-box-icons-truck nav-right-box-icon-group"
+                    className="nav-right-box-icons-truck nav-right-box-icon-group nav-btns"
                     Link
                     to="/delivery"
                   >
                     <CiDeliveryTruck />
                   </Link>
                 </div>
-                <Link className="nav-right-box-login" Link to="/main/login">
+                <Link
+                  className="nav-right-box-login nav-btns hovered-login-signup-btns"
+                  Link
+                  to="/main/login"
+                >
                   로그인
                 </Link>
-                <Link className="nav-right-box-signup" Link to="/main/signup">
+                <Link
+                  className="nav-right-box-signup nav-btns hovered-login-signup-btns"
+                  Link
+                  to="/main/signup"
+                >
                   signup
                 </Link>
               </div>
