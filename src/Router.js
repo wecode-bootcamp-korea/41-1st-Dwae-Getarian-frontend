@@ -1,7 +1,9 @@
 import React from 'react';
+
+import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './pages/Main/Main';
+import Product from './pages/Main/Components/Product/Product';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
@@ -10,6 +12,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Best from './components/Best/Best';
 import NotFound from './components/NotFound';
+import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 
 const router = createBrowserRouter([
   {
