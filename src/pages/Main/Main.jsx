@@ -11,7 +11,7 @@ export default function Main() {
   return (
     <div>
       <div className="productSlide" />
-      <div>
+      <div className="mainTop">
         <img
           alt="메인탑"
           className="mainTop"
