@@ -1,0 +1,8 @@
+.monBox {
+  display: inline-block;
+  .monList {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
