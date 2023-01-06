@@ -1,0 +1,100 @@
+@import '../../styles/common.scss';
+@import '../../styles/mixin.scss';
+
+.signup {
+  height: 55px;
+}
+
+.header-box {
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  background-color: #fff;
+  z-index: 100;
+  border-bottom: 1px solid #f0f0f0;
+
+  .header-box-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+
+    .header-box-login-title {
+      @include font-main;
+      display: block;
+      width: 520px;
+      height: 54px;
+      text-align: center;
+      line-height: 54px;
+      font-size: 18px;
+      letter-spacing: -0.8px;
+    }
+
+    .header-box-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 54px;
+      -webkit-background-size: 23px auto;
+      background-size: 23px auto;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+.container-signin {
+  @include font-main;
+  width: 520px;
+  height: 679.797px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 70px;
+
+  .singin-box {
+    display: flex;
+    flex-direction: column;
+
+    .signin-full-name,
+    .signin-email,
+    .signin-pw,
+    .signin-address,
+    .signin-postcode,
+    .signin-phone {
+      @include signup-box;
+    }
+
+    .signin_gender,
+    .signin-birth {
+      @include signup-choose-box;
+    }
+
+    .birth-text {
+      font-size: 14px;
+      color: #c6c6c6;
+      margin-bottom: 5px;
+    }
+
+    .signin-btn-box {
+      display: flex;
+      justify-content: center;
+      border-radius: 6px;
+
+      .signin-btn {
+        width: 100%;
+        height: 54px;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #c6c6c6;
+        border: none;
+        font-size: 18px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    }
+  }
+  &:focus {
+    border-color: #0000ff;
+    color: #252525;
+  }
+}
