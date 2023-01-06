@@ -2,29 +2,26 @@ import React, { useEffect, useState, useRef } from 'react';
 import { SliderData } from './SliderData';
 import './Recipe.scss';
 import ImageSlider from './ImageSlider';
+import SlideItem from './SlideItem';
 
 export default function Recipe() {
   const [productList, setProductList] = useState([]);
+  const [navList, setNavList] = useState([]);
   const recommendRef = useRef(null);
   const bestRef = useRef(null);
   const presentRef = useRef(null);
   const setRef = useRef(null);
 
   // --------------데이터 통신 로직----------------//
-  // const ProductFetch = () => {
-  //   useEffect(() => {
-  //     fetch('http://', {
-  //       method: 'GET',
-  //       headers: {
-  //         'Context-Type': 'application/json;charset=utf-8',
-  //       },
-  //     })
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         setProductList(data);
-  //       });
-  //   }, []);
-  // };
+  useEffect(() => {
+    fetch('http://10.58.52.95:3001/product', {
+      method: 'GET',
+    })
+      .then(response => response.json())
+      .then(data => {
+        setProductList(data);
+      });
+  }, []);
   //-----------------------------------------//
 
   const goToRecommend = () => {
@@ -50,66 +47,16 @@ export default function Recipe() {
           <div className="w1200">
             <div className="swiper-container recipe-nav-slide">
               <div className="swiper-wrapper recipe-nav-slide-wrapper">
-                <div className="swiper-slide item">
-                  <div className="item-link">
-                    <div className="img-box">
-                      <div className="img">
-                        <img
-                          onClick={goToRecommend}
-                          className="recipe-circles"
-                          src="https://www.osulloc.com/upload/kr/ko/adminImage/ON/LI/20220518005721019DU.png"
-                          alt="레시피 추천"
-                        />
-                        <p className="text">Leachou추천</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-slide item">
-                  <div className="item-link">
-                    <div className="img-box">
-                      <div className="img">
-                        <img
-                          onClick={goToBest}
-                          className="recipe-circles"
-                          src="https://www.osulloc.com/upload/kr/ko/adminImage/ZB/DD/20220518005819370VJ.png"
-                          alt="베스트"
-                        />
-                        <p className="text">베스트</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-slide item">
-                  <div className="item-link">
-                    <div className="img-box">
-                      <div className="img">
-                        <img
-                          onClick={goToPresent}
-                          className="recipe-circles"
-                          src="https://www.osulloc.com/upload/kr/ko/adminImage/ZH/XS/20220518005913180YI.png"
-                          alt="부담없는 선물"
-                        />
-                        <p className="text">부담없는 선물</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-slide item">
-                  <div className="item-link">
-                    <div className="img-box">
-                      <div className="img">
-                        <img
-                          onClick={goToSet}
-                          className="recipe-circles"
-                          src="https://www.osulloc.com/upload/kr/ko/adminImage/OJ/OD/20220913101158486TY.png"
-                          alt="티웨어 세트"
-                        />
-                        <p className="text">티웨어 세트</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <SlideItem
+                  goToRecommend={goToRecommend}
+                  goToBest={goToBest}
+                  goToPresent={goToPresent}
+                  goToSet={goToSet}
+                  img1="https://www.osulloc.com/upload/kr/ko/adminImage/ON/LI/20220518005721019DU.png"
+                  img2="https://www.osulloc.com/upload/kr/ko/adminImage/ZB/DD/20220518005819370VJ.png"
+                  img3="https://www.osulloc.com/upload/kr/ko/adminImage/ZH/XS/20220518005913180YI.png"
+                  img4="https://www.osulloc.com/upload/kr/ko/adminImage/OJ/OD/20220913101158486TY.png"
+                />
               </div>
             </div>
           </div>
@@ -151,7 +98,10 @@ export default function Recipe() {
                     {productList.map((product, index) => {
                       return (
                         <ul key={index}>
-                          <img src={product.thumnailImage} alt="상품 이미지" />
+                          <img
+                            src={product.thumbnail_image}
+                            alt="상품 이미지"
+                          />
                           <li>{product.price}</li>
                           <li>{product.name}</li>
                         </ul>
