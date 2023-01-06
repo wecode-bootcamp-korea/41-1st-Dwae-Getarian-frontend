@@ -54,9 +54,11 @@
       }
     }
     .shippingInput {
-      margin-top: 30px;
-      padding: 20px;
       border-bottom: 1px solid #e6e6e6;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
       .recipient {
         .recipientInput {
           width: 89.2%;
@@ -65,21 +67,10 @@
       }
     }
     .phoneNum {
-      margin-top: 10px;
-      .phoneNumSelect {
-        width: 30%;
-        height: 40px;
-      }
-      .hypen {
-        width: 1%;
-      }
-      .phoneNumInput {
-        width: 56%;
-        height: 40px;
-      }
+      width: 90%;
+      height: 40px;
     }
     .addressContainer {
-      margin-top: 10px;
       .addressLabelInfo {
         .addressInput {
           width: 30%;

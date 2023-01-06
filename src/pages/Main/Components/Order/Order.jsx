@@ -17,7 +17,7 @@ export default function Order() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch('http://10.58.52.95:3001/order/items/7', {
+    fetch('http://10.58.52.95:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -81,33 +81,13 @@ export default function Order() {
               <label className="labelStyle" for="email">
                 이메일
               </label>
-              <input className="phoneNumSelect" id="email" />
-              <span className="hypen"> @ </span>
-              <select className="phoneNumInput" id="email">
-                <option value="010">naver.com</option>
-                <option value="011">gmail.com</option>
-                <option value="016">hanmail.com</option>
-                <option value="017">직접입력</option>
-              </select>
+              <input className="phoneNum" id="email" />
             </div>
             <div className="phoneNum">
               <label className="labelStyle" for="phone">
                 연락처
               </label>
-              <select className="phoneNumSelect" id="phone">
-                <option value="010">010</option>
-                <option value="011">011</option>
-                <option value="016">016</option>
-                <option value="017">017</option>
-                <option value="018">018</option>
-                <option value="019">019</option>
-              </select>
-              <span className="hypen"> - </span>
-              <input
-                className="phoneNumInput"
-                type="number"
-                placeholder="'-'없이 휴대번호 입력"
-              />
+              <input className="phoneNum" />
             </div>
             <div className="recipient">
               <label className="labelStyle" for="Recipient">
@@ -137,15 +117,6 @@ export default function Order() {
             <label className="labelStyle" for="phone">
               연락처
             </label>
-            {/* <select className="phoneNumSelect" id="phone">
-              <option value="010">010</option>
-              <option value="011">011</option>
-              <option value="016">016</option>
-              <option value="017">017</option>
-              <option value="018">018</option>
-              <option value="019">019</option>
-            </select> */}
-            <span className="hypen"> - </span>
             <input
               type="text"
               name="phone_number"
@@ -156,14 +127,6 @@ export default function Order() {
             />
           </div>
           <div className="addressContainer">
-            <div className="addressLabelInfo">
-              <label className="labelStyle" for="address">
-                주소
-              </label>
-              <input className="addressInput" />
-              <button className="addressBtn">우편번호 찾기</button>
-            </div>
-            <input className="addressDetail" type="text" />
             <input
               name="address"
               onChange={onChange}
