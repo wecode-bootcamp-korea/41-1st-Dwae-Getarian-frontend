@@ -1,34 +1,26 @@
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [idValue, setId] = useState('');
   const [pwValue, setPw] = useState('');
+  const [isDisable, setDisabled] = useState(true);
+  const navigation = useNavigate();
+
+  const disable = idValue.includes('@') && pwValue.length >= 5 ? false : true;
+  const onDisabled = () => {
+    setDisabled(disable);
+  };
 
   const saveUserId = event => {
-    // console.log(event);
     setId(event.target.value);
-    console.log(event.target.value);
   };
 
   const saveUserPw = event => {
     setPw(event.target.value);
-    console.log(event.target.value);
   };
-
-  //---------------------------------------
-  // const [form, setForm] = useState({ id: '', pw: '' });
-
-  // const saveUserLogin = e => {
-  //   setForm(e.target.value);
-  // };
-
-  // const handleChange = e => {
-  //   setForm({ ...form });
-  // };
-
-  // console.log(form);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -50,6 +42,8 @@ export default function Login() {
       .then(data => {
         console.log(data);
         if (data.accessToken) {
+          setId('');
+          setPw('');
           localStorage.setItem('token', data.accessToken);
         }
       });
@@ -97,13 +91,17 @@ export default function Login() {
             onChange={saveUserPw}
           />
           <div className="save-id">
-            <label htmlFor="chk">
-              <input type="checkbox" />
-            </label>
-            <span>아이디 저장</span>
+            <img src="../images/checked.png" className="save-id-pic" />
+            <span className="save-id-li">아이디 저장</span>
           </div>
+
           <div className="login-btn-box">
-            <button type="button" className="login-btn" onClick={handleClick}>
+            <button
+              type="button"
+              className="login-btn"
+              disabled={disable}
+              onClick={handleClick}
+            >
               로그인
             </button>
           </div>
@@ -126,7 +124,12 @@ export default function Login() {
             </a>
           </li>
         </ul>
-        <button className="is-member">
+        <button
+          className="is-member"
+          onClick={() => {
+            navigation('/main/signin');
+          }}
+        >
           <span className="is-member-text">아직 회원이 아니세요?</span>
           <em className="is-member-em">회원가입</em>
         </button>

@@ -64,8 +64,6 @@
   }
 
   .login-box {
-    // margin-bottom: 20px;
-
     .login-id {
       border: solid 1px #d3d3d3;
       font-size: 16px;
@@ -104,6 +102,13 @@
         width: 1.25em; /* 너비 설정 */
         height: 1.25em; /* 높이 설정 */
         vertical-align: middle;
+        background-image: url();
+      }
+
+      .save-id-pic {
+        width: 22px;
+        height: 22px;
+        margin-left: 3px;
       }
     }
 
@@ -111,12 +116,16 @@
       border: solid 1px #d3d3d3;
       width: 100%;
       height: 54px;
-      background-color: #f0f0f0;
+
+      background-color: f0f0f0;
       border-color: #f0f0f0;
       color: #c6c6c6;
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
+      &:disabled {
+        color: gray;
+      }
     }
   }
 
@@ -172,7 +181,7 @@
     background-color: #fff;
     border-radius: 6px;
 
-    .is-member-text {
+    .is-member-em {
       cursor: pointer;
     }
 
@@ -187,24 +196,35 @@
     }
   }
 
-  input[type='checkbox'] {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    border: 1px solid #999;
-    appearance: none;
-  }
-  input[type='checkbox'] label {
-    // display: inline-block;
-    cursor: pointer;
-    display: none;
+  // .save-id {
+  //   width: 1rem;
+  //   height: 1rem;
+  //   border-radius: 50%;
+  //   border: 1px solid #999;
+  //   appearance: none;
+  //   position: relative;
+  //   .chk-list {
+  //     // display: flex;
+  //   }
+  // }
 
-    background: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
-  }
+  // input[type='checkbox'] {
+  //   width: 1rem;
+  //   height: 1rem;
+  //   border-radius: 50%;
+  //   border: 1px solid #999;
+  //   appearance: none;
+  //   position: relative;
+  //   // display: none;
+  // }
+  // input[type='checkbox'] label :hover {
+  //   cursor: pointer;
+  //   display: block;
+  //   background: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
+  // }
 
-  input[type='checkbox']:checked {
-    background-image: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
-  }
+  // input[type='checkbox']:checked {
+  //   background-color: black;
+  //   background-image: url('https://cdn.icon-icons.com/icons2/1744/PNG/512/3643781-check-checklist-complete-done-mark_113406.png');
+  // }
 }
-
-// 실제 체크박스 Display none 으로 숨기고 true/false를 이용하여 Img 나타내기
