@@ -19,28 +19,6 @@ export default function SignUp() {
 
   const [disable, setDisabled] = useState(false);
 
-  const [filledInput, setFilledInput] = useState({
-    name: '',
-    email: '',
-    password: '',
-    address: '',
-    mobile_number: '',
-    postcode: '',
-    date_of_birth: '',
-    gender_id: '',
-  });
-
-  console.log(filledInput);
-  const fillIn = e => {
-    const { value } = e.target;
-    setFilledInput(e.target.value);
-    if (filledInput.includes(e.target.value)) {
-      setDisabled(false);
-    }
-  };
-
-  // const onDisabled = () => {};
-
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -94,7 +72,6 @@ export default function SignUp() {
             name="name"
             value={form.name}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
@@ -103,7 +80,6 @@ export default function SignUp() {
             name="email"
             value={form.email}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="password"
@@ -112,7 +88,6 @@ export default function SignUp() {
             name="password"
             value={form.password}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
@@ -121,7 +96,6 @@ export default function SignUp() {
             name="postcode"
             value={form.postcode}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
@@ -130,7 +104,6 @@ export default function SignUp() {
             name="address"
             value={form.signin_address}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
@@ -140,13 +113,12 @@ export default function SignUp() {
             value={form.mobile_number}
             onChange={handleChange}
           />
-          <GenderOption setGender={setGender} onInput={fillIn} />
+          <GenderOption setGender={setGender} />
           <p className="birth-text">생년월일</p>
           <input
             type="date"
             className="signin-birth"
             onChange={e => setState(e.target.value)}
-            onInput={fillIn}
           />
           <div className="signin-btn-box">
             <button
