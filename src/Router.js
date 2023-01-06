@@ -7,7 +7,6 @@ import Product from './pages/Main/Components/Product/Product';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
-import Product from './pages/Main/Components/Product/Product';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Best from './components/Best/Best';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { SliderData } from './Components/Maincomponents/ImgSlide/SliderData.js';
 import './MainReview.scss';
 export default function MainReview() {
   return (

@@ -1,22 +1,21 @@
-.main-recomand {
+.mainRecomand {
   margin: 30px 0;
-
   display: flex;
-
+  align-items: center;
   .lineBreak {
     font-size: 28px;
   }
-  .recomand-btn {
+  .recomandBtn {
     display: flex;
     margin-left: 30px;
-    .best-btn {
+    .bestBtn {
       height: 36px;
       width: 71.9609px;
       border-radius: 150px;
       border: none;
       padding: 0 16px;
     }
-    .weekly-btn {
+    .weeklyBtn {
       height: 36px;
       width: 134.438px;
       border-radius: 150px;
@@ -26,13 +25,13 @@
     }
   }
 }
-.main-recomand-list {
+.mainRecomandList {
   display: flex;
   flex-direction: column;
-  .main-thumb {
+  .mainThumb {
     width: 200px;
   }
-  .more-btn {
+  .moreBtn {
     height: 48px;
     width: 179.148px;
     margin: 0 auto;
