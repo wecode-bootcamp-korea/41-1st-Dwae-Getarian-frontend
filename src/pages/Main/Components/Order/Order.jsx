@@ -1,48 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Order.scss';
 export default function Order() {
   // const [isOpen, setCart] = useState(false);
   const [form, setForm] = useState({
-    payment: {
-      payment_type: 'voucher',
-      total_cost: 10000.0,
-    },
-
-    delivery_address: {
-      address: '위코드',
-      phone_number: '123456789',
-    },
-
-    products: [
-      {
-        id: 2,
-        name: '채시익식단',
-        price: 5500.0,
-        quantity: 1,
-      },
-
-      {
-        id: 3,
-        name: '채식식단',
-        price: 5000.0,
-        quantity: 1,
-      },
-    ],
+    address: '',
+    phone_number: '',
   });
+  console.log(form);
+
   const onChange = e => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = e => {
-    e.prevent.Defalut();
-    fetch('http://10.58.52.134:3000/users/login', {
+    e.preventDefault();
+    fetch('http://10.58.52.95:3001/order/items/7', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        payment: {
+          payment_type: 'voucher',
+          total_cost: 30000.0,
+        },
+
+        delivery_address: {
+          address: form.address,
+          phone_number: form.phone_number,
+        },
+
+        products: [
+          {
+            id: 2,
+            name: '채시익식단',
+            price: 5500.0,
+            quantity: 1,
+          },
+
+          {
+            id: 3,
+            name: '채식식단',
+            price: 5000.0,
+            quantity: 1,
+          },
+        ],
+      }),
     })
       //요청
       .then(response => response.json())
@@ -51,6 +57,7 @@ export default function Order() {
         console.log(data);
       });
   };
+
   return (
     <div className="orderPage">
       <div className="infoInput">
@@ -63,7 +70,7 @@ export default function Order() {
             <img src="https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png" />
           </div>
 
-          <form className="shippingInput" onSubmit={e => handleSubmit(e)}>
+          <form className="shippingInput">
             <div className="recipient">
               <label className="labelStyle" for="Recipient">
                 이름
@@ -97,9 +104,8 @@ export default function Order() {
               </select>
               <span className="hypen"> - </span>
               <input
-                onChange={onChange}
                 className="phoneNumInput"
-                id="phone"
+                type="number"
                 placeholder="'-'없이 휴대번호 입력"
               />
             </div>
@@ -120,7 +126,7 @@ export default function Order() {
           <button className="userInfoSame">주문 고객과 동일</button>
         </div>
 
-        <form className="shippingInput">
+        <form onSubmit={handleSubmit} className="shippingInput">
           <div className="recipient">
             <label className="labelStyle" for="Recipient">
               받는 분
@@ -131,18 +137,21 @@ export default function Order() {
             <label className="labelStyle" for="phone">
               연락처
             </label>
-            <select className="phoneNumSelect" id="phone">
+            {/* <select className="phoneNumSelect" id="phone">
               <option value="010">010</option>
               <option value="011">011</option>
               <option value="016">016</option>
               <option value="017">017</option>
               <option value="018">018</option>
               <option value="019">019</option>
-            </select>
+            </select> */}
             <span className="hypen"> - </span>
             <input
+              type="text"
+              name="phone_number"
+              onChange={onChange}
+              value={form.phone_number}
               className="phoneNumInput"
-              id="phone"
               placeholder="'-'없이 휴대번호 입력"
             />
           </div>
@@ -151,11 +160,14 @@ export default function Order() {
               <label className="labelStyle" for="address">
                 주소
               </label>
-              <input className="addressInput" id="address" />
+              <input className="addressInput" />
               <button className="addressBtn">우편번호 찾기</button>
             </div>
             <input className="addressDetail" type="text" />
             <input
+              name="address"
+              onChange={onChange}
+              value={form.address}
               className="addressDetail"
               type="text"
               placeholder="상세주소 입력"

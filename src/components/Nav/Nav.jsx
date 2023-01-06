@@ -12,7 +12,6 @@ export default function Nav() {
       <Link to="/main/brand">Brand</Link>
       <Link to="/main/login">login</Link>
       <Link to="/main/signup">signup</Link>
-
     </div>
   );
 }
