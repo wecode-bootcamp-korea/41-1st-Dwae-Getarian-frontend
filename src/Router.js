@@ -10,6 +10,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import NotFound from './components/NotFound';
 import Footer from './pages/Main/Components/Footer/Footer';
+import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: 'main/brand', element: <Brand /> },
       { path: 'main/login', element: <Login /> },
       { path: 'main/signup', element: <SignUp /> },
+      { path: 'main/footer', element: <Footer /> },
     ],
     errorElement: <NotFound />,
   },
