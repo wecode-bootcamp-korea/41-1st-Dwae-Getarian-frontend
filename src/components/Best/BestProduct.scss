@@ -1,0 +1,28 @@
+.bestContainer {
+  .bestExplain {
+    padding: 20px;
+    width: 60vw;
+    margin: 0 auto;
+    .LechouBestTitle {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .monBox {
+    display: inline-block;
+
+    .monList {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      font-size: 16px;
+      .bestPrice {
+        padding: 10px;
+        .price {
+          color: #333333;
+        }
+      }
+    }
+  }
+}
