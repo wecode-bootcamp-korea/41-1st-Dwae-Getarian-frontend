@@ -9,14 +9,11 @@ import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
-
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-
       {
         index: true,
         path: '/',
@@ -43,7 +40,6 @@ const router = createBrowserRouter([
         path: 'main/brand',
         element: <Brand />,
       },
-
     ],
     errorElement: <NotFound />,
   },
