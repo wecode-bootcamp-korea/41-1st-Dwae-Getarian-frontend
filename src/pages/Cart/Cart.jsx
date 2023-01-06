@@ -11,7 +11,7 @@ export default function Cart() {
         <div className="cartBox">
           <div className="cartBoxTop">
             <div className="cartBoxCheck">
-              <input type="checkbox" id="checkbox" />
+              <input type="checkbox" className="checkbox" />
               <label htmlFor="checkbox">전체선택</label>
             </div>
             <div className="cartBoxDelete">
