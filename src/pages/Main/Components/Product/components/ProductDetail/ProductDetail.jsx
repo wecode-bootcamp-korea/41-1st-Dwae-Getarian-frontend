@@ -16,7 +16,6 @@ export default function ProductDetail() {
   useEffect(() => {
     setTotalPrice(count * state.price);
     // console.log(count, 'count');
-    //주석
   }, [count]);
 
   const handleCountUp = () => {
