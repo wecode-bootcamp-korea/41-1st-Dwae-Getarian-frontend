@@ -10,21 +10,37 @@ import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 
-import Order from './pages/Main/Components/Order/Order';
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { index: true, path: '/', element: <Main /> },
-      { path: 'main/product', element: <Product /> },
-      { path: 'main/recipe', element: <Recipe /> },
-      { path: 'main/review', element: <Review /> },
-      { path: 'main/brand', element: <Brand /> },
-      // { path: 'main/login', element: <Login /> },
-      // { path: 'main/signup', element: <SignUp /> },
-      { path: 'main/order', element: <Order /> },
+      {
+        index: true,
+        path: '/',
+        element: <Main />,
+      },
+      {
+        path: 'main/product',
+        element: <Product />,
+      },
+
+      {
+        path: '/productDetail',
+        element: <ProductDetail />,
+      },
+      {
+        path: 'main/recipe',
+        element: <Recipe />,
+      },
+      {
+        path: 'main/review',
+        element: <Review />,
+      },
+      {
+        path: 'main/brand',
+        element: <Brand />,
+      },
     ],
     errorElement: <NotFound />,
   },
