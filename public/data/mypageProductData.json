@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "러블리 티 박스",
+    "price": "20,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  },
+  {
+    "id": 2,
+    "name": "러블리 티 박스",
+    "price": "20,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  },
+  {
+    "id": 3,
+    "name": "세작 20입",
+    "price": "25,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  },
+  {
+    "id": 4,
+    "name": "러블리 티 박스",
+    "price": "20,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  },
+  {
+    "id": 5,
+    "name": "녹차 밀크 스프레드",
+    "price": "9,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  },
+  {
+    "id": 6,
+    "name": "마스터 블렌드",
+    "price": "20,000",
+    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80"
+  }
+]

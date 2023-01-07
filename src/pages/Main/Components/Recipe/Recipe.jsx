@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Footer from '../Footer/Footer';
 import { SliderData } from './SliderData';
 import './Recipe.scss';
 import ImageSlider from './ImageSlider';
