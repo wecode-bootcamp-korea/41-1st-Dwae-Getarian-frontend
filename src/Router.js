@@ -1,16 +1,18 @@
 import React from 'react';
+
+import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './pages/Main/Main';
+import Product from './pages/Main/Components/Product/Product';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
-import Product from './pages/Main/Components/Product/Product';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Best from './components/Best/Best';
 import NotFound from './components/NotFound';
-
+import Footer from './pages/Main/Components/Footer/Footer';
+import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
       { path: 'main/brand', element: <Brand /> },
       { path: 'main/login', element: <Login /> },
       { path: 'main/signup', element: <SignUp /> },
+      { path: 'main/footer', element: <Footer /> },
       { path: 'main/best', element: <Best /> },
     ],
     errorElement: <NotFound />,
