@@ -4,14 +4,6 @@ import './My.scss';
 import { BsExclamationCircle } from 'react-icons/bs';
 
 export default function OrderReservation() {
-  // const order_reservation_list = [
-  //   '주문접수',
-  //   '결제완료',
-  //   '상품준비',
-  //   '배송중',
-  //   '배송완료',
-  // ];
-
   const [reservation, setReservation] = useState([]);
 
   // console.log('a', reservartion);
@@ -43,31 +35,20 @@ export default function OrderReservation() {
 
       <section className="section">
         <div className="my-order-step">
-          {reservation.map(value => {
-            return <p key={value.id}>{value.order_reservation}</p>;
-          })}
-          {/* <ul className="my-order-list-box">
+          <ul className="my-order-list-box">
             <li className="my-order-step-list">
-              <p className="my-order-step-list-number">0</p>
-              <p className="my-order-step-list-text">주문접수</p>
+              {/* <p className="my-order-step-list-number">0</p> */}
+
+              {ORDER_RESERVATION_LIST.map(reservation => (
+                <li className="my-order-step-list" key={reservation.id}>
+                  <p className="my-order-step-list-number">
+                    {reservation.number}
+                  </p>
+                  <p className="my-order-step-list-text">{reservation.title}</p>
+                </li>
+              ))}
             </li>
-            <li className="my-order-step-list">
-              <p className="my-order-step-list-number">0</p>
-              <p className="my-order-step-list-text">결제완료</p>
-            </li>
-            <li className="my-order-step-list">
-              <p className="my-order-step-list-number">0</p>
-              <p className="my-order-step-list-text">상품준비</p>
-            </li>
-            <li className="my-order-step-list">
-              <p className="my-order-step-list-number">0</p>
-              <p className="my-order-step-list-text">배송중</p>
-            </li>
-            <li className="my-order-step-list">
-              <p className="my-order-step-list-number">0</p>
-              <p className="my-order-step-list-text">배송완료</p>
-            </li>
-          </ul> */}
+          </ul>
         </div>
       </section>
       <section className="my-order-list">
@@ -109,3 +90,11 @@ export default function OrderReservation() {
     </div>
   );
 }
+
+const ORDER_RESERVATION_LIST = [
+  { id: 1, title: '주문접수', number: 1 },
+  { id: 2, title: '결제완료', number: 13 },
+  { id: 3, title: '상품준비', number: 42 },
+  { id: 4, title: '배송중', number: 5 },
+  { id: 5, title: '배송완료', number: 196 },
+];

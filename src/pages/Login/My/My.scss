@@ -32,24 +32,26 @@
   text-align: center;
 
   .my-order-list-box {
-    display: flex;
-
     .my-order-step-list {
       font-size: 24px;
       font-weight: 500;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      font-size: 24px;
+      font-weight: 500;
 
       .my-order-step-list-text {
         margin-top: 10px;
       }
+
+      .my-order-step-list::after {
+        content: '>';
+      }
+
+      .my-order-step-list:last-child::after {
+        content: none;
+      }
     }
   }
-}
-
-.my-order-step-list::after {
-  content: '>';
 }
 
 .my-order-list {
