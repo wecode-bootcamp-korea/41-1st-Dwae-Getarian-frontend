@@ -1,150 +1,84 @@
 .orderPage {
-  width: 80%;
-  margin-left: 5%;
-  display: flex;
-  justify-content: space-around;
-
+  width: 60vw;
+  padding-left: 10vw;
   .infoInput {
-    width: 60%;
-
-    .orderedBox {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f6f6f6;
-      .discountTitle {
-        display: flex;
-        justify-content: space-between;
-      }
-      .discountAndPoints {
-        padding: 44px 0 60px;
-        .discountInput {
-          width: 90%;
-          height: 40px;
-        }
-        .btnWidth {
-          width: 10%;
-          height: 40px;
-        }
-      }
-    }
-    .labelStyle {
-      width: 10%;
-      display: inline-block;
-    }
-
     .paymentTitle {
-      font-size: 28px;
+      width: 100%;
+      font-size: 24px;
+      font-weight: 500;
+      padding: 24px;
+      border-bottom: 2px solid black;
     }
-    .orderClientInfo {
-      border-top: 2px solid black;
-      padding: 20px 20px;
-      font-size: 18px;
+    .deliveryInfoTitle {
+      width: 100%;
+      padding: 30px;
       display: flex;
       justify-content: space-between;
-    }
-    .shipmentInfo {
-      border-top: 1px solid gray;
-      padding: 20px 20px;
-      font-size: 18px;
-      display: flex;
-      justify-content: space-between;
-      .userInfoSame {
-        height: 32px;
-        width: 20%;
+      .infoTtile {
+        font-size: 18px;
+        font-weight: 500;
+        height: 60px;
+      }
+      .infoBtn {
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 8px;
+        font-size: 18px;
       }
     }
-    .shippingInput {
-      border-bottom: 1px solid #e6e6e6;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-
-      .recipient {
-        .recipientInput {
-          width: 89.2%;
-          height: 40px;
+    .orderBox {
+      .infoContainer {
+        .infoTitle {
+          display: inline-block;
+          width: 10%;
+          height: 60px;
+        }
+        .infoTitleInput {
+          width: 90%;
+          height: 60px;
         }
       }
     }
-    .phoneNum {
+    .saveSpot {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .delivery {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 5vw 0;
+
+    padding: 24px 20px 24px 20px;
+    .deliveryTitle {
+      font-size: 14px;
+      margin-left: 3%;
+    }
+    .deliveryRequest {
       width: 90%;
+      margin-left: 3%;
       height: 40px;
-    }
-    .addressContainer {
-      .addressLabelInfo {
-        .addressInput {
-          width: 30%;
-          height: 40px;
-          padding: 0 20px;
-        }
-        .addressBtn {
-          height: 40px;
-          padding: 0 20px;
-          margin-left: 15px;
-        }
-      }
-      .addressDetail {
-        width: 90%;
-        height: 40px;
-        margin-top: 10px;
-        margin-left: 10%;
-      }
-    }
-    .checkBox {
-      display: inline-block;
-      margin-left: 10%;
-    }
-    .delivery {
-      background-color: #f6f6f6;
-      border-bottom: 1px solid #e6e6e6;
-      margin-top: 20px;
-      padding: 24px 20px 24px 20px;
-      .deliveryTitle {
-        font-size: 14px;
-        margin-left: 3%;
-      }
-
-      .deliveryRequest {
-        width: 90%;
-        margin-left: 3%;
-        height: 40px;
-      }
     }
   }
 
-  .orderNav {
-    width: 20%;
-    height: 100%;
-    border: 1px solid black;
-    border-radius: 8px;
-    position: sticky;
-    .totalPaymentFont {
-      border-bottom: 1px solid #e6e6e6;
-      margin-top: 3%;
+  .cartBox {
+    padding: 24px 20px 24px;
+    .cartBoxTitle {
       display: flex;
       justify-content: space-between;
-      padding: 10px;
-      :nth-child(4) {
-        border-bottom: 1px solid #e6e6e6;
-      }
     }
-    .finalPrice {
-      border-bottom: 1px solid #e6e6e6;
-      margin-top: 3%;
+    .cartBoxDetail {
+      width: 96px;
+      height: 107px;
+    }
+    .cartBuyContent {
       display: flex;
       justify-content: space-between;
-      padding: 10px;
-    }
-    .paymentBtn {
-      background-color: green;
-      color: white;
-      font-weight: 500;
-      width: 100%;
-      height: 50px;
     }
   }
   .cartBox {
     padding: 24px 20px 24px;
+    border-top: 1px solid #e6e6e6;
     .cartBoxTitle {
       display: flex;
       justify-content: space-between;

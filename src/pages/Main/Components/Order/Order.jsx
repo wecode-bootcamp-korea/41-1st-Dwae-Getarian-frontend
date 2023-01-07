@@ -6,7 +6,6 @@ export default function Order() {
     address: '',
     phone_number: '',
   });
-  console.log(form);
 
   const onChange = e => {
     setForm({
@@ -64,57 +63,18 @@ export default function Order() {
         <div className="paymentTitle">
           <span>결제하기</span>
         </div>
-        <div className="MyInfo">
-          <div className="orderClientInfo">
-            <span>주문고객정보</span>
-            <img src="https://www.osulloc.com/kr/ko/static_cdj/images/shop/accordion_layout_btn_on.png" />
-          </div>
-
-          <form className="shippingInput">
-            <div className="recipient">
-              <label className="labelStyle" for="Recipient">
-                이름
-              </label>
-              <input className="recipientInput" type="text" id="Recipient" />
-            </div>
-            <div className="phoneNum">
-              <label className="labelStyle" for="email">
-                이메일
-              </label>
-              <input className="phoneNum" id="email" />
-            </div>
-            <div className="phoneNum">
-              <label className="labelStyle" for="phone">
-                연락처
-              </label>
-              <input className="phoneNum" />
-            </div>
-            <div className="recipient">
-              <label className="labelStyle" for="Recipient">
-                보내는분
-              </label>
-              <input className="recipientInput" type="text" id="Recipient" />
-            </div>
-          </form>
-        </div>
-        <div className="orderClientInfo">
-          <span>주문고객정보</span>
-          <span>이름/000-0000-0000</span>
-        </div>
-        <div className="shipmentInfo">
-          <span>배송지 정보</span>
-          <button className="userInfoSame">주문 고객과 동일</button>
+        <div className="deliveryInfoTitle">
+          <span className="infoTitle">배송지 정보</span>
+          <button className="infoBtn">주문 고객과 동일</button>
         </div>
 
-        <form onSubmit={handleSubmit} className="shippingInput">
-          <div className="recipient">
-            <label className="labelStyle" for="Recipient">
-              받는 분
-            </label>
-            <input className="recipientInput" type="text" id="Recipient" />
+        <form className="orderBox" onSubmit={handleSubmit}>
+          <div className="infoContainer">
+            <span className="infoTitle">받는 분</span>
+            <input className="infoTitleInput" type="text" for="Recipient" />
           </div>
-          <div className="phoneNum">
-            <label className="labelStyle" for="phone">
+          <div className="infoContainer">
+            <label className="infoTitle" for="phone">
               연락처
             </label>
             <input
@@ -122,22 +82,27 @@ export default function Order() {
               name="phone_number"
               onChange={onChange}
               value={form.phone_number}
-              className="phoneNumInput"
+              className="infoTitleInput"
               placeholder="'-'없이 휴대번호 입력"
             />
           </div>
-          <div className="addressContainer">
+          <div className="infoContainer">
+            <label className="infoTitle" for="address">
+              배송지
+            </label>
             <input
               name="address"
               onChange={onChange}
               value={form.address}
-              className="addressDetail"
+              className="infoTitleInput"
               type="text"
               placeholder="상세주소 입력"
             />
           </div>
-          <input className="checkBox" type="checkbox" id="cb1" />
-          <label for="cb1">기본배송지로 저장</label>
+          <div className="saveSpot">
+            <input type="checkbox" id="cb1" />
+            <label for="cb1">기본배송지로 저장</label>
+          </div>
         </form>
 
         <div className="delivery">
@@ -168,65 +133,31 @@ export default function Order() {
             </div>
           </div>
         </div>
-        {/* <div className="orderedBox">
-          <div className="discountTitle">
-          
-            <span>할인/포인트</span>
-            <span>-9500원</span>
-          </div>
-          <div className="discountAndPoints">
-            <div className="discount">
-              <p>상품할인</p>
-              <input
-                className="discountInput"
-                placeholder="0개 상품 할인 혜택(-0원)"
-              />
-              <button className="btnWidth">할인적용</button>
-            </div>
-            <div className="coupon">
-              <div>
-                <span>쿠폰</span>
-                <span>보유쿠폰 {}장</span>
-              </div>
-              <input className="discountInput " />
-              <button className="btnWidth">쿠폰조회</button>
-            </div>
-            <div className="beautyPoints">
-              <div>
-                <span>뷰티포인트</span>
-                <span>보유포인트 {}P</span>
-              </div>
-              <input className="discountInput" />
-              <button className="btnWidth">모두 사용</button>
-            </div>
-          </div>
-        </div> */}
 
         {/* <div className="orderNav">
-        <div className="totalPaymentFont">
-          <span>총 상품 금액</span>
-          <span>00000원</span>
-        </div>
-        <div className="totalPaymentFont">
-          <span>총 할인 혜택</span>
-          <span>-0원</span>
-        </div>
-        <div className="totalPaymentFont">
-          <span>포인트 결제</span>
-          <span>-0원</span>
-        </div>
-        <div className="totalPaymentFont">
-          <span>배송비</span>
-          <span>2,500원</span>
-        </div>
-        <div className="finalPrice">
-          <span>최종결제 금액</span>
-          <span>31,500원</span>
-        </div>
-        <button className="paymentBtn">결제하기</button>
-      </div> */}
+          <div className="totalPaymentFont">
+            <span>총 상품 금액</span>
+            <span>00000원</span>
+          </div>
+          <div className="totalPaymentFont">
+            <span>총 할인 혜택</span>
+            <span>-0원</span>
+          </div>
+          <div className="totalPaymentFont">
+            <span>포인트 결제</span>
+            <span>-0원</span>
+          </div>
+          <div className="totalPaymentFont">
+            <span>배송비</span>
+            <span>2,500원</span>
+          </div>
+          <div className="finalPrice">
+            <span>최종결제 금액</span>
+            <span>31,500원</span>
+          </div>
+          <button className="paymentBtn">결제하기</button>
+        </div> */}
       </div>
-      <div>결제창</div>
     </div>
   );
 }
