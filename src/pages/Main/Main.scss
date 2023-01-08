@@ -5,25 +5,26 @@
   height: 400px;
   background-color: #2d6806;
 }
-.slide {
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 500px;
-  .slideBox {
-    height: 400px;
-    width: 100%;
-    border-radius: 40px;
-    overflow: hidden;
-  }
-}
 
-.slideDot {
-  display: inline-block;
-  text-align: center;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 15px 7px 0px;
-  background-color: #c4c4c4;
+.mainBest {
+  width: 20vw;
+  height: 42px;
+  padding: 30px;
+  .bestTitle {
+    height: 42px;
+    font-size: 28px;
+    font-weight: 500;
+    color: #333333;
+  }
+  .goToBest {
+    height: 36px;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 40px;
+    background-color: #2d6806;
+    color: white;
+  }
 }
