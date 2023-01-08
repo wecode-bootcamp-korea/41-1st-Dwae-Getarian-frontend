@@ -23,9 +23,7 @@ export default function Best() {
         <button className="bestBtn">베스트</button>
       </div>
       <div className="bestExplain">
-        <p className="LechouBestTitle">
-          Lechou에서 많이 선물된 선물세트를 모았어요.
-        </p>
+        <p className="LechouBestTitle">Lechou BEST</p>
 
         {MonsterInfo.map(monster => {
           return <BestProduct monster={monster} key={monster.id} />;
