@@ -9,7 +9,7 @@ export default function BestProduct({ monster }) {
           key={monster.id}
           src={`https://robohash.org/${id}?set=set2&size=180x180`}
           alt="mon"
-          className="monList"
+          className="monListBox"
         />
         <h2 className="name font">{name}</h2>
         <div className="bestPrice">

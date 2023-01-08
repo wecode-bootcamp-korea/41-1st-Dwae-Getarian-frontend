@@ -1,10 +1,11 @@
 .bestContainer {
   .bestExplain {
-    padding: 20px;
+    padding: 30px;
     width: 60vw;
     margin: 0 auto;
     .LechouBestTitle {
-      font-size: 18px;
+      padding: 5px;
+      font-size: 24px;
       font-weight: 500;
     }
   }
@@ -14,11 +15,15 @@
     .monList {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      margin: 5px;
       padding: 20px;
       font-size: 16px;
+      .monListBox {
+        background-color: #e6e6e6;
+      }
       .bestPrice {
         padding: 10px;
+
         .price {
           color: #333333;
         }

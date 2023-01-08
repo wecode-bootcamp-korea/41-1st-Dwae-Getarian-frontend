@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BestProduct from './BestProduct';
+
 import './Best.scss';
 
 export default function Best() {
