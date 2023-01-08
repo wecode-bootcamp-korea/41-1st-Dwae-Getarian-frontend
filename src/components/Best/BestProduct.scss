@@ -1,8 +1,22 @@
 .monBox {
   display: inline-block;
+
   .monList {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 5px;
     padding: 20px;
+    font-size: 16px;
+    .monListBox {
+      background-color: #e6e6e6;
+    }
+    .bestPrice {
+      padding: 10px;
+
+      .price {
+        color: #333333;
+      }
+    }
   }
 }

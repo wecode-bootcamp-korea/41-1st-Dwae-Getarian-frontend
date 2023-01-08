@@ -3,7 +3,6 @@ import BestProduct from './BestProduct';
 import './Best.scss';
 
 export default function Best() {
-  const [MonsterLook, setMonsterLook] = useState('');
   const [MonsterInfo, setMonsterList] = useState([]);
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -18,17 +17,20 @@ export default function Best() {
           alt="img"
           className="mainImg"
         />
-        <span className="bestFont">베스트</span>
+        <span className="bestFont">BEST</span>
       </div>
       <div className="btnBox">
         <button className="bestBtn">베스트</button>
       </div>
       <div className="bestExplain">
-        <p>Lechou에서 많이 선물된 선물세트를 모았어요.</p>
+        <p className="LechouBestTitle">
+          Lechou에서 많이 선물된 선물세트를 모았어요.
+        </p>
+
+        {MonsterInfo.map(monster => {
+          return <BestProduct monster={monster} key={monster.id} />;
+        })}
       </div>
-      {MonsterInfo.map(monster => {
-        return <BestProduct monster={monster} key={monster.id} />;
-      })}
     </div>
   );
 }
