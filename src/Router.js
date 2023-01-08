@@ -9,9 +9,10 @@ import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
-
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 import Footer from './pages/Main/Components/Footer/Footer';
-import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
+
 const router = createBrowserRouter([
   {
     path: '/',
