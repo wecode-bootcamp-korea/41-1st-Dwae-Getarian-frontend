@@ -7,7 +7,7 @@
 }
 
 .mainBest {
-  width: 20vw;
+  width: 100vw;
   height: 42px;
   padding: 30px;
   .bestTitle {
@@ -15,16 +15,5 @@
     font-size: 28px;
     font-weight: 500;
     color: #333333;
-  }
-  .goToBest {
-    height: 36px;
-    width: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 40px;
-    background-color: #2d6806;
-    color: white;
   }
 }

@@ -1,8 +1,7 @@
 .recipe {
-  margin-top: 80px;
-  margin-bottom: 60px;
+  padding: 40px;
   .recipeTitle {
-    padding: 0 20px;
+    padding: 20px;
     .todayTitle {
       font-size: 28px;
     }
@@ -11,6 +10,21 @@
       font-size: 16px;
     }
   }
-  .recipeImgSlide {
+  .recipeImgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100vw;
+    .recipeImg {
+      display: flex;
+      margin-left: 2vw;
+      width: 20vw;
+      height: 30vw;
+      padding: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(https://images.unsplash.com/photo-1591910485006-6a0205c6df8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80);
+    }
   }
 }

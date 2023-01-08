@@ -9,13 +9,10 @@ export default function MainEvent() {
             <span>오늘만 이 가격</span>
             <span>10:20:30</span>
           </div>
-          <img
-            className="todayDiscountImg"
-            alt="eventImg"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1m0kMFcRKXr7JYjAGwM5eToVDrOXQvaUNQ&usqp=CAU"
-          />
-          <p>시그니처 티푸드 세트</p>
-          <p>20000원</p>
+          <div className="discountPrice">
+            <p>시그니처 콩고기 돈까스 세트</p>
+            <p>20000원</p>
+          </div>
         </div>
         <div className="attendanceStory">
           <div className="checkAttendence">
