@@ -163,6 +163,10 @@
   background-color: #c4c4c4;
 }
 .prd-list-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   .item-inner {
     display: flex;
     justify-content: center;

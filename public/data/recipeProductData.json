@@ -2,37 +2,37 @@
   {
     "id": 1,
     "name": "러블리 티 박스",
-    "Price": "20,000원",
+    "price": "20,000원",
     "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
   },
   {
     "id": 2,
     "name": "시크릿 티 스토리",
-    "Price": "45,000원",
+    "price": "45,000원",
     "image": "https://www.osulloc.com/upload/kr/ko/adminImage/SK/YT/20210825143014310SG.png?quality=80&shrink=304:340"
   },
   {
     "id": 3,
     "name": "마스터 블렌드",
-    "Price": "50,000원",
+    "price": "50,000원",
     "image": "https://www.osulloc.com/upload/kr/ko/adminImage/YZ/LP/20221114150242254NM.png?quality=80&shrink=304:340"
   },
   {
     "id": 4,
     "name": "프리미엄 티 컬렉션 90입",
-    "Price": "52,500원",
+    "price": "52,500원",
     "image": "https://www.osulloc.com/upload/kr/ko/item_overImg/16045.png?quality=80&shrink=304:340"
   },
   {
     "id": 5,
     "name": "메모리 인 제주 20입",
-    "Price": "28,500원",
+    "price": "28,500원",
     "image": "https://www.osulloc.com/upload/kr/ko/adminImage/TQ/GD/20200513135237903WI.png?quality=80&shrink=304:340"
   },
   {
     "id": 6,
     "name": "과일 블렌디드 티백 박스",
-    "Price": "29,500원",
+    "price": "29,500원",
     "image": "https://www.osulloc.com/upload/kr/ko/adminImage/JI/YV/20220401151829295RG.png?quality=80&shrink=304:340"
   }
 ]
