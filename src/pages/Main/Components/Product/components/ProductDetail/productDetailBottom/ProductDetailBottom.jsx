@@ -11,6 +11,17 @@ export default function ProductDetailBottom() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollActive, setScrollActive] = useState(false);
 
+  const goToInfo = () => {
+    return info.current.scrollIntoView({ behavior: 'smooth' });
+  };
+  const goToContent = () => {
+    return content.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSeleted = id => {
+    setMenu(id);
+  };
+
   const scrollFixed = () => {
     if (scrollY > 450) {
       setScrollY(window.pageYOffset);
@@ -30,17 +41,6 @@ export default function ProductDetailBottom() {
       window.removeEventListener('scroll', scrollFixed);
     };
   });
-
-  const handleSeleted = id => {
-    setMenu(id);
-  };
-
-  const goToInfo = () => {
-    return info.current.scrollIntoView({ behavior: 'smooth' });
-  };
-  const goToContent = () => {
-    return content.current.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <div className="productDetailPageBottom" ref={info}>
