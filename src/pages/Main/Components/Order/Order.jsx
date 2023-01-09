@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Payment from '../payment/Payment';
 import './Order.scss';
 export default function Order() {
   // const [isOpen, setCart] = useState(false);
@@ -133,30 +134,9 @@ export default function Order() {
             </div>
           </div>
         </div>
-
-        {/* <div className="orderNav">
-          <div className="totalPaymentFont">
-            <span>총 상품 금액</span>
-            <span>00000원</span>
-          </div>
-          <div className="totalPaymentFont">
-            <span>총 할인 혜택</span>
-            <span>-0원</span>
-          </div>
-          <div className="totalPaymentFont">
-            <span>포인트 결제</span>
-            <span>-0원</span>
-          </div>
-          <div className="totalPaymentFont">
-            <span>배송비</span>
-            <span>2,500원</span>
-          </div>
-          <div className="finalPrice">
-            <span>최종결제 금액</span>
-            <span>31,500원</span>
-          </div>
-          <button className="paymentBtn">결제하기</button>
-        </div> */}
+      </div>
+      <div className="payment">
+        <Payment />
       </div>
     </div>
   );

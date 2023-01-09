@@ -1,9 +1,11 @@
 .orderPage {
-  width: 60vw;
+  width: 100vw;
   padding-left: 10vw;
+  display: flex;
+  justify-content: space-evenly;
   .infoInput {
     .paymentTitle {
-      width: 100%;
+      width: 40vw;
       font-size: 24px;
       font-weight: 500;
       padding: 24px;
