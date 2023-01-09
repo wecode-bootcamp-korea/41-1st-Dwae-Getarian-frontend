@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch, CiShoppingCart, CiDeliveryTruck } from 'react-icons/ci';
 import './Nav.scss';
@@ -43,18 +43,7 @@ export default function Nav() {
                         <div className="wrapper">
                           <div className="nav-flex-box">
                             <ul className="nav-list-dep2">
-                              <li className="nav-dep2-item">
-                                <Link className="link-text" to="/">
-                                  베스트
-                                </Link>
-                                <ul className="nav-list-dep3">
-                                  <li className="dep3-item">
-                                    <Link className="link-text" to="/">
-                                      위클리 베스트
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </li>
+                              <li className="nav-dep2-item" />
                               <li className="nav-dep2-item">깊이 2 아이템</li>
                               <li className="nav-dep2-item">깊이 2 아이템</li>
                               <li className="nav-dep2-item">깊이 2 아이템</li>
@@ -127,7 +116,7 @@ export default function Nav() {
                   Link
                   to="/main/signup"
                 >
-                  signup
+                  회원가입
                 </Link>
               </div>
             </div>
