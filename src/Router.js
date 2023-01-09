@@ -8,8 +8,6 @@ import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
-import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
-
 import Footer from './pages/Main/Components/Footer/Footer';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
@@ -22,8 +20,8 @@ const router = createBrowserRouter([
       { path: 'main/recipe', element: <Recipe /> },
       { path: 'main/review', element: <Review /> },
       { path: 'main/brand', element: <Brand /> },
-      { path: 'main/login', element: <Login /> },
-      { path: 'main/signup', element: <SignUp /> },
+      // { path: 'main/login', element: <Login /> },
+      // { path: 'main/signup', element: <SignUp /> },
       { path: 'main/footer', element: <Footer /> },
     ],
     errorElement: <NotFound />,
