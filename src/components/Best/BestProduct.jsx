@@ -4,14 +4,13 @@ export default function BestProduct({ monster }) {
   const { id, name } = monster;
   return (
     <div className="monBox">
-      <div className="monList">
+      <div key={monster.id} className="monList">
         <img
-          key={monster.id}
           src={`https://robohash.org/${id}?set=set2&size=180x180`}
           alt="mon"
           className="monListBox"
         />
-        <h2 className="name font">{name}</h2>
+        <p className="name font">{name}</p>
         <div className="bestPrice">
           <p className="price">{}원</p>
           <span className="discountPrice">{}원</span>

@@ -48,6 +48,10 @@ const router = createBrowserRouter([
         path: 'main/brand',
         element: <Brand />,
       },
+      {
+        path: 'main/best',
+        element: <Best />,
+      },
     ],
     errorElement: <NotFound />,
   },
