@@ -8,7 +8,7 @@ export default function RecipeTeawear({ setRef, tea }) {
     fetch('./data/recipeProductData.json')
       .then(response => response.json())
       .then(data => setTeaWearItems(data));
-  });
+  }, []);
   return (
     <section className="recipe-sec recipe-typeB">
       <div className="w1200-2">

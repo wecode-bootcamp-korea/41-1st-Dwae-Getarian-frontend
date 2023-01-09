@@ -30,7 +30,7 @@
   .recipe-nav-wrap {
     border-bottom: 1px solid #e6e6e6;
     width: 100%;
-    height: 14vh;
+    height: 80px;
     background-color: #fff;
     .recipe-nav-slide {
       overflow: visible;
@@ -108,7 +108,7 @@
 }
 
 .recipe-circles {
-  width: 45px;
+  width: 55px;
   height: auto;
   vertical-align: top;
 }
@@ -164,12 +164,26 @@
 }
 .prd-list-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   .item-inner {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    .test-product-items {
+      padding: 20px;
+      .test-product-image {
+        width: 250px;
+      }
+      .best-product-price {
+        font-size: 20px;
+      }
+      .best-product-name {
+        margin-top: 12px;
+        font-size: 16px;
+      }
+    }
   }
 }
