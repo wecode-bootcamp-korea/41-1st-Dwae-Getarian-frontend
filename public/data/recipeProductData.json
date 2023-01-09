@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "name": "러블리 티 박스",
+    "name": "비건 플래터",
     "price": "20,000원",
-    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/HK/AS/20211026141426702YO.png?quality=80&shrink=304:340"
+    "image": "./images/mealKit.jpeg"
   },
   {
     "id": 2,
-    "name": "시크릿 티 스토리",
+    "name": "비건미트",
     "price": "45,000원",
-    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/SK/YT/20210825143014310SG.png?quality=80&shrink=304:340"
+    "image": "./images/food1.jpeg"
   },
   {
     "id": 3,
-    "name": "마스터 블렌드",
+    "name": "프라이드 머쉬룸 볼",
     "price": "50,000원",
-    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/YZ/LP/20221114150242254NM.png?quality=80&shrink=304:340"
+    "image": "./images/food2.jpeg"
   },
   {
     "id": 4,
-    "name": "프리미엄 티 컬렉션 90입",
-    "price": "52,500원",
-    "image": "https://www.osulloc.com/upload/kr/ko/item_overImg/16045.png?quality=80&shrink=304:340"
+    "name": "아보카도 오픈 샌드위치",
+    "price": "12,000원",
+    "image": "./images/food3.jpeg"
   },
   {
     "id": 5,
-    "name": "메모리 인 제주 20입",
+    "name": "토마토 바질 샐러드",
     "price": "28,500원",
-    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/TQ/GD/20200513135237903WI.png?quality=80&shrink=304:340"
+    "image": "./images/food4.jpeg"
   },
   {
     "id": 6,
-    "name": "과일 블렌디드 티백 박스",
+    "name": "베지 스낵랩",
     "price": "29,500원",
-    "image": "https://www.osulloc.com/upload/kr/ko/adminImage/JI/YV/20220401151829295RG.png?quality=80&shrink=304:340"
+    "image": "./images/food5.jpeg"
   }
 ]

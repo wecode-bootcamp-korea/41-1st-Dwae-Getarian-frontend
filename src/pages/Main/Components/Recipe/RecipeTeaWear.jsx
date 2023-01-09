@@ -23,23 +23,17 @@ export default function RecipeTeawear({ setRef, tea }) {
             return (
               <div className="teawear-item-container" key={teaWearItem.id}>
                 <div>
-                  <img src={teaWearItem.image} alt="이미지" />
+                  <img
+                    className="teawear-item-img"
+                    src={teaWearItem.image}
+                    alt="이미지"
+                  />
                   <p className="teawear-item-name">{teaWearItem.name}</p>
                   <p className="teawear-item-price">{teaWearItem.price}</p>
                 </div>
               </div>
             );
           })}
-          <img
-            className="prd-recommend-image1"
-            src={tea.image1}
-            alt="추천 이미지 1"
-          />
-          <img
-            className="prd-recommend-image2"
-            src={tea.image2}
-            alt="추천 이미지 2"
-          />
           <div className="swiper-container prd-slideban swiper-container-initialized swiper-container-horizontal" />
         </div>
       </div>
