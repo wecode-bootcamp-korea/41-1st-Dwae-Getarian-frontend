@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Link } from 'react';
 import './My.scss';
 import MyProducts from './MyProducts';
 
@@ -21,29 +21,24 @@ export default function My() {
       <nav className="item-list-wrapper">
         <ul className="item-list">
           <li className="item">
-            <a className="link-item" href="/">
-              주문/예약관리
-            </a>
+            <Link className="link-item" to="/" />
+            주문/예약관리
           </li>
           <li className="item">
-            <a className="link-item" href="/">
-              활동내역
-            </a>
+            <Link className="link-item" to="/" />
+            활동내역
           </li>
           <li className="item">
-            <a className="link-item" href="/">
-              나의 혜택
-            </a>
+            <Link className="link-item" to="/" />
+            나의 혜택
           </li>
           <li className="item">
-            <a className="link-item" href="/">
-              정보관리
-            </a>
+            <Link className="link-item" to="/" />
+            정보관리
           </li>
           <li className="item">
-            <a className="link-item" href="/">
-              고객센터
-            </a>
+            <Link className="link-item" to="/" />
+            고객센터
           </li>
         </ul>
       </nav>
@@ -69,40 +64,40 @@ export default function My() {
           <div className="inner2">
             <ul className="point-list">
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">보유 쿠폰</p>
                   <p className="right-box-text2">2장</p>
-                </a>
+                </Link>
               </li>
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">뷰티포인트</p>
                   <p className="right-box-text2">0P</p>
-                </a>
+                </Link>
               </li>
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">찻잎포인트</p>
                   <p className="right-box-text2">500P</p>
-                </a>
+                </Link>
               </li>
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">선물함</p>
                   <p className="right-box-text2">0개</p>
-                </a>
+                </Link>
               </li>
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">다다일상</p>
                   <p className="right-box-text2">미구독</p>
-                </a>
+                </Link>
               </li>
               <li className="point-item">
-                <a href="/">
+                <Link to="/">
                   <p className="right-box-text1">후기관리</p>
                   <p className="right-box-text2">0개</p>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
