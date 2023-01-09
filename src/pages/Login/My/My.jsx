@@ -5,7 +5,6 @@ import MyProducts from './MyProducts';
 export default function My() {
   const [productList, setProductList] = useState([]);
 
-  // mock data fetch
   useEffect(() => {
     fetch('./data/mypageProductData.json')
       .then(response => response.json())
