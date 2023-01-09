@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import './MainbestSlide.scss';
-const delay = 2500;
+const delay = 3500;
 
 function MainbestSlide({ slides }) {
   const [index, setIndex] = useState(0);
@@ -36,7 +36,7 @@ function MainbestSlide({ slides }) {
       >
         {slides.map((slideImage, index) => (
           <div className="slide" key={index}>
-            <img src={slideImage.image} alt="" />
+            <img src={slideImage.image} alt="베스트메뉴추천" />
           </div>
         ))}
       </div>

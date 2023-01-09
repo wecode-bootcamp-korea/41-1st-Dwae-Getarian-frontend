@@ -1,7 +1,8 @@
 .mainbestSlideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 30vw;
+  display: flex;
+  max-width: 40vw;
   height: 100%;
   .bestslideshowSlider {
     white-space: nowrap;
@@ -9,7 +10,7 @@
     .bestslide {
       display: inline-block;
       background-size: cover;
-      width: 500px;
+      width: 100%;
       img {
         width: 100%;
         height: 350px;
