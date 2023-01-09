@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function RecipePresent({ presentRef, present }) {
   const [presentItems, setPresentItems] = useState([]);
@@ -21,17 +22,19 @@ export default function RecipePresent({ presentRef, present }) {
         <div className="prd-list-wrap">
           {presentItems.map(presentItem => {
             return (
-              <div className="teawear-item-container" key={presentItem.id}>
-                <div>
-                  <img
-                    className="teawear-item-img"
-                    src={presentItem.thumbnail_image}
-                    alt="이미지"
-                  />
-                  <p className="teawear-item-name">{presentItem.name}</p>
-                  <p className="teawear-item-price">{presentItem.price}</p>
+              <Link to="/" key={presentItem.id}>
+                <div className="teawear-item-container">
+                  <div>
+                    <img
+                      className="teawear-item-img"
+                      src={presentItem.thumbnail_image}
+                      alt="이미지"
+                    />
+                    <p className="teawear-item-name">{presentItem.name}</p>
+                    <p className="teawear-item-price">{presentItem.price}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
           <div className="swiper-container prd-slideban swiper-container-initialized swiper-container-horizontal" />

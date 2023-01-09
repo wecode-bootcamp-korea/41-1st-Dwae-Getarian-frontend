@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { SliderData } from './SliderData';
 import './Recipe.scss';
 import ImageSlider from './ImageSlider';
@@ -19,7 +20,7 @@ export default function Recipe() {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
-  // --------------데이터 통신 로직----------------//
+  //--------------데이터 통신 로직----------------//
   useEffect(() => {
     fetch('http://10.58.52.174:3001/product/best', {
       method: 'GET',
@@ -29,7 +30,7 @@ export default function Recipe() {
         setProductList(data);
       });
   }, []);
-  //-----------------------------------------//
+  //------------------------------------------//
 
   const goToRecommend = () => {
     recommendRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -104,17 +105,21 @@ export default function Recipe() {
                     {/* -------상품 뿌려주기 로직------- */}
                     {productList.map((product, index) => {
                       return (
-                        <ul key={index} className="test-product-items">
-                          <img
-                            className="test-product-image"
-                            src={product.thumbnail_image}
-                            alt="상품 이미지"
-                          />
-                          <li className="best-product-name">{product.name}</li>
-                          <li className="best-product-price">
-                            {convertPrice(product.price)}원
-                          </li>
-                        </ul>
+                        <Link to="/" key={product.id}>
+                          <ul className="test-product-items">
+                            <img
+                              className="test-product-image"
+                              src={product.thumbnail_image}
+                              alt="상품 이미지"
+                            />
+                            <li className="best-product-name">
+                              {product.name}
+                            </li>
+                            <li className="best-product-price">
+                              {convertPrice(product.price)}원
+                            </li>
+                          </ul>
+                        </Link>
                       );
                     })}
                   </div>

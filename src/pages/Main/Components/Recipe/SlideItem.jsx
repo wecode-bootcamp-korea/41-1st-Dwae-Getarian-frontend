@@ -68,7 +68,7 @@ export default function SlideItem({
                 src={img4}
                 alt="티웨어 세트"
               />
-              <p className="text">티웨어 세트</p>
+              <p className="text">밀키트</p>
             </div>
           </div>
         </div>

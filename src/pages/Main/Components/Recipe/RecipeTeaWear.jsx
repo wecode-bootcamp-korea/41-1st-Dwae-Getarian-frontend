@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './RecipeTeaWear.scss';
 
 export default function RecipeTeawear({ setRef, tea }) {
@@ -21,17 +22,19 @@ export default function RecipeTeawear({ setRef, tea }) {
         <div className="prd-list-wrap">
           {teaWearItems.map(teaWearItem => {
             return (
-              <div className="teawear-item-container" key={teaWearItem.id}>
-                <div>
-                  <img
-                    className="teawear-item-img"
-                    src={teaWearItem.image}
-                    alt="이미지"
-                  />
-                  <p className="teawear-item-name">{teaWearItem.name}</p>
-                  <p className="teawear-item-price">{teaWearItem.price}</p>
+              <Link key={teaWearItem.id} to="/">
+                <div className="teawear-item-container">
+                  <div>
+                    <img
+                      className="teawear-item-img"
+                      src={teaWearItem.image}
+                      alt="이미지"
+                    />
+                    <p className="teawear-item-name">{teaWearItem.name}</p>
+                    <p className="teawear-item-price">{teaWearItem.price}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
           <div className="swiper-container prd-slideban swiper-container-initialized swiper-container-horizontal" />
