@@ -9,6 +9,7 @@ import Product from './pages/Main/Components/Product/Product';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import NotFound from './components/NotFound';
+import Benefits from './pages/Login/My/Benefits/Benefits';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: 'main/brand', element: <Brand /> },
       { path: 'main/login', element: <Login /> },
       { path: 'main/signup', element: <SignUp /> },
+      { path: 'main/benefits', element: <Benefits /> },
     ],
     errorElement: <NotFound />,
   },
