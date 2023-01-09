@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import { ImLink } from 'react-icons/im';
 import { BsFacebook, BsHeart } from 'react-icons/bs';
 import { FiPlus, FiMinus } from 'react-icons/fi';
@@ -8,8 +7,29 @@ import './ProductDetail.scss';
 import ProductDetailBottom from './productDetailBottom/ProductDetailBottom';
 
 export default function ProductDetail() {
+  const { id } = useParams();
+  console.log(id);
   const [count, setCount] = useState(1);
-  const { state } = useLocation();
+  const { state } = useLocation(id);
+  const [totalPrice, setTotalPrice] = useState(state.price);
+
+  useEffect(() => {
+    setTotalPrice(count * state.price);
+    // console.log(count, 'count');
+  }, [count]);
+
+  const handleCountUp = () => {
+    setCount(count + 1);
+  };
+  // console.log(state.price);
+
+  const handleCountDown = () => {
+    if (count === 1) {
+      return;
+    }
+    setTotalPrice(totalPrice - state.price);
+    setCount(prev => prev - 1);
+  };
 
   return (
     <>
@@ -46,9 +66,9 @@ export default function ProductDetail() {
             <div className="productDetailQuatity">
               <p>구매수량</p>
               <div className="productDetailCount">
-                <FiMinus />
-                {count}
-                <FiPlus />
+                <FiMinus onClick={handleCountDown} />
+                <p>{count}</p>
+                <FiPlus onClick={handleCountUp} />
               </div>
             </div>
             <p className="productDetaileDelivery">50000만원이상 시 무료배송</p>
@@ -56,7 +76,7 @@ export default function ProductDetail() {
           <div className="productDetailSum">
             <p className="productDetailSumText">상품금액 합계</p>
             <p className="productDetailSumTotalPrice">
-              <span>{state.price}</span>원
+              <span>{totalPrice}</span>원
             </p>
           </div>
           <div className="productDetailButtons">
