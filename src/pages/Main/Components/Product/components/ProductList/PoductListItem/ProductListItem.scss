@@ -1,0 +1,30 @@
+.productListItems {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  .productListItemsBox {
+    width: 20%;
+    height: 250px;
+    margin: 0 10px;
+    margin-top: 40px;
+    .productListItemsImg {
+      width: 100%;
+      height: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    div {
+      margin: 10px;
+      margin-bottom: 20px;
+    }
+
+    .productListItemsIcon {
+      span {
+        margin-right: 20px;
+        color: #a0886f;
+      }
+    }
+  }
+}
