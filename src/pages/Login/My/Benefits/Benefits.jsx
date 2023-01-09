@@ -1,8 +1,6 @@
 import React from 'react';
 import './Benefits.scss';
 import { RiCoupon2Line } from 'react-icons/ri';
-// import { RiMoneyDollarCircleLine } from 'react-icons/ri';
-// import { RxDotFilled } from 'react-icons/rx';
 
 export default function Benefits() {
   return (
@@ -11,7 +9,6 @@ export default function Benefits() {
         <div className="benefits-info">
           {BENEFITS_NAV.map(info => (
             <a className={`link-text ${info.color}`} href="/" key={info.id}>
-              {/* <RxDotFilled /> */}
               {info.title}
             </a>
           ))}
@@ -20,7 +17,6 @@ export default function Benefits() {
       <div className="benefits-content">
         <div className="benefits-content-top">
           <div className="content-icons">
-            {/* <RiMoneyDollarCircleLine className="icon-money" /> */}
             <RiCoupon2Line className="icon-ticket" />
           </div>
           <div className="content-text">
