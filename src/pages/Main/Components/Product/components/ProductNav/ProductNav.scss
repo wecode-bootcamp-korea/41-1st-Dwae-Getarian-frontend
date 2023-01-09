@@ -1,0 +1,74 @@
+.productNav {
+  color: #000;
+  width: 165px;
+  height: 198px;
+  margin: 50px auto;
+  position: relative;
+
+  .productNavList {
+    margin: 20px 30px;
+    padding-top: 20px;
+    cursor: pointer;
+    .productNavListA {
+      text-decoration: none;
+      color: #000;
+      display: block;
+    }
+
+    :hover {
+      color: #2d6806;
+    }
+    .vegetarianType,
+    .mealkit {
+      display: block;
+      width: 120px;
+      position: absolute;
+      top: 40px;
+      right: -60px;
+      padding: 5px;
+      border: 1px solid rgb(219, 219, 219);
+      background-color: #fff;
+      color: #000;
+      opacity: 0;
+      transition: 0.5s;
+
+      li {
+        margin: 15px;
+        font-size: 13px;
+      }
+      li:hover {
+        color: #000;
+      }
+    }
+
+    .mealkit {
+      position: absolute;
+      top: 90px;
+      right: -60px;
+    }
+  }
+  .hover1:hover .vegetarianType {
+    position: absolute;
+    width: 120px;
+    top: 40px;
+    right: -60px;
+    padding: 5px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: #fff;
+    color: #000;
+    opacity: 100;
+    transition: 0.5s;
+  }
+  .hover2:hover .mealkit {
+    position: absolute;
+    width: 120px;
+    top: 90px;
+    right: -60px;
+    padding: 5px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: #fff;
+    color: #000;
+    opacity: 100;
+    transition: 0.5s;
+  }
+}
