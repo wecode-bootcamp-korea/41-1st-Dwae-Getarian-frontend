@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Timer from './Timer';
 import './MainEvent.scss';
 export default function MainEvent() {
+  const [timer, setTimer] = useState(24);
+
+  const duration = () => {
+    setTimer(timer * 24 * 60 * 60 * 1000);
+  };
+  console.log(timer);
   return (
     <div className="collection">
       <div className="eventBox">
         <div className="todayDiscount">
           <div className="todayDiscountTitle">
             <span>오늘만 이 가격</span>
-            <span>10:20:30</span>
+            <Timer duration={duration} />
           </div>
           <div className="discountPrice">
             <p>시그니처 콩고기 돈까스 세트</p>

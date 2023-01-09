@@ -4,6 +4,7 @@ import MainEvent from './Components/Maincomponents/MainEvent/MainEvent';
 import Recipe from './Components/Maincomponents/Recipe/Recipe';
 import Slide from './Components/Maincomponents/Slidecomponent/Slide';
 import Mainbest from './Components/Maincomponents/Mainbest/Mainbest';
+import Footer from './Components/Footer/Footer';
 import { SlideData } from './Components/Maincomponents/Slidecomponent/SlideData';
 import './Main.scss';
 
