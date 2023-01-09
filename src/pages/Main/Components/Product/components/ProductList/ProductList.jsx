@@ -1,15 +1,28 @@
 import React from 'react';
+import { useState } from 'react';
 import ProductListItem from './PoductListItem/ProductListItem';
 import './ProductList.scss';
 
 export default function ProductList({
   title,
-  quantity,
-  heart,
   bubble,
   dis,
-  img,
+  boldItem,
+  convertPrice,
+  cart,
+  setCart,
+  product,
+  setProduct,
 }) {
+  const [select, setSelect] = useState();
+
+  const handleClick = type => {
+    setSelect(type);
+    if (select === type) {
+      setSelect(!select);
+    }
+  };
+
   return (
     <div className="productList">
       <div className="productListHeader">
@@ -27,22 +40,42 @@ export default function ProductList({
         </div>
         <div className="productListQuantity">
           <div className="productListQuantityNumber">
-            총 <span>{quantity}</span>개의 상품이 있습니다.
+            총 <span>{product.length}</span>개의 상품이 있습니다.
           </div>
           <div className={'productListQuantityCategory ' + dis}>
             <ul>
-              <li>전체</li>
-              <li>채소</li>
-              <li>육류</li>
-              <li>생선</li>
-              <li>유제품</li>
+              {boldItem &&
+                boldItem.map((item, idx) => {
+                  return (
+                    <li
+                      key={idx}
+                      onClick={() => handleClick(item.name)}
+                      className={select === item.name ? 'boldItem' : ''}
+                    >
+                      {item.name}
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </div>
       </div>
-
-      <div>
-        <ProductListItem img={img} heart={heart} bubble={bubble} />
+      <div className="productListItems">
+        {product &&
+          product.map(item => {
+            return (
+              <ProductListItem
+                key={item.id}
+                heart={item.like}
+                bubble={bubble}
+                convertPrice={convertPrice}
+                product={item}
+                setProduct={setProduct}
+                cart={cart}
+                setCart={setCart}
+              />
+            );
+          })}
       </div>
     </div>
   );
