@@ -3,14 +3,13 @@
 }
 .mainTop {
   height: 400px;
-  background-color: #2d6806;
 }
 
-.mainBest {
+.mainBestContainer {
   width: 100vw;
-  height: 42px;
+  height: 15vw;
   padding: 30px;
-  .bestTitle {
+  .bestTitleFont {
     height: 42px;
     font-size: 28px;
     font-weight: 500;

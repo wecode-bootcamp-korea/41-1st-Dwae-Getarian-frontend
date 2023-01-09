@@ -1,7 +1,5 @@
 .mainbest {
   width: 100vw;
-  height: 50px;
-  height: 300px;
   display: flex;
   .container {
     width: 300vw;
@@ -18,5 +16,18 @@
         height: 100px;
       }
     }
+  }
+}
+
+.moreLookBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .moreLook {
+    width: 180px;
+    height: 48px;
+    margin: 0 autos;
+    border-radius: 8px;
+    border-style: none;
   }
 }

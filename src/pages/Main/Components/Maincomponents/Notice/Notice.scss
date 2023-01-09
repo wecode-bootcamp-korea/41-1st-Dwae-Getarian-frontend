@@ -2,8 +2,11 @@
   height: 48px;
   width: 80%;
   margin: 48px auto 0 auto;
-  padding: 14px 16px;
+  padding: 18px;
   opacity: 0.4;
   border-radius: 8px;
   background-color: #666666;
+  .noticecontent {
+    margin-left: 25px;
+  }
 }

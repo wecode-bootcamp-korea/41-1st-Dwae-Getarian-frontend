@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
-import './Slide.scss';
+import './MainbestSlide.scss';
 const delay = 2500;
 
-function Slide({ slides }) {
+function MainbestSlide({ slides }) {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -29,9 +29,9 @@ function Slide({ slides }) {
   }, [index]);
 
   return (
-    <div className="slideshow">
+    <div className="mainbestSlideshow">
       <div
-        className="slideshowSlider"
+        className="bestslideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {slides.map((slideImage, index) => (
@@ -40,7 +40,7 @@ function Slide({ slides }) {
           </div>
         ))}
       </div>
-      <div className="slideshowDots">
+      <div className="bestslideshowDots">
         {slides.map((_, idx) => (
           <div
             key={idx}
@@ -51,7 +51,10 @@ function Slide({ slides }) {
           />
         ))}
       </div>
+      <div className="moreLook">
+        <button className="moreLook">더보기</button>
+      </div>
     </div>
   );
 }
-export default Slide;
+export default MainbestSlide;
