@@ -7,7 +7,7 @@ import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Brand from './pages/Main/Components/Brand/Brand';
 import NotFound from './components/NotFound';
-import Benefits from './pages/Login/My/Benefits/Benefits';
+import Benefits from './pages/My/Benefits/Benefits';
 
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: 'main/brand',
         element: <Brand />,
+      },
+      {
+        path: 'main/benefits',
+        element: <Benefits />,
       },
     ],
     errorElement: <NotFound />,
