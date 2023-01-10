@@ -1,15 +1,24 @@
-import React, { useEffect, useState, Link } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './My.scss';
 import MyProducts from './MyProducts';
 
 export default function My() {
   const [productList, setProductList] = useState([]);
+  const [myUserList, setMyUserList] = useState({});
 
   useEffect(() => {
     fetch('./data/mypageProductData.json')
       .then(response => response.json())
       .then(result => setProductList(result));
   }, []);
+
+  useEffect(() => {
+    fetch('./data/mypageUserData.json')
+      .then(response => response.json())
+      .then(data => setMyUserList(data));
+  }, []);
+
   return (
     <div className="my-page-wrapper">
       <div className="title-container">
@@ -19,26 +28,21 @@ export default function My() {
       </div>
       <nav className="item-list-wrapper">
         <ul className="item-list">
-          <li className="item">
-            <Link className="link-item" to="/" />
-            주문/예약관리
-          </li>
-          <li className="item">
-            <Link className="link-item" to="/" />
-            활동내역
-          </li>
-          <li className="item">
-            <Link className="link-item" to="/" />
-            나의 혜택
-          </li>
-          <li className="item">
-            <Link className="link-item" to="/" />
-            정보관리
-          </li>
-          <li className="item">
-            <Link className="link-item" to="/" />
-            고객센터
-          </li>
+          <Link className="link-item" to="/orderReservation">
+            <li className="item">주문/예약관리</li>
+          </Link>
+          <Link className="link-item" to="/activityList">
+            <li className="item">활동내역</li>
+          </Link>
+          <Link className="link-item" to="/benefits">
+            <li className="item">나의 혜택</li>
+          </Link>
+          <Link className="link-item" to="/">
+            <li className="item">정보관리</li>
+          </Link>
+          <Link className="link-item" to="/">
+            <li className="item">고객센터</li>
+          </Link>
         </ul>
       </nav>
       <div className="my-info">
@@ -50,9 +54,9 @@ export default function My() {
               alt="마이페이지 로고"
             />
             <div className="text">
-              <span className="text1">김진우님의 회원등급은</span>
+              <span className="text1">{myUserList.name}님의 회원등급은</span>
               <br />
-              <span className="text2">WELCOME 입니다.</span>
+              <span className="text2">{myUserList.grade}입니다.</span>
             </div>
           </div>
           <div className="button-container">
@@ -65,37 +69,37 @@ export default function My() {
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">보유 쿠폰</p>
-                  <p className="right-box-text2">2장</p>
+                  <p className="right-box-text2">{myUserList.coupon}장</p>
                 </Link>
               </li>
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">뷰티포인트</p>
-                  <p className="right-box-text2">0P</p>
+                  <p className="right-box-text2">{myUserList.point}P</p>
                 </Link>
               </li>
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">찻잎포인트</p>
-                  <p className="right-box-text2">500P</p>
+                  <p className="right-box-text2">{myUserList.chapoint}P</p>
                 </Link>
               </li>
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">선물함</p>
-                  <p className="right-box-text2">0개</p>
+                  <p className="right-box-text2">{myUserList.present}개</p>
                 </Link>
               </li>
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">다다일상</p>
-                  <p className="right-box-text2">미구독</p>
+                  <p className="right-box-text2">{myUserList.dada}</p>
                 </Link>
               </li>
               <li className="point-item">
                 <Link to="/">
                   <p className="right-box-text1">후기관리</p>
-                  <p className="right-box-text2">0개</p>
+                  <p className="right-box-text2">{myUserList.review}개</p>
                 </Link>
               </li>
             </ul>
@@ -107,23 +111,25 @@ export default function My() {
         <div className="item-list-container">
           <ul className="item-lists">
             <li className="recent-item">
-              <p className="recent-item-text-1">0</p>
+              <p className="recent-item-text-1">{myUserList.order}</p>
               <p className="recent-item-text-2">주문접수</p>
             </li>
             <li className="recent-item">
-              <p className="recent-item-text-1">0</p>
+              <p className="recent-item-text-1">{myUserList.payment}</p>
               <p className="recent-item-text-2">결제완료</p>
             </li>
             <li className="recent-item">
-              <p className="recent-item-text-1">0</p>
+              <p className="recent-item-text-1">{myUserList.productready}</p>
               <p className="recent-item-text-2">상품준비</p>
             </li>
             <li className="recent-item">
-              <p className="recent-item-text-1">0</p>
+              <p className="recent-item-text-1">{myUserList.shipping}</p>
               <p className="recent-item-text-2">배송중</p>
             </li>
             <li className="recent-item">
-              <p className="recent-item-text-1">0</p>
+              <p className="recent-item-text-1">
+                {myUserList.shippingcomplete}
+              </p>
               <p className="recent-item-text-2">배송완료</p>
             </li>
           </ul>

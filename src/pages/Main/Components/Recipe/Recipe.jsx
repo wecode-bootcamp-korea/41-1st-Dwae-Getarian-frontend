@@ -14,15 +14,15 @@ export default function Recipe() {
   const setRef = useRef(null);
 
   // --------------데이터 통신 로직----------------//
-  useEffect(() => {
-    fetch('http://10.58.52.95:3001/product', {
-      method: 'GET',
-    })
-      .then(response => response.json())
-      .then(data => {
-        setProductList(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://10.58.52.95:3001/product', {
+  //     method: 'GET',
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setProductList(data);
+  //     });
+  // }, []);
   //-----------------------------------------//
 
   const goToRecommend = () => {
