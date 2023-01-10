@@ -4,19 +4,21 @@ import MainEvent from './Components/Maincomponents/MainEvent/MainEvent';
 import Recipe from './Components/Maincomponents/Recipe/Recipe';
 import Slide from './Components/Maincomponents/Slidecomponent/Slide';
 import Footer from './Components/Footer/Footer';
+import BestMenu from './Components/Maincomponents/Mainbest/BestMenu';
 import { SlideData } from './Components/Maincomponents/Slidecomponent/SlideData';
 import './Main.scss';
+import Best from './Components/Maincomponents/Mainbest/BestMenu';
 
 export default function Main() {
   return (
     <div>
-      <div className="mainTop">
-        <Slide slides={SlideData} />
-      </div>
+      <Slide slides={SlideData} />
+
       <Notice />
-      <div className="mainBestContainer">
-        <p className="bestTitleFont">Le chou 베스트 메뉴</p>
-      </div>
+
+      <p className="bestTitleFont">Le chou 베스트 메뉴</p>
+
+      <BestMenu />
       <MainEvent />
       <Recipe />
     </div>

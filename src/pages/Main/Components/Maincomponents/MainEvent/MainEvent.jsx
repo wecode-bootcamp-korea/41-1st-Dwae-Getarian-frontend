@@ -16,14 +16,13 @@ export default function MainEvent() {
             <span>오늘만 이 가격</span>
             <Timer duration={duration} />
           </div>
-          <div className="discountPriceBox">
-            <div className="discountPrice" />
-            <div className="discountPriceText">
-              <p>시그니처 콩고기 돈까스 세트</p>
-              <p>20000원</p>
-            </div>
+
+          <div className="discountPriceText">
+            <p>시그니처 콩고기 돈까스 세트</p>
+            <p>20000원</p>
           </div>
         </div>
+
         <div className="attendanceStory">
           <div className="checkAttendence">
             <div className="attendencePeriodBox">

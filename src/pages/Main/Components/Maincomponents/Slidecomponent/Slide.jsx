@@ -34,30 +34,11 @@ function Slide({ slides }) {
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        <div className="slide" key={index}>
-          {/* <img
-            src="https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=MnwxMjA3[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-            alt="1"
-          /> */}
-        </div>
-        <div className="slide" key={index}>
-          <img src="./images/choyunhwan/hi.tiff" alt="2" />
-        </div>
-        <div className="slide" key={index}>
-          <img src="./images/choyunhwan/flower.tiff" alt="3" />
-        </div>
-        <div className="slide" key={index}>
-          <img
-            src="./images/choyunhwan/photo-1504204267155-aaad8e81290d.tiff"
-            alt="4"
-          />
-        </div>
-        <div className="slide" key={index}>
-          <img
-            src="./images/choyunhwan/photo-1510172951991-856a654063f9.tiff"
-            alt="5"
-          />
-        </div>
+        {slides.map((slideImage, index) => (
+          <div className="slide" key={index}>
+            <img src={slideImage.image} alt="" />
+          </div>
+        ))}
       </div>
       <div className="slideshowDots">
         {slides.map((_, idx) => (

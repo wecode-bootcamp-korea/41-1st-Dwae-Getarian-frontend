@@ -1,20 +1,17 @@
 * {
   box-sizing: border-box;
 }
-.mainTop {
-  height: 500px;
-}
+// .mainTop {
+//   height: 500px;
+//   width: 100vw;
+// }
 
-.mainBestContainer {
-  width: 200px;
-  height: 300px;
-  padding: 30px;
-
-  .bestTitleFont {
-    height: 50px;
-    width: 300px;
-    font-size: 28px;
-    font-weight: 500;
-    color: #333333;
-  }
+.bestTitleFont {
+  height: 50px;
+  width: 300px;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-left: 100px;
+  color: #333333;
 }
