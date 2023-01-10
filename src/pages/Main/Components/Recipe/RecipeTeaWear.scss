@@ -1,9 +1,10 @@
 .teawear-item-container {
-  padding: 30px;
+  padding: 20px;
   .teawear-item-img {
     width: 230px;
     height: 230px;
     border-radius: 5px;
+    object-fit: cover;
   }
   .teawear-item-name {
     font-size: 15px;

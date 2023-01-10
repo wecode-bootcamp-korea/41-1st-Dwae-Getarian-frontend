@@ -23,17 +23,17 @@ export default function RecipeTeawear({ setRef, tea, convertPrice }) {
           {teaWearItems.map(teaWearItem => {
             return (
               <Link key={teaWearItem.id} to="/">
-                <div className="teawear-item-container">
-                  <div>
-                    <img
-                      className="teawear-item-img"
-                      src={teaWearItem.image}
-                      alt="이미지"
-                    />
-                    <p className="teawear-item-name">{teaWearItem.name}</p>
-                    <p className="teawear-item-price">
-                      {convertPrice(parseInt(teaWearItem.price))}원
-                    </p>
+                <div className="item-inner">
+                  <div className="teawear-item-container">
+                    <div>
+                      <img
+                        className="teawear-item-img"
+                        src={teaWearItem.image}
+                        alt="이미지"
+                      />
+                      <p className="teawear-item-name">{teaWearItem.name}</p>
+                      <p className="teawear-item-price">{teaWearItem.price}</p>
+                    </div>
                   </div>
                 </div>
               </Link>
