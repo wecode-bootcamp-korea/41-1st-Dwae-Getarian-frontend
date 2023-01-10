@@ -1,0 +1,19 @@
+@mixin btn {
+  z-index: 100;
+}
+
+// 각각 전달된 direction 값에 따라 style 값 변경
+
+.btnPrev {
+  position: absolute;
+  left: 0%;
+  top: 45%;
+  @include btn;
+}
+
+.btnNext {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  @include btn;
+}
