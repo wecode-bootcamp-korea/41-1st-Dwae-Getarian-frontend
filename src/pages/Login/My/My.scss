@@ -207,7 +207,8 @@
     .product-list-container {
       .history-product-box {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
         padding-left: 60px;
 
         .history-product {
