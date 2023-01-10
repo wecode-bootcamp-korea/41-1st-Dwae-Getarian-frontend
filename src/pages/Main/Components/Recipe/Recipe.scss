@@ -7,7 +7,7 @@
 
   .top-visual-box {
     display: flex;
-    height: 300px;
+    height: 340px;
     border-bottom: none;
     margin-bottom: 0;
     background: url('https://elavegan.com/wp-content/uploads/2022/07/horizontal-shot-of-couscous-salad.jpg');
@@ -179,10 +179,12 @@
       }
       .best-product-price {
         font-size: 20px;
+        color: #333;
       }
       .best-product-name {
         margin-top: 12px;
         font-size: 16px;
+        color: #333;
       }
     }
   }

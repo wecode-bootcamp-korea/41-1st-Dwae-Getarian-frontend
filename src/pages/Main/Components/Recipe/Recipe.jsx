@@ -22,7 +22,7 @@ export default function Recipe() {
 
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
-    fetch('http://10.58.52.174:3001/product/best', {
+    fetch('http://10.58.52.152:3001/product/best', {
       method: 'GET',
     })
       .then(response => response.json())
@@ -48,7 +48,7 @@ export default function Recipe() {
   return (
     <div className="recipe-total-container">
       <div className="top-visual-box">
-        <p className="title">Recipe</p>
+        <p className="title">Present</p>
       </div>
       <div className="recipe-navigation">
         <div className="recipe-nav-wrap">
@@ -105,7 +105,10 @@ export default function Recipe() {
                     {/* -------상품 뿌려주기 로직------- */}
                     {productList.map((product, index) => {
                       return (
-                        <Link to="/" key={product.id}>
+                        <Link
+                          to={`/productDetail/${product.id}`}
+                          key={product.id}
+                        >
                           <ul className="test-product-items">
                             <img
                               className="test-product-image"
@@ -116,7 +119,7 @@ export default function Recipe() {
                               {product.name}
                             </li>
                             <li className="best-product-price">
-                              {convertPrice(product.price)}원
+                              {convertPrice(parseInt(product.price))}원
                             </li>
                           </ul>
                         </Link>
