@@ -1,29 +1,37 @@
+import React from 'react';
 import '../Login/Login.scss';
-import { TfiClose } from 'react-icons/tfi';
+import { TfiClose, TfiGallery } from 'react-icons/tfi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import stylelint from 'stylelint';
 
 export default function Login() {
-  const [idValue, setId] = useState('');
-  const [pwValue, setPw] = useState('');
   const [isDisable, setDisabled] = useState(true);
   const navigation = useNavigate();
+  const [form, setForm] = useState({
+    id: '',
+    password: '',
+  });
 
-  const disable = idValue.includes('@') && pwValue.length >= 5 ? false : true;
-  const onDisabled = () => {
-    setDisabled(disable);
+  const pwCondition = /^[A-Za-z0-9]{8,20}$/;
+  const idCondition =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  const idIdValid = idCondition.test(form.id);
+  console.log(idIdValid);
+  const pwPwValid = pwCondition.test(form.password);
+  console.log(pwPwValid);
+
+  const formValid = () => {
+    if (!idIdValid || form.password.length === 0) {
+      setDisabled(false);
+    }
   };
 
-  const saveUserId = event => {
-    setId(event.target.value);
-  };
-
-  const saveUserPw = event => {
-    setPw(event.target.value);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
+  const onLogin = e => {
+    const { name, value } = e.target;
+    console.log(e.target.value);
+    setForm({ ...form, [name]: value });
   };
 
   const handleClick = e => {
@@ -31,28 +39,23 @@ export default function Login() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('login-token'),
       },
       body: JSON.stringify({
-        email: idValue,
-        password: pwValue,
+        email: form.id,
+        password: form.password,
       }),
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if (data.accessToken) {
-          setId('');
-          setPw('');
           localStorage.setItem('token', data.accessToken);
         }
       });
+    e.preventDefault();
   };
 
-  console.log(localStorage.getItem('token'));
-
   return (
-    <>
+    <div className="login">
       <header className="header">
         <div className="header-box">
           <div className="header-box-inner">
@@ -73,34 +76,35 @@ export default function Login() {
           <br />
           <span>아이디로 로그인해주세요.</span>
         </div>
-        <form action="" className="login-box" onSubmit={handleSubmit}>
+        <form action="" className="login-box" onSubmit={handleClick}>
           <input
             type="text"
             className="login-id"
-            name="name"
+            name="id"
             placeholder="아이디 입력"
-            value={idValue}
-            onChange={saveUserId}
+            value={form.id}
+            onChange={onLogin}
           />
+          {!idIdValid && '아이디는 @를 포함해야 합니다.'}
           <input
             type="password"
             className="login-pw"
             name="password"
             placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
-            value={pwValue}
-            onChange={saveUserPw}
+            value={form.password}
+            onChange={onLogin}
           />
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 8글자 이상입니다.'}
           <div className="save-id">
-            <img src="../images/checked.png" className="save-id-pic" />
+            <img src="/images/checked.png" className="save-id-pic" />
             <span className="save-id-li">아이디 저장</span>
           </div>
-
           <div className="login-btn-box">
             <button
               type="button"
               className="login-btn"
-              disabled={disable}
               onClick={handleClick}
+              disabled={isDisable}
             >
               로그인
             </button>
@@ -127,13 +131,13 @@ export default function Login() {
         <button
           className="is-member"
           onClick={() => {
-            navigation('/main/signin');
+            navigation('/');
           }}
         >
           <span className="is-member-text">아직 회원이 아니세요?</span>
           <em className="is-member-em">회원가입</em>
         </button>
       </section>
-    </>
+    </div>
   );
 }
