@@ -31,8 +31,7 @@ export default function MainEvent() {
           </div>
           <div className="brandStory">
             <div className="storyFont">
-              <span>돼지테리언</span>
-              <span>돼지테리언스토리</span>
+              <span>BRAND</span>
             </div>
           </div>
         </div>
