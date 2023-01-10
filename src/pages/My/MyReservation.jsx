@@ -1,53 +1,45 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import './My.scss';
+import './MyReservation.scss';
 import { BsExclamationCircle } from 'react-icons/bs';
 
 export default function OrderReservation() {
   const [reservation, setReservation] = useState([]);
-
-  // console.log('a', reservartion);
-
-  useEffect(() => {
-    fetch('/data/my_reservation.json')
-      .then(result => result.json())
-      .then(data => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('/data/my_reservation.json')
+  //     .then(result => result.json())
+  //     .then(data => console.log(data));
+  // }, []);
 
   return (
     <div className="order-reservation">
       <div className="my-term-sort-box">
         <section className="my-term-sort">
-          <button type="button" className="month-search">
+          <button type="button" className="month-search btn-first">
             최근 1개월
           </button>
-          <button type="button" className="month-search">
+          <button type="button" className="month-search btn-seconde">
             12월
           </button>
-          <button type="button" className="month-search">
+          <button type="button" className="month-search btn-third">
             11월
           </button>
-          <button type="button" className="month-search">
+          <button type="button" className="month-search btn-fourth">
             기간조회
           </button>
         </section>
       </div>
-
       <section className="section">
         <div className="my-order-step">
           <ul className="my-order-list-box">
-            <li className="my-order-step-list">
-              {/* <p className="my-order-step-list-number">0</p> */}
-
-              {ORDER_RESERVATION_LIST.map(reservation => (
-                <li className="my-order-step-list" key={reservation.id}>
-                  <p className="my-order-step-list-number">
-                    {reservation.number}
-                  </p>
-                  <p className="my-order-step-list-text">{reservation.title}</p>
-                </li>
-              ))}
-            </li>
+            {ORDER_RESERVATION_LIST.map(reservation => (
+              <li className="my-order-step-list">
+                <p className="my-order-step-list-number" key={reservation.id}>
+                  {reservation.number}
+                </p>
+                <p className="my-order-step-list-text">{reservation.title}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -59,7 +51,7 @@ export default function OrderReservation() {
       </section>
       <section className="my-order-info">
         <div className="my-order-box">
-          <ul>
+          <ul className="my-order-info-box">
             <p className="my-order-info-text">주문/배송조회 안내</p>
             <li className="my-order-info-list">
               주문취소는 주문접수, 결제완료 단계에서만 신청 가능하며 즉시
