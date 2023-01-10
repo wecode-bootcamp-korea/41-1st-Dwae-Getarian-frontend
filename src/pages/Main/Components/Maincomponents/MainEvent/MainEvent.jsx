@@ -26,10 +26,8 @@ export default function MainEvent() {
         <div className="attendanceStory">
           <div className="checkAttendence">
             <div className="attendencePeriodBox">
-              <span className="month">1월 출석체크</span>
-              <span className="period"> 기간 적기</span>
+              <span className="month">GO TO MYPAGE</span>
             </div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD1m0kMFcRKXr7JYjAGwM5eToVDrOXQvaUNQ&usqp=CAU" />
           </div>
           <div className="brandStory">
             <div className="storyFont">

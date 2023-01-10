@@ -41,9 +41,13 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        background: url('https://images.unsplash.com/photo-1541894323-8b2bf33b83dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+            50%,
+          50% no-repeat;
         height: 273.734px;
         width: 579.953px;
-        background-color: blue;
+        font-size: 500;
+        color: green;
         .attendencePeriodBox {
           display: flex;
           flex-direction: column;
