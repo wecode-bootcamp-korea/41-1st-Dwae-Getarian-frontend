@@ -1,0 +1,76 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "name1",
+      "img": "https://images.unsplash.com/photo-1515316941871-2f69c7f2e5a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 3000,
+      "type": "VEGAN"
+    },
+    {
+      "id": 2,
+      "name": "name2",
+      "img": "https://plus.unsplash.com/premium_photo-1661499164144-e5a49f5441ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 5000,
+      "type": "LACTO"
+    },
+    {
+      "id": 3,
+      "name": "name3",
+      "img": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+      "like": 11,
+      "price": 12000,
+      "type": "OVO"
+    },
+    {
+      "id": 4,
+      "name": "name4",
+      "img": "https://plus.unsplash.com/premium_photo-1661666882005-9fdeeb6fef80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 7000,
+      "type": "LACTO_OVO"
+    },
+    {
+      "id": 5,
+      "name": "name5",
+      "img": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 27000,
+      "type": "VEGAN"
+    },
+    {
+      "id": 6,
+      "name": "name6",
+      "img": "https://images.unsplash.com/photo-1534528696266-aade1e8bae09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 27000,
+      "type": " LACTO"
+    },
+    {
+      "id": 7,
+      "name": "name7",
+      "img": "https://images.unsplash.com/photo-1596723427394-4bc6d407dee1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "like": 11,
+      "price": 27000,
+      "type": "OVO"
+    },
+    {
+      "id": 8,
+      "name": "name8",
+      "img": "https://images.unsplash.com/photo-1600850056064-a8b380df8395?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "like": 11,
+      "price": 27000,
+      "type": "LACTO_OVO"
+    },
+    {
+      "id": 9,
+      "name": "name9",
+      "img": "https://images.unsplash.com/photo-1518310532637-f5225f94f3c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "like": 11,
+      "price": 27000,
+      "type": "OVO"
+    }
+  ]
+}
