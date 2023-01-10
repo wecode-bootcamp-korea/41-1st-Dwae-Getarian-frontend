@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function RecipePresent({ presentRef, present }) {
+export default function RecipePresent({ presentRef, present, convertPrice }) {
   const [presentItems, setPresentItems] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.52.174:3001/product/best').then(response =>
+    fetch('http://10.58.52.152:3000/product?page=list_10').then(response =>
       response.json().then(data => {
         setPresentItems(data);
       })
@@ -27,11 +27,13 @@ export default function RecipePresent({ presentRef, present }) {
                   <div>
                     <img
                       className="teawear-item-img"
-                      src={presentItem.thumbnail_image}
+                      src={presentItem.image}
                       alt="이미지"
                     />
                     <p className="teawear-item-name">{presentItem.name}</p>
-                    <p className="teawear-item-price">{presentItem.price}</p>
+                    <p className="teawear-item-price">
+                      {convertPrice(parseInt(presentItem.price))}원
+                    </p>
                   </div>
                 </div>
               </Link>

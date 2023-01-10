@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './RecipeTeaWear.scss';
 
-export default function RecipeTeawear({ setRef, tea }) {
+export default function RecipeTeawear({ setRef, tea, convertPrice }) {
   const [teaWearItems, setTeaWearItems] = useState([]);
 
   useEffect(() => {
@@ -31,7 +31,9 @@ export default function RecipeTeawear({ setRef, tea }) {
                       alt="이미지"
                     />
                     <p className="teawear-item-name">{teaWearItem.name}</p>
-                    <p className="teawear-item-price">{teaWearItem.price}</p>
+                    <p className="teawear-item-price">
+                      {convertPrice(parseInt(teaWearItem.price))}원
+                    </p>
                   </div>
                 </div>
               </Link>

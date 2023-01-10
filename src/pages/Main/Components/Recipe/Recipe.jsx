@@ -8,6 +8,7 @@ import RecipeProducts from './RecipePresent';
 import RecipeTeaWear from './RecipeTeaWear';
 import { RECIPE_PRESENT } from './constantData/recipePresent';
 import { RECIPE_TEAWEAR } from './constantData/recipeTeawear';
+import './Recipe.scss';
 
 export default function Recipe() {
   const [productList, setProductList] = useState([]);
@@ -22,9 +23,12 @@ export default function Recipe() {
 
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
-    fetch('http://10.58.52.152:3000/product', {
-      method: 'GET',
-    })
+    fetch(
+      'http://10.58.52.152:3000/product?sortBy=price_high&sortBy=new&page=list_10',
+      {
+        method: 'GET',
+      }
+    )
       .then(response => response.json())
       .then(data => {
         setProductList(data);
@@ -112,7 +116,7 @@ export default function Recipe() {
                           <ul className="test-product-items">
                             <img
                               className="test-product-image"
-                              src={product.thumbnail_image}
+                              src={product.image}
                               alt="상품 이미지"
                             />
                             <li className="best-product-name">
@@ -132,8 +136,16 @@ export default function Recipe() {
             </div>
           </div>
         </section>
-        <RecipeProducts present={RECIPE_PRESENT} presentRef={presentRef} />
-        <RecipeTeaWear tea={RECIPE_TEAWEAR} setRef={setRef} />
+        <RecipeProducts
+          present={RECIPE_PRESENT}
+          presentRef={presentRef}
+          convertPrice={convertPrice}
+        />
+        <RecipeTeaWear
+          tea={RECIPE_TEAWEAR}
+          setRef={setRef}
+          convertPrice={convertPrice}
+        />
       </div>
     </div>
   );

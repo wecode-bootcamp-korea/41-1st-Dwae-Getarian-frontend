@@ -130,7 +130,8 @@
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 500px;
+  max-width: 850px;
+  max-height: 500px;
 }
 .slideshowSlider {
   white-space: nowrap;
@@ -169,13 +170,17 @@
   flex-wrap: wrap;
   .item-inner {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 30px;
+    flex-wrap: wrap;
     .test-product-items {
       padding: 20px;
       .test-product-image {
-        width: 250px;
+        width: 230px;
+        height: 230px;
+        border-radius: 5px;
+        object-fit: cover;
       }
       .best-product-price {
         font-size: 20px;
@@ -188,4 +193,11 @@
       }
     }
   }
+}
+.img1 {
+  width: 100px;
+  height: 3000px;
+}
+.img1 {
+  width: 2000px;
 }
