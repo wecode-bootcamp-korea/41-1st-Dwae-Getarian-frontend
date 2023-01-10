@@ -22,7 +22,7 @@ export default function Recipe() {
 
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
-    fetch('http://10.58.52.152:3001/product/best', {
+    fetch('http://10.58.52.152:3000/product', {
       method: 'GET',
     })
       .then(response => response.json())
