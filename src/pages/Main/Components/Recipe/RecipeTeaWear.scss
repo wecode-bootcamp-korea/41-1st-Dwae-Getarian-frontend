@@ -5,6 +5,10 @@
     height: 230px;
     border-radius: 5px;
     object-fit: cover;
+    &:hover {
+      scale: 1.2;
+      transition: all ease-in-out 0.2s;
+    }
   }
   .teawear-item-name {
     font-size: 15px;

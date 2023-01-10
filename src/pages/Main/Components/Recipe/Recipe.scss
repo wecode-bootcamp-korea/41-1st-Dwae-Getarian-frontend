@@ -180,6 +180,10 @@
         height: 230px;
         border-radius: 5px;
         object-fit: cover;
+        &:hover {
+          scale: 1.2;
+          transition: all ease-in-out 0.2s;
+        }
       }
       .best-product-price {
         font-size: 20px;
