@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 import { GiCabbage } from 'react-icons/gi';
 import { ImLocation } from 'react-icons/im';
@@ -12,7 +13,9 @@ export default function Footer() {
       <div className="footerLoginContainer">
         <form className="footerLogin">
           <div className="goToSns">
-            <button className="footerLoginBtn">로그인</button>
+            <Link to="/Login">
+              <button className="footerLoginBtn">로그인</button>
+            </Link>
             <AiOutlineFacebook className="facebook" />
             <AiOutlineInstagram className="insta" />
             <ImYoutube2 className="youtube" />
@@ -42,10 +45,12 @@ export default function Footer() {
             <GiCabbage className="abcd" />
             <p>멤버십</p>
           </div>
+
           <div className="column">
             <BsQuestionCircle className="abcd" />
             <p>FAQ</p>
           </div>
+
           <div className="column">
             <BiConversation className="abcd" />
             <p>문의</p>
