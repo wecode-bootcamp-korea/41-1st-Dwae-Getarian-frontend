@@ -37,10 +37,10 @@ export default function My() {
           <Link className="link-item" to="/benefits">
             <li className="item">나의 혜택</li>
           </Link>
-          <Link className="link-item" to="/">
+          <Link className="link-item">
             <li className="item">정보관리</li>
           </Link>
-          <Link className="link-item" to="/">
+          <Link className="link-item">
             <li className="item">고객센터</li>
           </Link>
         </ul>

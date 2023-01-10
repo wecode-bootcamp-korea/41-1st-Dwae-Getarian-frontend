@@ -212,10 +212,15 @@
 
         .history-product {
           margin-top: 30px;
+          margin-right: 30px;
           .history-product-img {
-            width: 65%;
+            width: 125px;
+            height: 125px;
+            border-radius: 5px;
+            object-fit: cover;
             &:hover {
-              aspect-ratio: 1/1.1184;
+              transition: all ease-in-out 0.2s;
+              scale: 1.2;
             }
           }
           .product-info {
