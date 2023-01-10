@@ -46,12 +46,18 @@ body {
   margin: 5px;
   border-radius: 15px;
 }
-
-.bestslide {
-  width: 300px;
-  height: 500px;
-  display: flex;
-  .bestslideImg {
-    width: 300px;
+.bestslideBox {
+  width: 100vw;
+  overflow: hidden;
+  .bestslide {
+    width: 300vw;
+    height: 500px;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    transition: transform 2s;
+    .bestslideImg {
+      width: 300px;
+    }
   }
 }
