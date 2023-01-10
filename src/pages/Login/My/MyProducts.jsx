@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function MyProducts({ name, price, image }) {
   return (
-    <Link to="/">
+    <Link>
       <div className="history-product">
         <img
           className="history-product-img"
@@ -24,4 +24,3 @@ export default function MyProducts({ name, price, image }) {
     </Link>
   );
 }
-//<Link to={`/productDetail/${product.id}`}>
