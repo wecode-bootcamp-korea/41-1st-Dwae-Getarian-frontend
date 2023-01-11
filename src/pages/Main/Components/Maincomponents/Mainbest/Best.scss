@@ -5,12 +5,13 @@
   justify-content: center;
   margin: 0;
   .menuBox {
-    width: 70%;
+    width: 73%;
+    object-fit: cover;
     display: flex;
     justify-content: space-around;
-
+    gap: 25px;
+    overflow: hidden;
     .best {
-      //   border: 1px solid black;
       width: 18%;
       margin: 1% 0;
 
@@ -18,11 +19,16 @@
         width: 100%;
       }
       .bestMenu {
-        width: 100%;
-      }
-      .menuuBoxName {
-      }
-      .menuBoxPrice {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+
+        transition: all 0.2s linear;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }

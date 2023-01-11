@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Timer from './Timer';
 import './MainEvent.scss';
 export default function MainEvent() {
@@ -7,33 +8,31 @@ export default function MainEvent() {
   const duration = () => {
     setTimer(timer * 24 * 60 * 60 * 1000);
   };
-  console.log(timer);
+
   return (
     <div className="collection">
       <div className="eventBox">
-        <div className="todayDiscount">
+        <Link className="todayDiscount" to="">
           <div className="todayDiscountTitle">
-            <span>오늘만 이 가격</span>
+            <span>오늘의 메뉴</span>
             <Timer duration={duration} />
           </div>
-
-          <div className="discountPriceText">
-            <p>시그니처 콩고기 돈까스 세트</p>
-            <p>20000원</p>
-          </div>
-        </div>
-
+        </Link>
         <div className="attendanceStory">
-          <div className="checkAttendence">
-            <div className="attendencePeriodBox">
-              <span className="month">GO TO MYPAGE</span>
+          <Link to="/mypage">
+            <div className="checkAttendence">
+              <div className="attendencePeriodBox">
+                <span className="month">GO TO MYPAGE</span>
+              </div>
             </div>
-          </div>
-          <div className="brandStory">
-            <div className="storyFont">
-              <span>BRAND</span>
+          </Link>
+          <Link to="/brand">
+            <div className="brandStory">
+              <div className="storyFont">
+                <span>BRAND</span>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 .recipe {
   padding: 40px;
-
+  z-index: 1;
   .recipeTitle {
     padding: 20px;
     .todayTitle {
       font-size: 28px;
+      font-weight: 500;
     }
     .recipeExplain {
       margin-top: 5px;
@@ -25,7 +26,7 @@
       padding: 10px;
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url(https://images.unsplash.com/photo-1591910485006-6a0205c6df8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80);
+      background-image: url(https://images.unsplash.com/photo-1617033541006-f066da39fd4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGJyZWFkJTIwd2l0aCUyMGF2b2NhZG98ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
     }
 
     .box-wrap {
@@ -44,6 +45,12 @@
       cursor: pointer;
       overflow: hidden;
       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      img {
+        object-fit: cover;
+        width: 400px;
+        height: 300px;
+        z-index: 1;
+      }
     }
     .box img {
       width: 100%;
