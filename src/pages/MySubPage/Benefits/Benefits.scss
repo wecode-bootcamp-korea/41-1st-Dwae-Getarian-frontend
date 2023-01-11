@@ -5,6 +5,25 @@
   justify-content: center;
   flex-direction: column;
 
+  .item-list-wrapper {
+    width: 1200px;
+    .item-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgb(223, 223, 223);
+      .item {
+        font-size: 16px;
+        padding: 14px 40px 14px;
+        margin: 0px 14px;
+        .link-item {
+          color: #333;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
   .tab-box {
     width: 1200px;
     border-bottom: 1px solid #e6e6e6;

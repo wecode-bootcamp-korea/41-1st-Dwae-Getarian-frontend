@@ -1,10 +1,36 @@
 import React from 'react';
 import './Benefits.scss';
 import { RiCoupon2Line } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export default function Benefits() {
   return (
     <div className="benefits">
+      <nav className="item-list-wrapper">
+        <ul className="item-list">
+          <li className="item">
+            <Link className="link-item" to="/orderReservation">
+              주문/예약관리
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/activityList">
+              활동내역
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/benefits">
+              나의 혜택
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">정보관리</Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">고객센터</Link>
+          </li>
+        </ul>
+      </nav>
       <div className="tab-box">
         <div className="benefits-info">
           {BENEFITS_NAV.map(info => (
@@ -67,8 +93,9 @@ export default function Benefits() {
             <div className="bottom-consent">
               <p className="contentbox-title">수신 동의 변경 방법</p>
               <p className="content-list-bottom">
-                오설록 홈페이지 > 마이페이지 > 회원정보 관리(로그인) >
-                [선택]광고성 정보 수신 동의 선택 확인
+                {
+                  '오설록 홈페이지 > 마이페이지 > 회원정보 관리(로그인) > [선택]광고성 정보 수신 동의 선택 확인'
+                }
               </p>
               <button type="button" className="bottom-consent-btn">
                 바로가기
