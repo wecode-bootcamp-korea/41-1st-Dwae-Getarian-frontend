@@ -19,7 +19,6 @@
     position: relative;
 
     .header-box-login-title {
-      @include font-main;
       display: block;
       width: 520px;
       height: 54px;
@@ -44,7 +43,6 @@
 }
 
 .container-signin {
-  @include font-main;
   width: 520px;
   height: 679.797px;
   margin: 0 auto;

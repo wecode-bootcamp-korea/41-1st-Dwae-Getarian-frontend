@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TfiClose } from 'react-icons/tfi';
 import './SignUp.scss';
 import GenderOption from './GenderOption';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [form, setForm] = useState({
@@ -13,11 +14,11 @@ export default function SignUp() {
     mobile_number: '',
   });
 
+  const navigate = useNavigate();
+
   const [whatGender, setGender] = useState(0);
 
   const [startDate, setState] = useState('');
-
-  const [disable, setDisabled] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -46,8 +47,8 @@ export default function SignUp() {
       }),
     })
       .then(response => response.json())
-      .then(data => {
-        console.log(data);
+      .then(() => {
+        navigate('/main/login');
       });
   };
 
@@ -58,7 +59,11 @@ export default function SignUp() {
           <div className="header-box-inner">
             <h1 className="header-box-login-title">회원가입</h1>
             <button type="button" className="header-box-btn">
-              <TfiClose />
+              <TfiClose
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
             </button>
           </div>
         </div>
@@ -120,16 +125,17 @@ export default function SignUp() {
             className="signin-birth"
             onChange={e => setState(e.target.value)}
           />
-          <div className="signin-btn-box">
-            <button
-              type="button"
-              className="signin-btn"
-              onClick={handleClick}
-              disabled={true}
-            >
-              회원가입
-            </button>
-          </div>
+          <Link to="/main/login">
+            <div className="signin-btn-box">
+              <button
+                type="button"
+                className="signin-btn"
+                onClick={handleClick}
+              >
+                회원가입
+              </button>
+            </div>
+          </Link>
         </form>
       </section>
     </>
