@@ -7,7 +7,7 @@ export default function Best() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/product')
+    fetch('http://10.58.52.95:3000/product')
       .then(result => result.json())
       .then(data => setItems(data));
   }, []);
@@ -30,7 +30,11 @@ export default function Best() {
 
         {items.map(monster => {
           return (
-            <Link key={monster.id} to={`/detail/${monster.id}`}>
+            <Link
+              className="linkStyle"
+              key={monster.id}
+              to={`/detail/${monster.id}`}
+            >
               <BestProduct monster={monster} key={monster.id} />
             </Link>
           );
