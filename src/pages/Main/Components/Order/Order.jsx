@@ -19,7 +19,7 @@ export default function Order() {
       .then(result => result.json())
       .then(data => setCartItems(data));
   }, []);
-  console.log(cartItems);
+
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.52.95:3001/order/items/4', {
@@ -55,11 +55,9 @@ export default function Order() {
         ],
       }),
     })
-      //요청
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', data.accessToken);
-        console.log(data);
       });
   };
 
