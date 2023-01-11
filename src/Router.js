@@ -12,6 +12,7 @@ import Order from './pages/Main/Components/Order/Order';
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 // import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: 'main/login',
         element: <Login />,
+      },
+      {
+        path: 'main/signup',
+        element: <SignUp />,
       },
     ],
     errorElement: <NotFound />,

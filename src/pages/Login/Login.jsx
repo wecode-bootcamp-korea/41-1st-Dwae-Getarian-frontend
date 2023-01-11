@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [isDisable, setDisabled] = useState(true);
@@ -12,7 +12,9 @@ export default function Login() {
     password: '',
   });
 
-  const pwCondition = /^[A-Za-z0-9]{8,20}$/;
+  const pwCondition = /^[0-9a-z]+$/;
+  // const pwCondition = /^[A-Za-z0-9]{8,20}$/;
+  // const idCondition = /^[0-9a-zA-Z]$/;
   const idCondition =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
@@ -64,7 +66,11 @@ export default function Login() {
               className="header-box-btn"
               ap-click-area="로그인"
             >
-              <TfiClose />
+              <TfiClose
+                onClick={() => {
+                  navigation('/');
+                }}
+              />
             </button>
           </div>
         </div>
@@ -98,16 +104,20 @@ export default function Login() {
             <img src="/images/checked.png" className="save-id-pic" />
             <span className="save-id-li">아이디 저장</span>
           </div>
-          <div className="login-btn-box">
-            <button
-              type="button"
-              className="login-btn"
-              onClick={handleClick}
-              disabled={isDisable}
-            >
-              로그인
-            </button>
-          </div>
+          <Link to="/">
+            <div>
+              <div className="login-btn-box">
+                <button
+                  type="text"
+                  className="login-btn"
+                  onClick={handleClick}
+                  disabled={isDisable}
+                >
+                  로그인
+                </button>
+              </div>
+            </div>
+          </Link>
         </form>
         <hr />
         <ul className="login-search-box">
@@ -130,7 +140,7 @@ export default function Login() {
         <button
           className="is-member"
           onClick={() => {
-            navigation('/');
+            navigation('/main/signup');
           }}
         >
           <span className="is-member-text">아직 회원이 아니세요?</span>
