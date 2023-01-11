@@ -51,10 +51,14 @@
     color: rgb(98, 161, 10);
   }
   .content {
-    border: 1px solid rgb(205, 207, 205);
+    // border: 1px solid rgb(205, 207, 205);
     width: 100%;
-    padding: 30px 50px;
+    padding: 30px 0;
     margin-bottom: 30px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 .fixed {

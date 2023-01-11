@@ -7,8 +7,10 @@
   }
   .pay {
     border: 1px solid #2d6806;
+    border-bottom: 1px solid #dbdbdb;
     border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid rgb(134, 134, 134);
+    margin: 0;
+
     li {
       display: flex;
       justify-content: space-between;
@@ -22,6 +24,7 @@
   .total {
     border-left: 1px solid #2d6806;
     border-right: 1px solid #2d6806;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     li {
@@ -39,5 +42,6 @@
     padding: 15px;
     width: 100%;
     border-radius: 0 0 7px 7px;
+    box-sizing: border-box;
   }
 }
