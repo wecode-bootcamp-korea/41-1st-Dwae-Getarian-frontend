@@ -8,5 +8,4 @@ export default function Product() {
       <ProductDetail />
     </div>
   );
-
 }
