@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductNav.scss';
 
-export default function ProductNav() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+export default function ProductNav({
+  product,
+  setProduct,
+  bubble,
+  boldItem,
+  cart,
+  setCart,
+}) {
   return (
     <ul className="productNav">
       Product
-      <li className="productNavList hover1" onMouseOver={toggleMenu}>
+      <li className="productNavList hover1">
         {' '}
-        <Link to="/main/productFood" className="productNavListA">
+        <Link to="/product" className="productNavListA">
           음식
         </Link>
         <ul className="vegetarianType">
-          <li>Vegan</li>
-          <li>Lacto</li>
-          <li>Ovo</li>
-          <li>Lacto Ovo</li>
-          <li>Pollo</li>
-          <li>Pesco</li>
-          <li>Flexitarian</li>
+          {boldItem.map(item => {
+            return <li key={item.id}>{item.name}</li>;
+          })}
         </ul>
       </li>
       <li className="productNavList hover2">
@@ -31,9 +29,6 @@ export default function ProductNav() {
         <Link to="/productMealkit" className="productNavListA">
           밀키트
         </Link>
-        <ul className="mealkit">
-          <li>MealKit</li>
-        </ul>
       </li>
     </ul>
   );

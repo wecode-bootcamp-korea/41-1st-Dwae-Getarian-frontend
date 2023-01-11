@@ -1,0 +1,118 @@
+.recipe {
+  padding: 40px;
+  z-index: 1;
+  .recipeTitle {
+    padding: 20px;
+    .todayTitle {
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .recipeExplain {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
+  .recipeImgBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 25vw;
+    width: 100%;
+    .recipeImg {
+      display: flex;
+      margin-left: 2vw;
+      width: 20vw;
+      height: 100%;
+      padding: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(https://images.unsplash.com/photo-1617033541006-f066da39fd4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGJyZWFkJTIwd2l0aCUyMGF2b2NhZG98ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+    }
+
+    .box-wrap {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box {
+      position: relative;
+      background: #000;
+      width: 400px;
+      height: 300px;
+      border: 7px solid #283593;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      img {
+        object-fit: cover;
+        width: 400px;
+        height: 300px;
+        z-index: 1;
+      }
+    }
+    .box img {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    .box:before {
+      content: '';
+      background: #fff;
+      width: 0px;
+      height: 1px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      transition: all 0.35s ease;
+    }
+    .box:after {
+      content: '';
+      background: #fff;
+      width: 1px;
+      height: 0px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      transition: all 0.35s ease;
+    }
+
+    .box .info {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: #fff;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    .box .info h3 {
+      font-size: 24px;
+      line-height: 40px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-bottom: 3px;
+    }
+    .box .info p {
+      font-size: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .box:hover .info {
+      opacity: 1;
+    }
+    .box:hover img {
+      opacity: 0.2;
+    }
+    .box:hover:before {
+      width: 60px;
+    }
+    .box:hover:after {
+      height: 60px;
+    }
+  }
+}
