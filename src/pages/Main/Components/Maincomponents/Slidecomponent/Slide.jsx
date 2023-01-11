@@ -36,7 +36,7 @@ function Slide({ slides }) {
       >
         {slides.map((slideImage, index) => (
           <div className="slide" key={index}>
-            <img src={slideImage.image} alt="" />
+            <img className="sliderimg" src={slideImage.image} alt="" />
           </div>
         ))}
       </div>

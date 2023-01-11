@@ -14,7 +14,11 @@
     .best {
       width: 18%;
       margin: 1% 0;
-
+      .font {
+        width: 100px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
       img {
         width: 100%;
       }

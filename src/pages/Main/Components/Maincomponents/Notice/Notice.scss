@@ -12,10 +12,11 @@
     width: 100px;
   }
   .alertContent {
-    font-size: 24px;
-    height: 23px;
+    font-size: 18px;
+    height: 16px;
     overflow: hidden;
     transition: transform 2s;
+    color: black;
     p {
       transition: all 500ms;
     }
