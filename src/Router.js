@@ -10,11 +10,7 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
-<<<<<<< HEAD
-import Order from './pages/Main/Components/Order/Order';
 import Best from './components/Best/Best';
-=======
->>>>>>> master
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import My from './pages/Login/My/My';
@@ -54,13 +50,8 @@ const router = createBrowserRouter([
         element: <Brand />,
       },
       {
-<<<<<<< HEAD
         path: 'main/best',
         element: <Best />,
-=======
-        path: '/mypage',
-        element: <My />,
->>>>>>> master
       },
     ],
     errorElement: <NotFound />,

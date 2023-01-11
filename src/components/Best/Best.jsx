@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BestProduct from './BestProduct';
 import './Best.scss';
+import Footer from '../Footer/Footer';
 
 export default function Best() {
   const [items, setItems] = useState([]);
@@ -40,6 +41,7 @@ export default function Best() {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }
