@@ -8,7 +8,7 @@ export default function MyOhDelivery() {
   useEffect(() => {
     fetch('/data/my_reservation.json')
       .then(result => result.json())
-      .then(data => setReservation(data));
+      .then(data => setReservation(data.data[0]));
   }, []);
 
   return (
@@ -18,9 +18,7 @@ export default function MyOhDelivery() {
           {ORDER_RESERVATION_LIST.map(item => (
             <li className="my-order-step-list" key={item.id}>
               <p className="my-order-step-list-number">
-                {/* {item.key === reservation.key ? true : false} */}
-                {console.log(reservation.key)}
-                {/* {console.log(item.key === reservation.key ? true : false)} */}
+                {reservation[item.key]}
               </p>
               <p className="my-order-step-list-text">{item.title}</p>
             </li>
