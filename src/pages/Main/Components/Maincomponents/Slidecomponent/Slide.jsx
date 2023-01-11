@@ -29,33 +29,17 @@ function Slide({ slides }) {
   }, [index]);
 
   return (
-    <div className="slideshow">
+    <div className="slideshowImg">
       <div
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {slides.map((slideImage, index) => (
           <div className="slide" key={index}>
-            <img
-              key={index}
-              className="sliderimg"
-              src={slideImage.image}
-              alt=""
-            />
+            <img className="sliderimg" src={slideImage.image} alt="" />
           </div>
         ))}
       </div>
-      {/* <div className="slideshowDots">
-        {slides.map((_, idx) => (
-          <div
-            key={idx}
-            className={`slideshowDot${index === idx ? ' active' : ''}`}
-            onClick={() => {
-              setIndex(idx);
-            }}
-          />
-        ))}
-      </div> */}
     </div>
   );
 }

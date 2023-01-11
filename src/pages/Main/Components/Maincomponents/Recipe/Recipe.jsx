@@ -9,7 +9,7 @@ export default function Recipe({ slides }) {
       </div>
       <div className="recipeImgBox">
         <div class="box-wrap">
-          <Link to="/detail/1">
+          <Link to="/product/detail/1">
             <div class="box">
               <div class="img">
                 <img
@@ -24,7 +24,7 @@ export default function Recipe({ slides }) {
           </Link>
         </div>
         <div class="box-wrap">
-          <Link to="/detail/2">
+          <Link to="/product/detail/2">
             <div class="box">
               <div class="img">
                 <img
@@ -39,7 +39,7 @@ export default function Recipe({ slides }) {
           </Link>
         </div>
         <div class="box-wrap">
-          <Link to="detail/36">
+          <Link to="/product/detail/36">
             <div class="box">
               <div class="img">
                 <img

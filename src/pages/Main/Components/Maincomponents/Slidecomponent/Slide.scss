@@ -1,20 +1,17 @@
-.slideshow {
-  margin: 0 auto;
-  overflow: hidden;
+.slideshowImg {
+  margin: 0;
 
   .slideshowSlider {
     white-space: nowrap;
-    width: auto;
+
     .slide {
       display: inline-block;
       background-size: cover;
       width: 100%;
       .sliderimg {
-        height: 700px;
+        height: 600px;
+        width: 100%;
       }
     }
   }
-  // .slideshowDots {
-  //   text-align: center;
-  // }
 }
