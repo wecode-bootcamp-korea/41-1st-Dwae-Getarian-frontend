@@ -1,0 +1,58 @@
+.cartContainer {
+  font-size: 12px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 100px;
+  .cart {
+    width: 100%;
+    margin-right: 30px;
+    h1 {
+      font-size: 23px;
+      margin: 30px 0;
+    }
+    .cartBox {
+      .cartBoxTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        .cartBoxCheck {
+          accent-color: #2d6806;
+        }
+        .cartBoxDelete {
+          button {
+            border: none;
+            font-size: 12px;
+            background-color: #fff;
+            color: rgb(168, 168, 168);
+          }
+        }
+      }
+    }
+    .cartBtn {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      padding-top: 30px;
+      button {
+        font-size: 12px;
+        background-color: #fff;
+        padding: 10px 20px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+      .selectBtn {
+        margin-right: 10px;
+      }
+      .totalBtn {
+        background-color: #2d6806;
+        color: #fff;
+      }
+    }
+  }
+  .payment {
+    margin-top: 40px;
+  }
+}
