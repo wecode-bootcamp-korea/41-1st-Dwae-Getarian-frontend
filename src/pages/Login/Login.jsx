@@ -39,9 +39,8 @@ export default function Login() {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.accessToken) {
-          localStorage.setItem('token', data.accessToken);
-        }
+        localStorage.setItem('token', data.jwtToken);
+
         navigation('/');
       });
     e.preventDefault();
