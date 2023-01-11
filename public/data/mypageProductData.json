@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "비건 베지 버거",
+    "price": "10,000",
+    "image": "https://images.unsplash.com/photo-1626414375188-805f321bd821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+  },
+  {
+    "id": 2,
+    "name": "비건 베지 파스타",
+    "price": "20,000",
+    "image": "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1694&q=80"
+  },
+  {
+    "id": 3,
+    "name": "신선 야채 랩",
+    "price": "12,000",
+    "image": "https://images.unsplash.com/photo-1569692062823-f1196218f0a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2786&q=80"
+  },
+  {
+    "id": 4,
+    "name": "비건 베지 버거",
+    "price": "10,000",
+    "image": "https://images.unsplash.com/photo-1626414375188-805f321bd821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+  },
+  {
+    "id": 5,
+    "name": "비건 토푸 커리",
+    "price": "19,000",
+    "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&q=80"
+  },
+  {
+    "id": 6,
+    "name": "비건 베지 버거",
+    "price": "10,000",
+    "image": "https://images.unsplash.com/photo-1626414375188-805f321bd821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+  }
+]

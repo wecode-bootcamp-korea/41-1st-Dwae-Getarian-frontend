@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './ProductListImg.scss';
 import { CgShoppingCart } from 'react-icons/cg';
-import Modal from '../../../../../modal/Modal';
 import { Link } from 'react-router-dom';
 
 export default function ProductListImg({ product, setProduct, cart, setCart }) {
