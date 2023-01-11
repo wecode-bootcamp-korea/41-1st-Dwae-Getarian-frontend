@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const [isDisable, setDisabled] = useState(true);
   const navigation = useNavigate();
   const [form, setForm] = useState({
     id: '',
     password: '',
   });
 
-  const pwCondition = /^[0-9a-z]+$/;
-  // const pwCondition = /^[A-Za-z0-9]{8,20}$/;
-  // const idCondition = /^[0-9a-zA-Z]$/;
+  const pwCondition = /^[A-Za-z0-9]{6,20}$/;
   const idCondition =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
@@ -23,20 +20,14 @@ export default function Login() {
   const pwPwValid = pwCondition.test(form.password);
   console.log(pwPwValid);
 
-  const formValid = () => {
-    if (!idIdValid || form.password.length === 0) {
-      setDisabled(false);
-    }
-  };
-
   const onLogin = e => {
     const { name, value } = e.target;
-    console.log(e.target.value);
     setForm({ ...form, [name]: value });
+    console.log(e.target.value);
   };
 
   const handleClick = e => {
-    fetch('http://10.58.52.134:3000/user/login', {
+    fetch('http://10.58.52.95:3000/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -51,6 +42,7 @@ export default function Login() {
         if (data.accessToken) {
           localStorage.setItem('token', data.accessToken);
         }
+        navigation('/');
       });
     e.preventDefault();
   };
@@ -90,7 +82,7 @@ export default function Login() {
             value={form.id}
             onChange={onLogin}
           />
-          {!idIdValid && '아이디는 @를 포함해야 합니다.'}
+          {!idIdValid && '아이디는 @, . 을 포함해야합니다.'}
           <input
             type="password"
             className="login-pw"
@@ -99,25 +91,21 @@ export default function Login() {
             value={form.password}
             onChange={onLogin}
           />
-          {!pwPwValid && '비밀번호는 영문, 숫자 조합 8글자 이상입니다.'}
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 4글자 이상입니다.'}
           <div className="save-id">
             <img src="/images/checked.png" className="save-id-pic" />
             <span className="save-id-li">아이디 저장</span>
           </div>
-          <Link to="/">
-            <div>
-              <div className="login-btn-box">
-                <button
-                  type="text"
-                  className="login-btn"
-                  onClick={handleClick}
-                  disabled={isDisable}
-                >
-                  로그인
-                </button>
-              </div>
-            </div>
-          </Link>
+          <div className="login-btn-box">
+            <button
+              type="text"
+              className="login-btn"
+              onClick={handleClick}
+              disabled={!(idIdValid && pwPwValid)}
+            >
+              로그인
+            </button>
+          </div>
         </form>
         <hr />
         <ul className="login-search-box">
