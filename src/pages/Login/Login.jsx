@@ -1,9 +1,8 @@
 import React from 'react';
 import '../Login/Login.scss';
-import { TfiClose, TfiGallery } from 'react-icons/tfi';
+import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import stylelint from 'stylelint';
 
 export default function Login() {
   const [isDisable, setDisabled] = useState(true);
