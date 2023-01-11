@@ -2,14 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductNav.scss';
 
-export default function ProductNav({
-  product,
-  setProduct,
-  bubble,
-  boldItem,
-  cart,
-  setCart,
-}) {
+export default function ProductNav({ categoryNumber }) {
   return (
     <ul className="productNav">
       Product
@@ -19,9 +12,12 @@ export default function ProductNav({
           음식
         </Link>
         <ul className="vegetarianType">
-          {boldItem.map(item => {
-            return <li key={item.id}>{item.name}</li>;
-          })}
+          <ul>
+            <li onClick={() => categoryNumber('vegan')}>VEGAN</li>
+            <li onClick={() => categoryNumber('lacto')}>LOCTO</li>
+            <li onClick={() => categoryNumber('ovo')}>OVO</li>
+            <li onClick={() => categoryNumber('lacto_ovo')}>LACTO_OVO</li>
+          </ul>
         </ul>
       </li>
       <li className="productNavList hover2">

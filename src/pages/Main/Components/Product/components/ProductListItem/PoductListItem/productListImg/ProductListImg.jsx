@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 export default function ProductListImg({ product, setProduct, cart, setCart }) {
   return (
     <div className="productListItemsImg">
-      <Link to={`/productDetail/${product.id}`}>
+      <Link to={`/product/detail/${product.id}`}>
         <img
-          src={product.img} //thumbnail_image
-          alt="img"
+          src={product.image} //thumbnail_image
+          alt="image"
         />
       </Link>
       <CgShoppingCart className="cartIcon" />
