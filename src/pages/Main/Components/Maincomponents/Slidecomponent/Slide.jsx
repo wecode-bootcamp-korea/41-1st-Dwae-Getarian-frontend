@@ -36,11 +36,16 @@ function Slide({ slides }) {
       >
         {slides.map((slideImage, index) => (
           <div className="slide" key={index}>
-            <img className="sliderimg" src={slideImage.image} alt="" />
+            <img
+              key={index}
+              className="sliderimg"
+              src={slideImage.image}
+              alt=""
+            />
           </div>
         ))}
       </div>
-      <div className="slideshowDots">
+      {/* <div className="slideshowDots">
         {slides.map((_, idx) => (
           <div
             key={idx}
@@ -50,7 +55,7 @@ function Slide({ slides }) {
             }}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

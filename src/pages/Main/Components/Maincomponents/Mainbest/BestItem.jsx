@@ -8,7 +8,7 @@ export default function BestItem({ item }) {
         <img className="bestMenu" src={item.image} alt="베스트메뉴" />
         <div className="font">
           <p className="menuuBoxName">{item.name}</p>
-          <p className="menuBoxPrice">{item.price}원</p>
+          <p className="menuBoxPrice">{parseInt(item.price)}원</p>
         </div>
       </div>
     </Link>

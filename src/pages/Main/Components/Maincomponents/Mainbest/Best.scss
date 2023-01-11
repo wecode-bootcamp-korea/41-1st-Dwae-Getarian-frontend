@@ -15,9 +15,17 @@
       width: 18%;
       margin: 1% 0;
       .font {
-        width: 100px;
+        width: 180px;
         margin-top: 10px;
         margin-left: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        .menuuBoxName {
+          margin-bottom: 5px;
+        }
+        .menuBoxPrice {
+          margin-left: 20px;
+        }
       }
       img {
         width: 100%;
