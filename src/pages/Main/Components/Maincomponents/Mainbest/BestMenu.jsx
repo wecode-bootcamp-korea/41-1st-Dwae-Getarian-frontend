@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Best.scss';
 export default function BestMenu() {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch('http://10.58.52.95:3001/product')
+      .then(result => result.json())
+      .then(data => setItems(data));
+  }, []);
   return (
     <div className="menuBoxBox">
       <div className="menuBox">

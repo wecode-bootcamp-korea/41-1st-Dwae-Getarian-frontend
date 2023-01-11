@@ -21,17 +21,6 @@ export default function Nav() {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <div>
-      <Link to="/">Main</Link>
-
-      <Link to="/main/product">Products</Link>
-      <Link to="/main/recipe">Recipe</Link>
-      <Link to="/main/review">Review</Link>
-      <Link to="/main/brand">Brand</Link>
-      <Link to="/main/login">login</Link>
-      <Link to="/main/signup">signup</Link>
-=======
     <div className="nav-header">
       <div className={scrollPosition < 200 ? 'nav-original' : 'nav-changed'}>
         <div className="vacant-container">
@@ -125,7 +114,6 @@ export default function Nav() {
           </div>
         </div>
       </div>
->>>>>>> master
     </div>
   );
 }
