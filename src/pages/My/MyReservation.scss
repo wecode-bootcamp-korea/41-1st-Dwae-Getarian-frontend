@@ -44,43 +44,6 @@
   }
 }
 
-.my-order-step {
-  height: 126.5px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-  .my-order-list-box {
-    display: flex;
-    flex-direction: row;
-
-    .my-order-step-list {
-      font-size: 24px;
-      font-weight: 500;
-      display: flex;
-      flex-direction: column;
-      font-size: 24px;
-      font-weight: 500;
-      position: relative;
-      margin-right: 20px;
-
-      .my-order-step-list-text {
-        margin-top: 20px;
-      }
-    }
-    .my-order-step-list::after {
-      content: '>';
-      position: absolute;
-      right: -18px;
-    }
-
-    .my-order-step-list:last-child::after {
-      content: none;
-    }
-  }
-}
-
 .my-order-list {
   height: 179px;
 
