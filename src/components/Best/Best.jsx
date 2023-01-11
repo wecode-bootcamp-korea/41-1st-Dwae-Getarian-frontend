@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import BestProduct from './BestProduct';
 import './Best.scss';
 
@@ -28,7 +29,11 @@ export default function Best() {
         <p className="LechouBestTitle">Lechou BEST</p>
 
         {items.map(monster => {
-          return <BestProduct monster={monster} key={monster.id} />;
+          return (
+            <Link key={monster.id} to={`/detail/${monster.id}`}>
+              <BestProduct monster={monster} key={monster.id} />
+            </Link>
+          );
         })}
       </div>
     </div>
