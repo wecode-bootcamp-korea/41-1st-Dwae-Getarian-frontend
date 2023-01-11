@@ -1,0 +1,71 @@
+.collection {
+  background-color: #f6f6f6;
+
+  .eventBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    .todayDiscount {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      background-image: url('https://images.unsplash.com/photo-1609710219171-f86ae613c8d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx2aXN1YWwtc2VhcmNofDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      object-fit: fill;
+      .todayDiscountTitle {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px;
+        font-size: 26px;
+        font-weight: 500;
+        color: white;
+      }
+      .discountPrice {
+        margin-left: 0;
+        font-size: 40px;
+        font-weight: 500;
+      }
+    }
+    .attendanceStory {
+      margin-left: 20px;
+      .checkAttendence {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: url('https://images.unsplash.com/photo-1541894323-8b2bf33b83dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+            50%,
+          50% no-repeat;
+        height: 273.734px;
+        width: 579.953px;
+        font-size: 500;
+        color: green;
+        .attendencePeriodBox {
+          display: flex;
+          flex-direction: column;
+          margin-left: px;
+          .month {
+            font-size: 26px;
+          }
+        }
+      }
+      .brandStory {
+        height: 273.734px;
+        width: 579.953px;
+        margin-top: 21.5px;
+        background-color: yellow;
+        background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .storyFont {
+          color: white;
+          font-size: 36px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

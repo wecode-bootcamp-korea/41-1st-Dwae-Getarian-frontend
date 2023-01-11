@@ -7,11 +7,14 @@ export default function ProductCompo({
   name,
   title,
   content,
-  quantity,
-  heart,
   bubble,
   dis,
-  img,
+  boldList,
+  convertPrice,
+  product,
+  setProduct,
+  cart,
+  setCart,
 }) {
   return (
     <div>
@@ -21,16 +24,26 @@ export default function ProductCompo({
         </div>
         <div className="productCompoDisplay">
           <div className="productCompoNav">
-            <ProductNav />
+            <ProductNav
+              product={product}
+              setProduct={setProduct}
+              cart={cart}
+              setCart={setCart}
+              bubble={bubble}
+              boldItem={boldList}
+            />
           </div>
           <div className="productCompoList">
             <ProductList
               title={title}
-              quantity={quantity}
-              heart={heart}
               bubble={bubble}
               dis={dis}
-              img={img}
+              boldItem={boldList}
+              convertPrice={convertPrice}
+              product={product}
+              setProduct={setProduct}
+              cart={cart}
+              setCart={setCart}
             />
           </div>
         </div>
