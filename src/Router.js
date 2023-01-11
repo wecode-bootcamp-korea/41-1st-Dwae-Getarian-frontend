@@ -12,6 +12,7 @@ import NotFound from './components/NotFound';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
+import My from './pages/Login/My/My';
 // import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: 'main/brand',
         element: <Brand />,
+      },
+      {
+        path: '/mypage',
+        element: <My />,
       },
     ],
     errorElement: <NotFound />,
