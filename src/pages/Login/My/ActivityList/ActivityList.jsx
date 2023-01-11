@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function ActivityList() {
   return (
     <div className="activity-list">
-      {/* <nav className="item-list-wrapper">
+      <nav className="item-list-wrapper">
         <ul className="item-list">
           <li className="item">
             <Link className="link-item" to="/orderReservation">
@@ -30,7 +30,7 @@ export default function ActivityList() {
             <Link className="link-item">고객센터</Link>
           </li>
         </ul>
-      </nav> */}
+      </nav>
       <section className="pick-wrapper">
         <div className="pick-box">
           <div className="image-box">
