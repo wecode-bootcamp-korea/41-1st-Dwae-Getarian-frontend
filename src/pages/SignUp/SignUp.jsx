@@ -11,14 +11,21 @@ export default function SignUp() {
     email: '',
     password: '',
     address: '',
+    postcode: '',
     mobile_number: '',
   });
+
+  console.log(form);
 
   const navigate = useNavigate();
 
   const [whatGender, setGender] = useState(0);
 
+  console.log(whatGender);
+
   const [startDate, setState] = useState('');
+
+  console.log(startDate);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -30,7 +37,7 @@ export default function SignUp() {
   };
 
   const handleClick = () => {
-    fetch('http://10.58.52.134:3000/user/signup', {
+    fetch('http://10.58.52.95:3000/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -40,7 +47,7 @@ export default function SignUp() {
         email: form.email,
         password: form.password,
         address: form.address,
-        postcode: '',
+        postcode: form.postcode,
         phone_number: form.mobile_number,
         gender_id: whatGender,
         date_of_birth: startDate,
