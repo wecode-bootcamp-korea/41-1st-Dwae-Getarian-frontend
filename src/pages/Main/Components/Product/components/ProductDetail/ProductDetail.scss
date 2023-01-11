@@ -1,0 +1,127 @@
+.productDetailPageTop {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+
+  .productDetailLeft {
+    width: 40%;
+    margin-right: 50px;
+    img {
+      width: 100%;
+    }
+  }
+  .productDetailRight {
+    width: 30%;
+    .productDetailCategory {
+      font-size: 13px;
+      color: rgb(162, 171, 162);
+    }
+    .productDetailName {
+      font-size: 25px;
+      margin: 10px 0;
+    }
+    .productDetailContent {
+      margin: 20px 0;
+    }
+    .productDetailOthers {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+      svg {
+        margin: 0 5px 10px 0;
+        color: rgb(208, 208, 208);
+        font-size: 20px;
+      }
+      .productDetailPrice {
+        span {
+          font-weight: bold;
+        }
+      }
+      border-bottom: 1px solid rgb(205, 207, 205);
+      margin-bottom: 10px;
+    }
+    .productDetailSelect {
+      outline: none;
+      border: 1px solid rgb(205, 207, 205);
+      padding: 6px;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .productDetailPurchase {
+      background-color: #fff8ed;
+      font-size: 13px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      height: 130px;
+      border: 1px solid rgb(231, 231, 231);
+      .productDetailQuatity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        font-size: 14px;
+
+        .productDetailCount {
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+        }
+      }
+
+      .productDetaileDelivery {
+        padding: 10px;
+        background-color: #fff;
+        margin: 10px;
+        margin-bottom: 0;
+        border: 1px solid rgb(205, 207, 205);
+      }
+    }
+    .productDetailSum {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      p {
+        color: #2d6806;
+        font-size: 18px;
+      }
+
+      .productDetailSumTotalPrice {
+        span {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+    }
+    .productDetailButtons {
+      width: 100%;
+
+      button {
+        padding: 13px 10px;
+        border: none;
+      }
+      .productDetailGift {
+        width: 24%;
+        margin-right: 1%;
+        background-color: #fff;
+        border: 1px solid #000;
+      }
+      .productDetailCart {
+        width: 30%;
+        color: #fff;
+        background-color: #000;
+      }
+      .productDetailBuy {
+        width: 45%;
+        color: #fff;
+        background-color: #2d6806;
+      }
+    }
+  }
+}
+button {
+  cursor: pointer;
+}

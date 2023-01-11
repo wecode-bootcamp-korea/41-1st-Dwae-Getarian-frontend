@@ -1,11 +1,37 @@
 import React from 'react';
 import './MyReservation.scss';
 import { BsExclamationCircle } from 'react-icons/bs';
-import MyOhDelivery from './components/MyOhDelivery';
+import MyOhDelivery from './MyOhDelivery';
+import { Link } from 'react-router-dom';
 
 export default function OrderReservation() {
   return (
     <div className="order-reservation">
+      <nav className="item-list-wrapper">
+        <ul className="item-list">
+          <li className="item">
+            <Link className="link-item" to="/orderReservation">
+              주문/예약관리
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/activityList">
+              활동내역
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/benefits">
+              나의 혜택
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">정보관리</Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">고객센터</Link>
+          </li>
+        </ul>
+      </nav>
       <div className="my-term-sort-box">
         <section className="my-term-sort">
           <button type="button" className="month-search btn-first">

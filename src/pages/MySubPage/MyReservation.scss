@@ -1,6 +1,27 @@
 .order-reservation {
-  width: 100%;
   font-family: 'Noto Sans', sans-serif;
+
+  .item-list-wrapper {
+    // width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .item-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgb(223, 223, 223);
+      .item {
+        font-size: 16px;
+        padding: 14px 40px 14px;
+        margin: 0px 14px;
+        .link-item {
+          color: #333;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 
 .my-term-sort-box {
