@@ -128,7 +128,7 @@ export default function Order() {
               className="cartBuy"
             />
             <div className="cartBuyContent">
-              <span>상품이름</span>
+              <span>{}상품이름</span>
               <span>가격/개수</span>
             </div>
           </div>
