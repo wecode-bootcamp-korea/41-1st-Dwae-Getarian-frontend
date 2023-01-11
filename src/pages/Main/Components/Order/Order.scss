@@ -80,12 +80,15 @@
   }
   .cartBox {
     padding: 24px 20px 24px;
+    width: 100%;
     border-top: 1px solid #e6e6e6;
+
     .cartBoxTitle {
       display: flex;
       justify-content: space-between;
     }
     .cartBoxDetail {
+      overflow: auto;
       .cartBuy {
         width: 96px;
         height: 107px;

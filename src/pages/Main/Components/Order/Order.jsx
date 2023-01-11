@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import Payment from '../payment/Payment';
+import OrderPayment from '../payment/OrderPayment';
 import './Order.scss';
+import OrderedItems from './OrderedItems';
 export default function Order() {
   const [form, setForm] = useState({
     address: '',
     phone_number: '',
   });
-
+  const [cartItems, setCartItems] = useState({});
   const onChange = e => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
-
+  useEffect(() => {
+    fetch('http://10.58.52.95:3001/cart/items')
+      .then(result => result.json())
+      .then(data => setCartItems(data));
+  }, []);
+  console.log(cartItems);
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.52.95:3001/order/items/4', {
@@ -122,6 +128,9 @@ export default function Order() {
           </div>
 
           <div className="cartBoxDetail">
+            {cartItems.map(items => {
+              <OrderedItems items={items} />;
+            })}
             <img
               alt="chosen"
               src="https://www.osulloc.com/upload/kr/ko/adminImage/NP/YV/304_20200513135231693GB.png?quality=80"
@@ -135,7 +144,7 @@ export default function Order() {
         </div>
       </div>
       <div className="payment">
-        <Payment />
+        <OrderPayment />
       </div>
     </div>
   );
