@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
 import Main from './pages/Main/Main';
@@ -10,8 +9,11 @@ import Brand from './pages/Main/Components/Brand/Brand';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import NotFound from './components/NotFound';
-import Footer from './pages/Main/Components/Footer/Footer';
 import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
+import Order from './pages/Main/Components/Order/Order';
+import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
+import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
+// import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -26,10 +28,13 @@ const router = createBrowserRouter([
         path: 'main/product',
         element: <Product />,
       },
-
       {
-        path: '/productDetail',
-        element: <ProductDetail />,
+        path: '/main/productFood',
+        element: <ProductFood />,
+      },
+      {
+        path: '/productMealkit',
+        element: <ProductMeaKit />,
       },
       {
         path: 'main/recipe',
@@ -42,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: 'main/brand',
         element: <Brand />,
+      },
+      {
+        path: 'main/order',
+        element: <Order />,
       },
     ],
     errorElement: <NotFound />,
