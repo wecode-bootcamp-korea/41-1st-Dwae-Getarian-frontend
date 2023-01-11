@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Payment from '../payment/Payment';
 import './Order.scss';
 export default function Order() {
-  // const [isOpen, setCart] = useState(false);
   const [form, setForm] = useState({
     address: '',
     phone_number: '',
