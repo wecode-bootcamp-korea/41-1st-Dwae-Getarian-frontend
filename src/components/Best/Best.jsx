@@ -3,12 +3,14 @@ import BestProduct from './BestProduct';
 import './Best.scss';
 
 export default function Best() {
-  const [MonsterInfo, setMonsterList] = useState([]);
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://10.58.52.95:3001/product')
       .then(result => result.json())
-      .then(data => setMonsterList(data));
+      .then(data => setItems(data));
   }, []);
+  console.log(items);
   return (
     <div className="bestcontainer">
       <div className="bestMain">
@@ -25,7 +27,7 @@ export default function Best() {
       <div className="bestExplain">
         <p className="LechouBestTitle">Lechou BEST</p>
 
-        {MonsterInfo.map(monster => {
+        {items.map(monster => {
           return <BestProduct monster={monster} key={monster.id} />;
         })}
       </div>
