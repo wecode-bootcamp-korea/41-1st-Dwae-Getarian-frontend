@@ -52,11 +52,7 @@ export default function SignUp() {
         gender_id: whatGender,
         date_of_birth: startDate,
       }),
-    })
-      .then(response => response.json())
-      .then(() => {
-        navigate('/main/login');
-      });
+    }).then(response => response.json());
   };
 
   return (
