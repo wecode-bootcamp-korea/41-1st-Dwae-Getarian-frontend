@@ -1,12 +1,10 @@
 import React from 'react';
 import './MyOhDelivery.scss';
 import { useEffect, useState } from 'react';
-import { Value } from 'sass';
 
 export default function MyOhDelivery() {
   const [reservation, setReservation] = useState([]);
 
-  console.log(reservation);
   useEffect(() => {
     fetch('/data/my_reservation.json')
       .then(result => result.json())
