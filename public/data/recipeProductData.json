@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "비건 플래터",
+    "price": "20,000원",
+    "image": "./images/mealKit.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "비건미트",
+    "price": "45,000원",
+    "image": "./images/food1.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "프라이드 머쉬룸 볼",
+    "price": "50,000원",
+    "image": "./images/food2.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "아보카도 오픈 샌드위치",
+    "price": "12,000원",
+    "image": "./images/food3.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "토마토 바질 샐러드",
+    "price": "28,500원",
+    "image": "./images/food4.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "베지 스낵랩",
+    "price": "29,500원",
+    "image": "./images/food5.jpeg"
+  }
+]

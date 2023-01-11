@@ -1,0 +1,22 @@
+.teawear-item-container {
+  padding: 20px;
+  .teawear-item-img {
+    width: 230px;
+    height: 230px;
+    border-radius: 5px;
+    object-fit: cover;
+    &:hover {
+      scale: 1.2;
+      transition: all ease-in-out 0.2s;
+    }
+  }
+  .teawear-item-name {
+    font-size: 15px;
+    color: #666;
+    margin-top: 15px;
+  }
+  .teawear-item-price {
+    font-size: 20px;
+    color: #333;
+  }
+}
