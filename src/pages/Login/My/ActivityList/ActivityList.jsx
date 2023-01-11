@@ -1,10 +1,36 @@
 import React from 'react';
 import { IoHeartCircleOutline } from 'react-icons/io5';
 import './ActivityList.scss';
+import { Link } from 'react-router-dom';
 
 export default function ActivityList() {
   return (
     <div className="activity-list">
+      {/* <nav className="item-list-wrapper">
+        <ul className="item-list">
+          <li className="item">
+            <Link className="link-item" to="/orderReservation">
+              주문/예약관리
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/activityList">
+              활동내역
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item" to="/benefits">
+              나의 혜택
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">정보관리</Link>
+          </li>
+          <li className="item">
+            <Link className="link-item">고객센터</Link>
+          </li>
+        </ul>
+      </nav> */}
       <section className="pick-wrapper">
         <div className="pick-box">
           <div className="image-box">
