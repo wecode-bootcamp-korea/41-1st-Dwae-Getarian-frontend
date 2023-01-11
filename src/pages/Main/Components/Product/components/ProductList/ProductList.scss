@@ -15,11 +15,13 @@
           display: flex;
           align-items: center;
           li {
+            cursor: pointer;
             font-size: 13px;
             margin-left: 30px;
           }
           :hover {
             color: #2d6806;
+            font-weight: bold;
           }
         }
       }
@@ -38,17 +40,33 @@
       .productListQuantityCategory {
         ul {
           display: flex;
+          width: 100%;
         }
         li {
+          cursor: pointer;
           font-size: 13px;
-          width: 70px;
+          width: 20%;
           margin-left: 10px;
-          padding: 5px;
+          padding: 5px 10px;
           display: flex;
           justify-content: center;
           color: rgb(162, 171, 162);
           background-color: #fff8e7;
           border-radius: 20px;
+          box-sizing: content-box;
+        }
+        .boldItem {
+          cursor: pointer;
+          font-size: 13px;
+          width: 20%;
+          margin-left: 10px;
+          padding: 5px 10px;
+          display: flex;
+          justify-content: center;
+          color: #fff;
+          background-color: #2d6806;
+          border-radius: 20px;
+          box-sizing: content-box;
         }
       }
     }
