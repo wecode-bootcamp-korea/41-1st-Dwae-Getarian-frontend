@@ -1,13 +1,15 @@
 .monBox {
   display: inline-block;
-
+  text-align: center;
   .monList {
     margin: 5px;
     padding: 20px;
     font-size: 16px;
+    .name {
+      margin-top: 15px;
+    }
     .monListBox {
       background-color: #e6e6e6;
-      text-align: center;
       object-fit: cover;
       width: 200px;
       height: 200px;

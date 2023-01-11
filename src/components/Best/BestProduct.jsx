@@ -6,11 +6,9 @@ export default function BestProduct({ monster }) {
     <div className="monBox">
       <div key={monster.id} className="monList">
         <img src={monster.image} alt="LechouBest" className="monListBox" />
-        <p className="name font">{name}</p>
+        <p className="name">{name}</p>
         <div className="bestPrice">
-          <p className="price">{}원</p>
-          <span className="discountPrice">{}원</span>
-          <span className="discountRate">20%</span>
+          <p className="price">{parseInt(monster.price)}원</p>
         </div>
       </div>
     </div>
