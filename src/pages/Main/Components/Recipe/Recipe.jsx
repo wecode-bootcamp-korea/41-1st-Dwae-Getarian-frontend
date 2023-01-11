@@ -4,11 +4,12 @@ import { SliderData } from './SliderData';
 import './Recipe.scss';
 import ImageSlider from './ImageSlider';
 import SlideItem from './SlideItem';
-import RecipeProducts from './RecipePresent';
 import RecipeTeaWear from './RecipeTeaWear';
 import { RECIPE_PRESENT } from './constantData/recipePresent';
 import { RECIPE_TEAWEAR } from './constantData/recipeTeawear';
 import Footer from '../../../../components/Footer/Footer';
+import RecipePresent from './RecipePresent';
+import Nav from '../../../../components/Nav/Nav';
 
 export default function Recipe() {
   const [productList, setProductList] = useState([]);
@@ -24,7 +25,7 @@ export default function Recipe() {
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
     fetch(
-      'http://10.58.52.152:3000/product?sortBy=price_high&sortBy=new&page=list_10',
+      'http://10.58.52.95:3000/product?sortBy=price_high&sortBy=new&page=list_10&categoryId=3',
       {
         method: 'GET',
       }
@@ -51,6 +52,7 @@ export default function Recipe() {
 
   return (
     <>
+      <Nav />
       <div className="recipe-total-container">
         <div className="top-visual-box">
           <p className="title">Present</p>
@@ -137,7 +139,7 @@ export default function Recipe() {
               </div>
             </div>
           </section>
-          <RecipeProducts
+          <RecipePresent
             present={RECIPE_PRESENT}
             presentRef={presentRef}
             convertPrice={convertPrice}
