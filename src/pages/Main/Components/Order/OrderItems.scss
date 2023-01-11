@@ -1,0 +1,11 @@
+.orderedItemsBox {
+  width: 180px;
+  height: 150px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  .userBuyItem {
+    border: 1px solid black;
+  }
+}

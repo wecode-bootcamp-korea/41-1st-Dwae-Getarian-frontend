@@ -1,11 +1,13 @@
 import React from 'react';
-
-export default function OrderedItems({ items }) {
+import './OrderItems.scss';
+export default function OrderedItems({ item }) {
   return (
-    <div key={items.id}>
-      <img src={items.image} />
-      <span>{items.name}</span>
-      <span>{items.price}</span>
+    <div className="orderedItemsBox">
+      <img className="userBuyItem" src={item.image} alt="userBuyImg" />
+      <div>
+        <span>{item.name}</span>
+        <span>{item.price}</span>
+      </div>
     </div>
   );
 }

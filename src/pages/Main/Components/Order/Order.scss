@@ -5,7 +5,7 @@
   justify-content: space-evenly;
   .infoInput {
     .paymentTitle {
-      width: 40vw;
+      width: 45vw;
       font-size: 24px;
       font-weight: 500;
       padding: 24px;
@@ -22,10 +22,11 @@
         height: 60px;
       }
       .infoBtn {
-        padding: 5px;
+        padding: 10px;
         border: 1px solid black;
-        border-radius: 8px;
-        font-size: 18px;
+        border-style: none;
+        border-radius: 16px;
+        font-size: 16px;
       }
     }
     .orderBox {
@@ -62,40 +63,19 @@
       height: 40px;
     }
   }
+  .cartBoxinBox {
+    .cartBox {
+      padding: 24px 20px 24px;
+      width: 700px;
+      border-top: 1px solid #e6e6e6;
 
-  .cartBox {
-    padding: 24px 20px 24px;
-    .cartBoxTitle {
-      display: flex;
-      justify-content: space-between;
-    }
-    .cartBoxDetail {
-      width: 96px;
-      height: 107px;
-    }
-    .cartBuyContent {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  .cartBox {
-    padding: 24px 20px 24px;
-    width: 100%;
-    border-top: 1px solid #e6e6e6;
-
-    .cartBoxTitle {
-      display: flex;
-      justify-content: space-between;
-    }
-    .cartBoxDetail {
-      overflow: auto;
-      .cartBuy {
-        width: 96px;
-        height: 107px;
-      }
-      .cartBuyContent {
+      .cartBoxTitle {
         display: flex;
         justify-content: space-between;
+      }
+      .cartBoxDetail {
+        display: flex;
+        overflow: auto;
       }
     }
   }

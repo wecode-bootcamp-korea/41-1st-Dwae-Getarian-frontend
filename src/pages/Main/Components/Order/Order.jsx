@@ -7,7 +7,7 @@ export default function Order() {
     address: '',
     phone_number: '',
   });
-  const [cartItems, setCartItems] = useState({});
+  const [cartItems, setCartItems] = useState([]);
   const onChange = e => {
     setForm({
       ...form,
@@ -15,7 +15,7 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/cart/items')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then(result => result.json())
       .then(data => setCartItems(data));
   }, []);
@@ -113,32 +113,19 @@ export default function Order() {
 
         <div className="delivery">
           <p className="deliveryTitle">배송 요청사항</p>
-          <select className="deliveryRequest" value="배송 요청사항 선택">
-            <option>경비실에 맡겨주세요</option>
-            <option>배송전에 미리 연락 주세요</option>
-            <option className="myself">직접입력</option>
-          </select>
           <input className="deliveryRequest displayNone" type="text" />
         </div>
+        <div className="cartBoxinBox">
+          <div className="cartBox">
+            <div className="cartBoxTitle">
+              <span>주문상품</span>
+              <span>총{}건</span>
+            </div>
 
-        <div className="cartBox">
-          <div className="cartBoxTitle">
-            <span>주문상품</span>
-            <span>총{}건</span>
-          </div>
-
-          <div className="cartBoxDetail">
-            {cartItems.map(items => {
-              <OrderedItems items={items} />;
-            })}
-            <img
-              alt="chosen"
-              src="https://www.osulloc.com/upload/kr/ko/adminImage/NP/YV/304_20200513135231693GB.png?quality=80"
-              className="cartBuy"
-            />
-            <div className="cartBuyContent">
-              <span>{}상품이름</span>
-              <span>가격/개수</span>
+            <div className="cartBoxDetail">
+              {cartItems.map(item => {
+                return <OrderedItems key={item.id} item={item} />;
+              })}
             </div>
           </div>
         </div>
