@@ -27,26 +27,32 @@ export default function My() {
       <div className="my-page-wrapper">
         <div className="title-container">
           <div className="my-main-title">
-            <h2 className="title">마이페이지</h2>
+            <p className="title">마이페이지</p>
           </div>
         </div>
         <nav className="item-list-wrapper">
           <ul className="item-list">
-            <Link className="link-item" to="/orderReservation">
-              <li className="item">주문/예약관리</li>
-            </Link>
-            <Link className="link-item" to="/activityList">
-              <li className="item">활동내역</li>
-            </Link>
-            <Link className="link-item" to="/benefits">
-              <li className="item">나의 혜택</li>
-            </Link>
-            <Link className="link-item">
-              <li className="item">정보관리</li>
-            </Link>
-            <Link className="link-item">
-              <li className="item">고객센터</li>
-            </Link>
+            <li className="item">
+              <Link className="link-item" to="/orderReservation">
+                주문/예약관리
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link-item" to="/activityList">
+                활동내역
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link-item" to="/benefits">
+                나의 혜택
+              </Link>
+            </li>
+            <li className="item">
+              <Link className="link-item">정보관리</Link>
+            </li>
+            <li className="item">
+              <Link className="link-item">고객센터</Link>
+            </li>
           </ul>
         </nav>
         <div className="my-info">
@@ -71,40 +77,29 @@ export default function My() {
             <div className="inner2">
               <ul className="point-list">
                 <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">보유 쿠폰</p>
-                    <p className="right-box-text2">{myUserList.coupon}장</p>
-                  </Link>
+                  <p className="right-box-text1">보유 쿠폰</p>
+                  <p className="right-box-text2">{myUserList.coupon}장</p>
+                </li>
+
+                <li className="point-item">
+                  <p className="right-box-text1">뷰티포인트</p>
+                  <p className="right-box-text2">{myUserList.point}P</p>
                 </li>
                 <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">뷰티포인트</p>
-                    <p className="right-box-text2">{myUserList.point}P</p>
-                  </Link>
+                  <p className="right-box-text1">찻잎포인트</p>
+                  <p className="right-box-text2">{myUserList.chapoint}P</p>
                 </li>
-                <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">찻잎포인트</p>
-                    <p className="right-box-text2">{myUserList.chapoint}P</p>
-                  </Link>
+                <li className="point-item point-item-btm">
+                  <p className="right-box-text1">선물함</p>
+                  <p className="right-box-text2">{myUserList.present}개</p>
                 </li>
-                <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">선물함</p>
-                    <p className="right-box-text2">{myUserList.present}개</p>
-                  </Link>
+                <li className="point-item point-item-btm">
+                  <p className="right-box-text1">다다일상</p>
+                  <p className="right-box-text2">{myUserList.dada}</p>
                 </li>
-                <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">다다일상</p>
-                    <p className="right-box-text2">{myUserList.dada}</p>
-                  </Link>
-                </li>
-                <li className="point-item">
-                  <Link to="/">
-                    <p className="right-box-text1">후기관리</p>
-                    <p className="right-box-text2">{myUserList.review}개</p>
-                  </Link>
+                <li className="point-item point-item-btm">
+                  <p className="right-box-text1">후기관리</p>
+                  <p className="right-box-text2">{myUserList.review}개</p>
                 </li>
               </ul>
             </div>
@@ -162,13 +157,13 @@ export default function My() {
           <h3 className="history-title">히스토리</h3>
           <div className="product-list-container">
             <div className="history-product-box">
-              {productList.map(product => {
+              {productList.map(({ id, name, price, image }) => {
                 return (
                   <MyProducts
-                    key={product.id}
-                    name={product.name}
-                    price={product.price}
-                    image={product.image}
+                    key={id}
+                    name={name}
+                    price={price}
+                    image={image}
                   />
                 );
               })}

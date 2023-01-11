@@ -5,14 +5,15 @@ import { CiSearch, CiShoppingCart, CiDeliveryTruck } from 'react-icons/ci';
 import './Nav.scss';
 
 export default function Nav() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 포지션 스테이트 생성
   const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    // 스크롤 값 계속해서 가져오는 함수 생성
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop); // 스크롤의 위치값을 가져와 setState 함수에 전달
   };
   useEffect(() => {
     let lock = false;
     if (!lock) {
-      window.addEventListener('scroll', updateScroll);
+      window.addEventListener('scroll', updateScroll); // 스크롤할때마다 updateScroll 함수를 계속해서 실행시킴.
     }
     return () => {
       // Clean up
@@ -22,6 +23,7 @@ export default function Nav() {
 
   return (
     <div className="nav-header">
+      {/* scrollPosition 스테이트에 저장돼있는 값이 200보다 작다면 nav-original 클래스를, 아니라면 nav-changed 를 클래스 네임으로 사용 */}
       <div className={scrollPosition < 200 ? 'nav-original' : 'nav-changed'}>
         <div className="vacant-container">
           <div className="nav-hover">

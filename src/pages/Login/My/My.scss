@@ -2,7 +2,7 @@
   font-family: 'noto sans';
   font-size: 12px;
   margin: 0px 100px 20px 100px;
-  padding: 0px 170px;
+  padding: 40px 150px 0px 150px;
   .title-container {
     .my-main-title {
       border-bottom: 1.5px solid #333;
@@ -25,8 +25,8 @@
         font-size: 16px;
         padding: 14px 40px 14px;
         margin: 0px 14px;
-        color: #333;
         .link-item {
+          color: #333;
           cursor: pointer;
         }
       }
@@ -65,12 +65,7 @@
           margin-right: 40px;
         }
         .text {
-          .text1 {
-            font-size: 17px;
-          }
-          .text2 {
-            font-size: 17px;
-          }
+          font-size: 17px;
         }
       }
     }
@@ -84,17 +79,11 @@
           text-align: center;
           flex-wrap: wrap;
           font-size: 10px;
+          .point-item-btm {
+            margin-top: 50px;
+          }
           .point-item {
             width: 33.3%;
-            &:nth-child(4) {
-              margin-top: 50px;
-            }
-            &:nth-child(5) {
-              margin-top: 50px;
-            }
-            &:nth-child(6) {
-              margin-top: 50px;
-            }
             .right-box-text1 {
               font-size: 14px;
               margin-bottom: 7px;
