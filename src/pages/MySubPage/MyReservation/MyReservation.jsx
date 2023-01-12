@@ -4,7 +4,7 @@ import { BsExclamationCircle } from 'react-icons/bs';
 import MyOhDelivery from './MyOhDelivery';
 import { Link } from 'react-router-dom';
 
-export default function OrderReservation() {
+export default function MyReservation() {
   return (
     <div className="order-reservation">
       <nav className="item-list-wrapper">

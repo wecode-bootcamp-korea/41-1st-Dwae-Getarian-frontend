@@ -10,6 +10,7 @@ import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -75,6 +76,7 @@ const Router = () => {
             />
           }
         />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
       </Routes>
     </BrowserRouter>
   );
