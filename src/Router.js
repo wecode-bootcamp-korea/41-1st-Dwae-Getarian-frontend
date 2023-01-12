@@ -6,7 +6,7 @@ import ProductDetail from './pages/Main/Components/Product/components/ProductDet
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
-// import Search from './pages/Main/Components/search/Search';
+import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
@@ -20,13 +20,6 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 
 const Router = () => {
-  const [product, setProduct] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [checkList, setCheckList] = useState([]);
-  const convertPrice = price => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
   return (
     <BrowserRouter>
       <Routes>
@@ -37,66 +30,21 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route
-          path="/product"
-          element={
-            <ProductFood
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/product" element={<ProductFood />} />
         <Route path="/mypage" element={<My />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
         <Route path="/mypage/orderReservation" element={<MyReservation />} />
-        <Route
-          path="/productMealkit"
-          element={
-            <ProductMeaKit
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/productMealkit" element={<ProductMeaKit />} />
         <Route path="/present" element={<Recipe />} />
         <Route path="/review" element={<Review />} />
-        {/* <Route path="/search" element={<Search />} /> */}
-        <Route
-          path="/product/detail/:id"
-          element={
-            <ProductDetail
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/search" element={<Search />} />
+        <Route path="/product/detail/:id" element={<ProductDetail />} />
         <Route path="/brand" element={<Brand />} />
         <Route path="/best" element={<Best />} />
         <Route path="/order" element={<Order />} />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-              checkList={checkList}
-              setCheckList={setCheckList}
-            />
-          }
-        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
