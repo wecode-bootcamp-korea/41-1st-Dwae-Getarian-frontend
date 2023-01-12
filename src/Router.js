@@ -10,10 +10,13 @@ import Review from './pages/Main/Components/Review/Review';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
-import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
+import Best from './components/Best/Best';
+import Order from './pages/Main/Components/Order/Order';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
+import Login from './pages/Login/Login';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -72,6 +75,8 @@ const Router = () => {
           }
         />
         <Route path="/brand" element={<Brand />} />
+        <Route path="/best" element={<Best />} />
+        <Route path="/order" element={<Order />} />
         <Route
           path="/cart"
           element={
@@ -86,6 +91,7 @@ const Router = () => {
             />
           }
         />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
