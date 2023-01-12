@@ -33,17 +33,17 @@ export default function My() {
         <nav className="item-list-wrapper">
           <ul className="item-list">
             <li className="item">
-              <Link className="link-item" to="/orderReservation">
+              <Link className="link-item" to="/mypage/orderReservation">
                 주문/예약관리
               </Link>
             </li>
             <li className="item">
-              <Link className="link-item" to="/activityList">
+              <Link className="link-item" to="/mypage/activityList">
                 활동내역
               </Link>
             </li>
             <li className="item">
-              <Link className="link-item" to="/benefits">
+              <Link className="link-item" to="/mypage/benefits">
                 나의 혜택
               </Link>
             </li>

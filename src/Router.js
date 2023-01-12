@@ -34,7 +34,6 @@ const Router = () => {
         <Route path="/signup" element={<SignUp />} />
       </Routes>
 
-      <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
