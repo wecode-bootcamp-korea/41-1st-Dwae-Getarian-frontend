@@ -28,10 +28,14 @@
   }
   .productCompoDisplay {
     display: flex;
+
     justify-content: center;
     margin: 0 100px;
 
     .productCompoList {
+      width: 80%;
+    }
+    .productCompoItem {
       width: 80%;
     }
   }
