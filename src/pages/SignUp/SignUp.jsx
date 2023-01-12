@@ -27,6 +27,15 @@ export default function SignUp() {
 
   console.log(startDate);
 
+  const pwCondition = /^[A-Za-z0-9]{6,20}$/;
+  const idCondition =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  const idIdValid = idCondition.test(form.email);
+  console.log(idIdValid);
+  const pwPwValid = pwCondition.test(form.password);
+  console.log(pwPwValid);
+
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -78,7 +87,7 @@ export default function SignUp() {
             className="signin-full-name"
             placeholder="이름"
             name="name"
-            value={form.name}
+            value={form.name || ''}
             onChange={handleChange}
           />
           <input
@@ -86,23 +95,25 @@ export default function SignUp() {
             className="signin-email"
             placeholder="이메일"
             name="email"
-            value={form.email}
+            value={form.email || ''}
             onChange={handleChange}
           />
+          {!idIdValid && '이메일은 @, . 을 포함해야합니다.'}
           <input
             type="password"
             className="signin-pw"
             placeholder="비밀번호"
             name="password"
-            value={form.password}
+            value={form.password || ''}
             onChange={handleChange}
           />
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 6글자 이상입니다.'}
           <input
             type="text"
             className="signin-postcode"
             placeholder="우편번호"
             name="postcode"
-            value={form.postcode}
+            value={form.postcode || ''}
             onChange={handleChange}
           />
           <input
@@ -110,7 +121,7 @@ export default function SignUp() {
             className="signin-address"
             placeholder="주소"
             name="address"
-            value={form.signin_address}
+            value={form.address || ''}
             onChange={handleChange}
           />
           <input
@@ -118,7 +129,7 @@ export default function SignUp() {
             className="signin-phone"
             placeholder="핸드폰 번호"
             name="mobile_number"
-            value={form.mobile_number}
+            value={form.mobile_number || ''}
             onChange={handleChange}
           />
           <GenderOption setGender={setGender} />
@@ -134,6 +145,7 @@ export default function SignUp() {
                 type="button"
                 className="signin-btn"
                 onClick={handleClick}
+                disabled={!(idIdValid && pwPwValid)}
               >
                 회원가입
               </button>
