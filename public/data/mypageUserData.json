@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "name": "김진우",
+  "grade": "WELCOME",
+  "coupon": "2",
+  "point": "0",
+  "chapoint": "500",
+  "present": "0",
+  "dada": "미구독",
+  "review": "0",
+  "order": "0",
+  "payment": "0",
+  "productready": "0",
+  "shipping": "0",
+  "shippingcomplete": "0"
+}

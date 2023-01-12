@@ -11,6 +11,17 @@ export default function ProductDetailBottom() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollActive, setScrollActive] = useState(false);
 
+  const goToInfo = () => {
+    return info.current.scrollIntoView({ behavior: 'smooth' });
+  };
+  const goToContent = () => {
+    return content.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSeleted = id => {
+    setMenu(id);
+  };
+
   const scrollFixed = () => {
     if (scrollY > 450) {
       setScrollY(window.pageYOffset);
@@ -30,17 +41,6 @@ export default function ProductDetailBottom() {
       window.removeEventListener('scroll', scrollFixed);
     };
   });
-
-  const handleSeleted = id => {
-    setMenu(id);
-  };
-
-  const goToInfo = () => {
-    return info.current.scrollIntoView({ behavior: 'smooth' });
-  };
-  const goToContent = () => {
-    return content.current.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <div className="productDetailPageBottom" ref={info}>
@@ -69,14 +69,16 @@ export default function ProductDetailBottom() {
               })}
             </ul>
           </div>
-          <div className="content">{menuArr[menu].content}</div>
+          <div className="content">
+            <img src={menuArr[menu].content} className="" alt="" />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 const menuArr = [
-  { id: 1, name: '상품정보제공고시', content: 'menu1' },
-  { id: 2, name: '배송/교환/반품 안내', content: 'menu2' },
-  { id: 3, name: '배송/교환/반품 유의사항', content: 'menu3' },
+  { id: 1, name: '상품정보제공고시', content: '/image/a.png' },
+  { id: 2, name: '배송/교환/반품 안내', content: '/image/b.png' },
+  { id: 3, name: '배송/교환/반품 유의사항', content: '/image/c.png' },
 ];

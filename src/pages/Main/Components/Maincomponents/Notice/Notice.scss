@@ -1,0 +1,27 @@
+.notice {
+  height: 48px;
+  width: 80%;
+  margin: 48px auto 0 auto;
+  display: flex;
+  padding: 18px;
+  opacity: 0.4;
+  // border-radius: 8px;
+  border: 1px solid #ddd;
+  .alert {
+    color: black;
+    font-weight: bold;
+    width: 100px;
+  }
+  .alertContent {
+    font-size: 18px;
+    height: 16px;
+    overflow: hidden;
+    transition: transform 2s;
+    color: black;
+    p {
+      color: #000;
+      // font-weight: bold;
+      transition: all 500ms;
+    }
+  }
+}
