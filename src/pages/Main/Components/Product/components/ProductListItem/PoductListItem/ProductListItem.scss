@@ -1,16 +1,18 @@
-.productListItems {
+.productCompoItem {
   display: flex;
-  width: 100%;
+  justify-content: center;
   flex-flow: row wrap;
+  margin: 0;
+  box-sizing: border-box;
   .productListItemsBox {
     width: 30%;
-    height: 250px;
-    margin: 0 10px;
+    height: 300px;
+    margin: 10px;
     margin-top: 40px;
 
     .productListItemsImg {
       width: 100%;
-      height: 70%;
+      height: 90%;
       position: relative;
       img {
         width: 100%;
@@ -20,6 +22,7 @@
       svg {
         display: block;
       }
+
       .cartIcon {
         position: absolute;
         bottom: 5px;
@@ -35,6 +38,9 @@
         cursor: pointer;
       }
     }
+    .productListItemsPrice {
+      margin: 0;
+    }
     .productListItemsImg:hover .cartIcon {
       opacity: 60%;
     }
@@ -45,6 +51,7 @@
 
     .productListItemsIcon {
       margin: 10px;
+      margin-left: 0;
       margin-bottom: 20px;
       span {
         margin-right: 20px;

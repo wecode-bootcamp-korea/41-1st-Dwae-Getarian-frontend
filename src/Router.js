@@ -14,8 +14,8 @@ import ProductDetail from './pages/Main/Components/Product/components/ProductDet
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import My from './pages/Login/My/My';
-import MyReservation from './pages/MySubPage/MyReservation.jsx';
-
+import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation.jsx';
 // import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
 const router = createBrowserRouter([
   {
@@ -54,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage',
         element: <My />,
+      },
+      {
+        path: '/mypage/benefits',
+        element: <Benefits />,
       },
       {
         path: '/mypage/myReservation',
