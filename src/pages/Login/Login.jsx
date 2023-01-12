@@ -16,14 +16,11 @@ export default function Login() {
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
   const idIdValid = idCondition.test(form.id);
-  console.log(idIdValid);
   const pwPwValid = pwCondition.test(form.password);
-  console.log(pwPwValid);
 
   const onLogin = e => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-    console.log(e.target.value);
   };
 
   const handleClick = e => {
@@ -40,7 +37,6 @@ export default function Login() {
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', data.jwtToken);
-        console.log(data.jwtToken);
       });
     e.preventDefault();
   };
