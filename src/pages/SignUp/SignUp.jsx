@@ -75,7 +75,7 @@ export default function SignUp() {
             className="signin-full-name"
             placeholder="이름"
             name="name"
-            value={form.name}
+            value={form.name || ''}
             onChange={handleChange}
           />
           <input
@@ -83,7 +83,7 @@ export default function SignUp() {
             className="signin-email"
             placeholder="이메일"
             name="email"
-            value={form.email}
+            value={form.email || ''}
             onChange={handleChange}
           />
           <input
@@ -91,7 +91,7 @@ export default function SignUp() {
             className="signin-pw"
             placeholder="비밀번호"
             name="password"
-            value={form.password}
+            value={form.password || ''}
             onChange={handleChange}
           />
           <input
@@ -99,7 +99,7 @@ export default function SignUp() {
             className="signin-postcode"
             placeholder="우편번호"
             name="postcode"
-            value={form.postcode}
+            value={form.postcode || ''}
             onChange={handleChange}
           />
           <input
@@ -107,7 +107,7 @@ export default function SignUp() {
             className="signin-address"
             placeholder="주소"
             name="address"
-            value={form.signin_address}
+            value={form.address || ''}
             onChange={handleChange}
           />
           <input
@@ -115,7 +115,7 @@ export default function SignUp() {
             className="signin-phone"
             placeholder="핸드폰 번호"
             name="mobile_number"
-            value={form.mobile_number}
+            value={form.mobile_number || ''}
             onChange={handleChange}
           />
           <GenderOption setGender={setGender} />
@@ -123,7 +123,7 @@ export default function SignUp() {
           <input
             type="date"
             className="signin-birth"
-            onChange={e => setState(e.target.value)}
+            onChange={e => setState(e.target.value || '')}
           />
           <Link to="/main/login">
             <div className="signin-btn-box">
