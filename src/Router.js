@@ -43,6 +43,7 @@ const Router = () => {
         <Route path="/mypage" element={<My />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
         <Route
           path="/productMealkit"
           element={
@@ -85,9 +86,6 @@ const Router = () => {
             />
           }
         />
-        <Route path="/mypage/orderReservation" element={<MyReservation />} />
-        <Route path="/mypage/activityList" element={<ActivityList />} />
-        <Route path="/mypage/orderReservation" element={<MyReservation />} />
       </Routes>
     </BrowserRouter>
   );
