@@ -17,6 +17,7 @@ import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
 import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -28,6 +29,11 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -91,7 +97,6 @@ const Router = () => {
             />
           }
         />
-        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
