@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
 // import Payment from '../Product/components/payment/Payment';
 import './Cart.scss';
 import CartList from './CartList/CartList';
@@ -15,9 +15,9 @@ export default function Cart({
   checkList,
   setCheckList,
 }) {
-  const { id } = useParams();
-  const [total, setTotal] = useState(0);
-  const [carts, setCarts] = useState([]);
+  // const { id } = useParams();
+  // const [total, setTotal] = useState(0);
+  // const [carts, setCarts] = useState([]);
 
   // useEffect(() => {
   //   fetch(`http://10.58.52.174:3000/cart/items/user`, {

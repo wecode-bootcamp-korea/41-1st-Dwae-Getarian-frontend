@@ -13,9 +13,6 @@ import ProductMeaKit from './pages/Main/Components/Product/components/ProductMea
 import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
-import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
-import Order from './pages/Main/Components/Order/Order';
-import Best from './components/Best/Best';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -42,11 +39,8 @@ const Router = () => {
           }
         />
         <Route path="/mypage" element={<My />} />
-        <Route path="/best" element={<Best />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
-        <Route path="/mypage/orderReservation" element={<MyReservation />} />
-        <Route path="/order" element={<Order />} />
         <Route
           path="/productMealkit"
           element={
