@@ -28,11 +28,5 @@
     "name": "토마토 바질 샐러드",
     "price": "28,500원",
     "image": "./images/food4.jpeg"
-  },
-  {
-    "id": 6,
-    "name": "베지 스낵랩",
-    "price": "29,500원",
-    "image": "./images/food5.jpeg"
   }
 ]

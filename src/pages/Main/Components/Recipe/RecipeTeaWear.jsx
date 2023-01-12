@@ -24,7 +24,7 @@ export default function RecipeTeawear({ setRef, tea, convertPrice }) {
         <div className="prd-list-wrap">
           {teaWearItems.map(teaWearItem => {
             return (
-              <Link key={teaWearItem.id} to="/">
+              <Link key={teaWearItem.id}>
                 <div className="item-inner">
                   <div className="teawear-item-container">
                     <div>

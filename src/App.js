@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav';
 export default function App() {
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       <Outlet />
     </div>
   );

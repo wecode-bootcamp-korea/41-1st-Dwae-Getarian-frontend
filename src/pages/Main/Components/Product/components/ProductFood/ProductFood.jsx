@@ -11,23 +11,6 @@ export default function ProductFood({
   setCart,
   convertPrice,
 }) {
-  useEffect(() => {
-    fetch('/data/mock.json', { method: 'GET' })
-      .then(res => res.json())
-      .then(data => setProduct(data.product));
-  }, []);
-
-  // useEffect(() => {
-  //   fetch('http://10.58.52.134:3000/product', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setProductListItem(data);
-  //     });
-  // }, []);
-
   return (
     <div className="productFood">
       <ProductCompo
@@ -39,17 +22,8 @@ export default function ProductFood({
         setProduct={setProduct}
         cart={cart}
         setCart={setCart}
-        boldList={BOLD_ITEMS}
         convertPrice={convertPrice}
       />
     </div>
   );
 }
-
-const BOLD_ITEMS = [
-  { id: 1, name: 'TOTAL' },
-  { id: 2, name: 'VEGAN' },
-  { id: 3, name: 'LACTO' },
-  { id: 4, name: 'OVO' },
-  { id: 5, name: 'LACTO_OVO' },
-];
