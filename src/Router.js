@@ -22,12 +22,11 @@ import SignUp from './pages/SignUp/SignUp';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-
-      <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/product" element={<ProductFood />} />
