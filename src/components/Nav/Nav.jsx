@@ -2,14 +2,32 @@ import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { CiSearch, CiShoppingCart, CiDeliveryTruck } from 'react-icons/ci';
+import { AiOutlineSearch } from 'react-icons/ai';
+import Search from '../../pages/Main/Components/search/Search';
 import './Nav.scss';
 
 export default function Nav() {
   const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 포지션 스테이트 생성
+  const [cart, setCart] = useState([]);
+  const [search, setSearch] = useState(false);
+
   const updateScroll = () => {
     // 스크롤 값 계속해서 가져오는 함수 생성
     setScrollPosition(window.scrollY || document.documentElement.scrollTop); // 스크롤의 위치값을 가져와 setState 함수에 전달
   };
+
+  // detail에서 받을 product도  cart변수를 작성해서 받아와야함.
+  useEffect(() => {
+    fetch(`http://10.58.52.243:3000/cart/items/user`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res => setCart(res));
+  }, []);
   useEffect(() => {
     let lock = false;
     if (!lock) {
@@ -20,6 +38,9 @@ export default function Nav() {
       lock = true;
     };
   }, []);
+  const handleSearch = () => {
+    setSearch(!search);
+  };
 
   return (
     <div className="nav-header">
@@ -71,19 +92,22 @@ export default function Nav() {
                 </div>
                 <div className="nav-right-box">
                   <div className="nav-right-box-icons">
-                    <Link
+                    <CiSearch
+                      onClick={handleSearch}
                       className="nav-right-box-icons-search nav-right-box-icon-group nav-btns"
-                      Link
-                      to="/search"
-                    >
-                      <CiSearch />
-                    </Link>
+                    />
+
                     <Link
-                      className="nav-right-box-icons-cart nav-right-box-icon-group nav-btns"
+                      className="nav-right-box-icons-cart nav-right-box-icon-group nav-btns cartLink"
                       Link
                       to="/cart"
                     >
                       <CiShoppingCart />
+                      {cart.length >= 1 ? (
+                        <div className="cartIcon">
+                          <p>{cart.length}</p>
+                        </div>
+                      ) : null}
                     </Link>
                     <Link
                       className="nav-right-box-icons-truck nav-right-box-icon-group nav-btns"
@@ -111,6 +135,13 @@ export default function Nav() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={search ? '' : 'closeSearch'}>
+        <Search
+          search={search}
+          setSearch={setSearch}
+          handleSearch={handleSearch}
+        />
       </div>
     </div>
   );

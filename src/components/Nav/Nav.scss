@@ -119,3 +119,32 @@
     background-color: #fff;
   }
 }
+.cartLink {
+  position: relative;
+  .cartIcon {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: #fff;
+    border-radius: 100%;
+  }
+}
+.closeSearch {
+  display: none;
+}
+.searchLink {
+  position: absolute;
+  font-size: 30px;
+  width: 30px;
+  top: 0;
+  right: 45px;
+  cursor: pointer;
+}

@@ -7,21 +7,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-export default function ProductCompo({
-  name,
-  title,
-  content,
-  bubble,
-  dis,
-  convertPrice,
-  product,
-  setProduct,
-  cart,
-  setCart,
-}) {
+export default function ProductCompo({ name, title, content, bubble, dis }) {
   const [productSort, setProductSort] = useState([]);
   const [categoryNum, setCategoryNum] = useState(1);
 
+  const convertPrice = price => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
   const categoryNumber = type => {
     if (type === 'vegan') {
       setCategoryNum(1);
@@ -51,56 +43,48 @@ export default function ProductCompo({
 
   console.log(categoryNum);
   return (
-    product && (
-      <div>
-        <div className="productCompo">
-          <div className={name}>
-            <h1>{content}</h1>
+    <div>
+      <div className="productCompo">
+        <div className={name}>
+          <h1>{content}</h1>
+        </div>
+        <div className="productCompoDisplay">
+          <div className="productCompoNav">
+            <ProductNav
+              bubble={bubble}
+              categoryNum={categoryNum}
+              setCategoryNum={setCategoryNum}
+              categoryNumber={categoryNumber}
+            />
           </div>
-          <div className="productCompoDisplay">
-            <div className="productCompoNav">
-              <ProductNav
-                cart={cart}
-                setCart={setCart}
+          <div className="productCompoPkg">
+            <div className="productCompoList">
+              <ProductList
+                title={title}
                 bubble={bubble}
+                dis={dis}
+                convertPrice={convertPrice}
+                productSort={productSort}
                 categoryNum={categoryNum}
                 setCategoryNum={setCategoryNum}
+                setProductSort={setProductSort}
                 categoryNumber={categoryNumber}
               />
             </div>
-            <div className="productCompoPkg">
-              <div className="productCompoList">
-                <ProductList
-                  title={title}
+            <div className="productCompoItem">
+              {productSort.map(item => (
+                <ProductListItem
+                  key={item.id}
+                  heart={item.like}
                   bubble={bubble}
-                  dis={dis}
                   convertPrice={convertPrice}
-                  cart={cart}
-                  setCart={setCart}
-                  productSort={productSort}
-                  categoryNum={categoryNum}
-                  setCategoryNum={setCategoryNum}
-                  setProductSort={setProductSort}
-                  categoryNumber={categoryNumber}
+                  productSort={item}
                 />
-              </div>
-              <div className="productCompoItem">
-                {productSort.map(item => (
-                  <ProductListItem
-                    key={item.id}
-                    heart={item.like}
-                    bubble={bubble}
-                    convertPrice={convertPrice}
-                    productSort={item}
-                    cart={cart}
-                    setCart={setCart}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    )
+    </div>
   );
 }
