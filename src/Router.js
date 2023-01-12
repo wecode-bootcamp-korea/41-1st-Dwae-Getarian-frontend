@@ -14,6 +14,9 @@ import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
 import Login from './pages/Login/Login';
+import Invoices from './pages/Login/Invoices';
+import Invoice from './pages/Login/Invoice';
+import SentInvoices from './pages/Login/SentInvoices';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -26,6 +29,14 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
+
+      <Routes>
+        <Route path="invoices" element={<Invoices />} />
+        <Route path="invoiceId" element={<Invoice />} />
+        <Route path="sent" element={<SentInvoices />} />
+        {/* <Route path="invoice" element={<Invoice />} />
+        <Route path=":invoiceId" element={<Invoices />} /> */}
+      </Routes>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
