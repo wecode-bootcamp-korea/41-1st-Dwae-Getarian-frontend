@@ -10,9 +10,13 @@ import Review from './pages/Main/Components/Review/Review';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
-import My from './pages/Login/My/My';
+import Best from './components/Best/Best';
+import Order from './pages/Main/Components/Order/Order';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
+import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
+import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 
 const Router = () => {
@@ -25,6 +29,11 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -43,6 +52,7 @@ const Router = () => {
         <Route path="/mypage" element={<My />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
         <Route
           path="/productMealkit"
           element={
@@ -71,6 +81,8 @@ const Router = () => {
           }
         />
         <Route path="/brand" element={<Brand />} />
+        <Route path="/best" element={<Best />} />
+        <Route path="/order" element={<Order />} />
         <Route
           path="/cart"
           element={
@@ -85,7 +97,6 @@ const Router = () => {
             />
           }
         />
-        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
