@@ -40,8 +40,6 @@ export default function Login() {
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', data.jwtToken);
-
-        navigation('/');
       });
     e.preventDefault();
   };
@@ -78,7 +76,7 @@ export default function Login() {
             className="login-id"
             name="id"
             placeholder="아이디 입력"
-            value={form.id}
+            value={form.id || ''}
             onChange={onLogin}
           />
           {!idIdValid && '아이디는 @, . 을 포함해야합니다.'}
@@ -87,7 +85,7 @@ export default function Login() {
             className="login-pw"
             name="password"
             placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
-            value={form.password}
+            value={form.password || ''}
             onChange={onLogin}
           />
           {!pwPwValid && '비밀번호는 영문, 숫자 조합 4글자 이상입니다.'}
