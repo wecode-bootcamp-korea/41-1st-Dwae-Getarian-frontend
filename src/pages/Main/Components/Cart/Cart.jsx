@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Payment from '../Product/components/payment/Payment';
-import './cart.scss';
+// import Payment from '../Product/components/payment/Payment';
+import './Cart.scss';
 import CartList from './CartList/CartList';
 
 export default function Cart({
@@ -126,13 +126,13 @@ export default function Cart({
         </div>
       </div>
       <div className="payment">
-        <Payment
+        {/* <Payment
           total={total}
           setTotal={setTotal}
           found={found}
           cart={cart}
           convertPrice={convertPrice}
-        />
+        /> */}
       </div>
     </div>
   );

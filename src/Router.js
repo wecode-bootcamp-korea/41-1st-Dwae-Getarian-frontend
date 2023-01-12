@@ -6,10 +6,16 @@ import ProductDetail from './pages/Main/Components/Product/components/ProductDet
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
-import Search from './pages/Main/Components/search/Search';
+// import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
+import My from './pages/Login/My/My';
+import ActivityList from './pages/Login/My/ActivityList/ActivityList';
+import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
+import Order from './pages/Main/Components/Order/Order';
+import Best from './components/Best/Best';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -35,6 +41,12 @@ const Router = () => {
             />
           }
         />
+        <Route path="/mypage" element={<My />} />
+        <Route path="/best" element={<Best />} />
+        <Route path="/mypage/activityList" element={<ActivityList />} />
+        <Route path="/mypage/benefits" element={<Benefits />} />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
+        <Route path="/order" element={<Order />} />
         <Route
           path="/productMealkit"
           element={
@@ -47,9 +59,9 @@ const Router = () => {
             />
           }
         />
-        <Route path="/recipe" element={<Recipe />} />
+        <Route path="/present" element={<Recipe />} />
         <Route path="/review" element={<Review />} />
-        <Route path="/search" element={<Search />} />
+        {/* <Route path="/search" element={<Search />} /> */}
         <Route
           path="/productDetail/:id"
           element={
