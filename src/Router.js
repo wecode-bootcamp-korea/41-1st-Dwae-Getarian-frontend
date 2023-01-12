@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
-import Product from './pages/Main/Components/Product/Product';
+import Cart from './pages/Main/Components/Cart/Cart';
+import ProductDetail from './pages/Main/Components/Product/components/ProductDetail/ProductDetail';
+import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
 import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
-
+import Best from './components/Best/Best';
 const Router = () => {
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
@@ -61,6 +63,7 @@ const Router = () => {
           }
         />
         <Route path="/brand" element={<Brand />} />
+        <Route path="/best" element={<Best />} />
         <Route
           path="/cart"
           element={
