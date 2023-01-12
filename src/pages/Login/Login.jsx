@@ -2,7 +2,7 @@ import React from 'react';
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const navigation = useNavigate();
@@ -37,6 +37,7 @@ export default function Login() {
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', data.jwtToken);
+        navigation('/');
       });
     e.preventDefault();
   };
@@ -122,7 +123,7 @@ export default function Login() {
         <button
           className="is-member"
           onClick={() => {
-            navigation('/main/signup');
+            navigation('/signup');
           }}
         >
           <span className="is-member-text">아직 회원이 아니세요?</span>

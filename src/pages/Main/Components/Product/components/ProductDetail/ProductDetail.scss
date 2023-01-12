@@ -1,13 +1,16 @@
 .productDetailPageTop {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  padding-top: 80px;
 
   .productDetailLeft {
     width: 40%;
     margin-right: 50px;
+    height: 400px;
+    overflow: hidden;
     img {
       width: 100%;
+      object-fit: fill;
     }
   }
   .productDetailRight {
