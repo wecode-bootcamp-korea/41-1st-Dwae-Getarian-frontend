@@ -6,14 +6,18 @@ import ProductDetail from './pages/Main/Components/Product/components/ProductDet
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
-import Search from './pages/Main/Components/search/Search';
+// import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
+import My from './pages/Login/My/My';
+import ActivityList from './pages/Login/My/ActivityList/ActivityList';
+import Benefits from './pages/MySubPage/Benefits/Benefits';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
+  const [checkList, setCheckList] = useState([]);
   const convertPrice = price => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
@@ -35,6 +39,9 @@ const Router = () => {
             />
           }
         />
+        <Route path="/mypage" element={<My />} />
+        <Route path="/mypage/activityList" element={<ActivityList />} />
+        <Route path="/mypage/benefits" element={<Benefits />} />
         <Route
           path="/productMealkit"
           element={
@@ -47,11 +54,11 @@ const Router = () => {
             />
           }
         />
-        <Route path="/recipe" element={<Recipe />} />
+        <Route path="/present" element={<Recipe />} />
         <Route path="/review" element={<Review />} />
-        <Route path="/search" element={<Search />} />
+        {/* <Route path="/search" element={<Search />} /> */}
         <Route
-          path="/productDetail/:id"
+          path="/product/detail/:id"
           element={
             <ProductDetail
               product={product}
@@ -72,6 +79,8 @@ const Router = () => {
               cart={cart}
               setCart={setCart}
               convertPrice={convertPrice}
+              checkList={checkList}
+              setCheckList={setCheckList}
             />
           }
         />
