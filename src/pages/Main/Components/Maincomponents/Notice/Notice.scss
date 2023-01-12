@@ -5,18 +5,22 @@
   display: flex;
   padding: 18px;
   opacity: 0.4;
-  border-radius: 8px;
-  background-color: #a17977;
+  // border-radius: 8px;
+  border: 1px solid #ddd;
   .alert {
     color: black;
+    font-weight: bold;
     width: 100px;
   }
   .alertContent {
-    font-size: 24px;
-    height: 23px;
+    font-size: 18px;
+    height: 16px;
     overflow: hidden;
     transition: transform 2s;
+    color: black;
     p {
+      color: #000;
+      // font-weight: bold;
       transition: all 500ms;
     }
   }

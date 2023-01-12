@@ -41,7 +41,6 @@
       background: #000;
       width: 400px;
       height: 300px;
-      border: 7px solid #283593;
       cursor: pointer;
       overflow: hidden;
       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
@@ -106,7 +105,7 @@
       opacity: 1;
     }
     .box:hover img {
-      opacity: 0.2;
+      opacity: 0.5;
     }
     .box:hover:before {
       width: 60px;
