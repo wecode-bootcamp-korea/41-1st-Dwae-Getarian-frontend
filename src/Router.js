@@ -12,14 +12,21 @@ import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import Best from './components/Best/Best';
 import Order from './pages/Main/Components/Order/Order';
-import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
+import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -27,6 +34,7 @@ const Router = () => {
         <Route path="/mypage" element={<My />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
         <Route path="/productMealkit" element={<ProductMeaKit />} />
         <Route path="/present" element={<Recipe />} />
         <Route path="/review" element={<Review />} />

@@ -1,0 +1,124 @@
+.order-reservation {
+  font-family: 'Noto Sans', sans-serif;
+
+  .item-list-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .item-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgb(223, 223, 223);
+      margin-top: 70px;
+      .item {
+        font-size: 16px;
+        padding: 14px 40px 14px;
+        margin: 0px 14px;
+        .link-item {
+          color: #333;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.my-term-sort-box {
+  width: 80%;
+  margin: 0 auto;
+  .my-term-sort {
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    height: 114px;
+    padding: 36px 0 36px 0;
+    border-radius: 4px;
+
+    .month-search {
+      width: 109px;
+      height: 40px;
+      border: 1px solid #ddd;
+      color: #666666;
+      position: relative;
+      font-size: 14px;
+      background-color: #ffffff;
+      cursor: pointer;
+    }
+
+    .btn-first {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-right: none;
+    }
+    .btn-seconde {
+      border-right: none;
+    }
+
+    .btn-third {
+      border-right: none;
+    }
+    .btn-fourth {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.my-order-list {
+  height: 179px;
+
+  .my-order-list-box {
+    height: 119px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .exclamation {
+      width: 80px;
+      height: 80px;
+      color: #bdbdbd;
+    }
+
+    .my-order-list-text {
+      margin-top: 20px;
+      color: #bdbdbd;
+    }
+  }
+}
+
+.my-order-info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .my-order-box {
+    width: 80%;
+    color: #333333;
+
+    .my-order-info-box {
+      background-color: #f6f6f6;
+      height: 267px;
+      padding: 24px 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 13px;
+      gap: 10px;
+      color: #999;
+      border-radius: 4px;
+      .my-order-info-text {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333333;
+      }
+
+      .my-order-info-list {
+        list-style: disc;
+        margin-left: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+}
