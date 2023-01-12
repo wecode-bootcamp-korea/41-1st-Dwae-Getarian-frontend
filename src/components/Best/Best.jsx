@@ -18,7 +18,6 @@ export default function Best() {
     <div className="bestcontainer">
       <Nav />
       <div className="bestMain">
-        <img src="./images/choyunhwan/bestmain.jpg" className="mainImg" />
         <span className="bestFont">BEST</span>
       </div>
       <div className="btnBox">
