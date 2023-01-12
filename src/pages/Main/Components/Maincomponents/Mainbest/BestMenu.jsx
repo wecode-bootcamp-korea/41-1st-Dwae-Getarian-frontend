@@ -5,7 +5,7 @@ import './Best.scss';
 export default function BestMenu() {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.52.95:3000/product?limit=5')
+    fetch('http://10.58.52.243:3000/product?limit=5')
       .then(result => result.json())
       .then(data => setItems(data));
   }, []);

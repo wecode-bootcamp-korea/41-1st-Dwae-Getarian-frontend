@@ -8,9 +8,11 @@
       display: inline-block;
       background-size: cover;
       width: 100%;
+
       .sliderimg {
-        height: 600px;
+        height: 500px;
         width: 100%;
+        object-fit: cover;
       }
     }
   }

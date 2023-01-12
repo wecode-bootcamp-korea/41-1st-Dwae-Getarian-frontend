@@ -14,7 +14,7 @@ export default function MainEvent() {
       <div className="eventBox">
         <Link className="todayDiscount" to="/product/detail/51">
           <div className="todayDiscountTitle">
-            <span>오늘의 메뉴</span>
+            <span>Today Menu</span>
             <Timer duration={duration} />
           </div>
         </Link>
