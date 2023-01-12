@@ -27,7 +27,7 @@ export default function Login() {
   };
 
   const handleClick = e => {
-    fetch('http://10.58.52.95:3000/user/login', {
+    fetch('http://10.58.52.243:3000/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -40,6 +40,7 @@ export default function Login() {
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', data.jwtToken);
+        console.log(data.jwtToken);
       });
     e.preventDefault();
   };
