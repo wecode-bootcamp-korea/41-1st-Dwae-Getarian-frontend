@@ -8,8 +8,8 @@ export default function ProductListItem({
   heart,
   bubble,
   convertPrice,
-  product,
-  setProduct,
+  productSort,
+  setProductSort,
   cart,
   setCart,
 }) {
@@ -17,14 +17,14 @@ export default function ProductListItem({
     <>
       <div className="productListItemsBox">
         <ProductListImg
-          product={product}
-          setProduct={setProduct}
+          product={productSort}
+          setProduct={setProductSort}
           cart={cart}
           setCart={setCart}
         />
-        <div className="productListItemsName">{product.name}</div>
+        <div className="productListItemsName">{productSort.name}</div>
         <div className="productListItemsPrice">
-          {convertPrice(product.price)}원
+          {convertPrice(parseInt(productSort.price))}원
         </div>
         <div className="productListItemsIcon">
           <span>
