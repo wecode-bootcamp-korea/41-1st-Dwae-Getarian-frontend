@@ -17,6 +17,7 @@ import Benefits from './pages/MySubPage/Benefits/Benefits';
 const Router = () => {
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
+  const [checkList, setCheckList] = useState([]);
   const convertPrice = price => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
@@ -57,7 +58,7 @@ const Router = () => {
         <Route path="/review" element={<Review />} />
         {/* <Route path="/search" element={<Search />} /> */}
         <Route
-          path="/productDetail/:id"
+          path="/product/detail/:id"
           element={
             <ProductDetail
               product={product}
@@ -78,6 +79,8 @@ const Router = () => {
               cart={cart}
               setCart={setCart}
               convertPrice={convertPrice}
+              checkList={checkList}
+              setCheckList={setCheckList}
             />
           }
         />

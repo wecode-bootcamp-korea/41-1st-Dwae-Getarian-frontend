@@ -1,22 +1,20 @@
 import React from 'react';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-// import Payment from '../Product/components/payment/Payment';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import Payment from '../payment/Payment';
 import './Cart.scss';
 import CartList from './CartList/CartList';
 
 export default function Cart({
   cart,
   setCart,
-  product,
-  setProduct,
   convertPrice,
   checkList,
   setCheckList,
 }) {
   // const { id } = useParams();
-  // const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
   // const [carts, setCarts] = useState([]);
 
   // useEffect(() => {
@@ -126,13 +124,13 @@ export default function Cart({
         </div>
       </div>
       <div className="payment">
-        {/* <Payment
+        <Payment
           total={total}
           setTotal={setTotal}
           found={found}
           cart={cart}
           convertPrice={convertPrice}
-        /> */}
+        />
       </div>
     </div>
   );
