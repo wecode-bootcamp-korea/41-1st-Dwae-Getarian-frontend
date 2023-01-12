@@ -36,10 +36,7 @@ export default function Nav() {
                   <div className="nav-left-box-btn">
                     <ul className="nav-list-dep1">
                       <li className="nav-dep1-item">
-                        <Link
-                          className="nav-left-box-btns nav-btns"
-                          to="/main/best"
-                        >
+                        <Link className="nav-left-box-btns nav-btns" to="/best">
                           베스트
                         </Link>
                         <div class="nav-list-dep2-box">
@@ -51,7 +48,7 @@ export default function Nav() {
                       <li className="nav-dep1-item">
                         <Link
                           className="nav-left-box-btns nav-btns"
-                          to="/main/product"
+                          to="/product"
                         >
                           제품
                         </Link>
@@ -59,7 +56,7 @@ export default function Nav() {
                       <li className="nav-dep1-item">
                         <Link
                           className="nav-left-box-btns nav-btns"
-                          to="/main/recipe"
+                          to="/present"
                         >
                           선물추천
                         </Link>
@@ -91,7 +88,6 @@ export default function Nav() {
                     <Link
                       className="nav-right-box-icons-truck nav-right-box-icon-group nav-btns"
                       Link
-                      to="/delivery"
                     >
                       <CiDeliveryTruck />
                     </Link>
@@ -99,14 +95,14 @@ export default function Nav() {
                   <Link
                     className="nav-right-box-login nav-btns hovered-login-signup-btns"
                     Link
-                    to="/main/login"
+                    to="/login"
                   >
                     로그인
                   </Link>
                   <Link
                     className="nav-right-box-signup nav-btns hovered-login-signup-btns"
                     Link
-                    to="/main/signup"
+                    to="/signup"
                   >
                     회원가입
                   </Link>
