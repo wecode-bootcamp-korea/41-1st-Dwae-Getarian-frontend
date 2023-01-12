@@ -30,11 +30,11 @@ function ImageSlider({ slides }) {
 
   return (
     <div className="slideshow">
-      <div className="slideshowDots">
+      <div className="present-slideshowDots">
         {slides.map((_, idx) => (
           <div
             key={idx}
-            className={`slideshowDot${index === idx ? ' active' : ''}`}
+            className={`present-slideshowDot${index === idx ? ' active' : ''}`}
             onClick={() => {
               setIndex(idx);
             }}
