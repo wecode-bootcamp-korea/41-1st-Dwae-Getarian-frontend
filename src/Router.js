@@ -13,6 +13,7 @@ import ProductMeaKit from './pages/Main/Components/Product/components/ProductMea
 import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
+import Login from './pages/Login/Login';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -84,6 +85,7 @@ const Router = () => {
             />
           }
         />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
