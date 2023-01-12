@@ -28,7 +28,7 @@ export default function ProductDetail({
   //     );
   // }, [id]);
   useEffect(() => {
-    fetch(`http://10.58.52.95:3001/product/detail/${id}`)
+    fetch(`http://10.58.52.243:3000/product/detail/${id}`)
       .then(res => res.json())
       .then(data =>
         setDetailProduct(data.find(product => product.id === parseInt(id)))
