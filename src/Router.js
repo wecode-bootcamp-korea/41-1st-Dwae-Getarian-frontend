@@ -11,6 +11,7 @@ import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import Best from './components/Best/Best';
+import Order from './pages/Main/Components/Order';
 import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
@@ -73,6 +74,7 @@ const Router = () => {
         />
         <Route path="/brand" element={<Brand />} />
         <Route path="/best" element={<Best />} />
+        <Route path="/order" element={<Order />} />
         <Route
           path="/cart"
           element={
