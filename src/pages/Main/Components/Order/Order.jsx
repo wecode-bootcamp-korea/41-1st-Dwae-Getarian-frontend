@@ -15,7 +15,7 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('http://jsonplaceholder.typicode.com/users')
       .then(result => result.json())
       .then(data => setCartItems(data));
   }, []);
