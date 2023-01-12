@@ -29,27 +29,37 @@ function Slide({ slides }) {
   }, [index]);
 
   return (
-    <div className="slideshow">
+    <div className="slideshowImg">
       <div
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        {slides.map((slideImage, index) => (
-          <div className="slide" key={index}>
-            <img src={slideImage.image} alt="" />
-          </div>
-        ))}
-      </div>
-      <div className="slideshowDots">
-        {slides.map((_, idx) => (
-          <div
-            key={idx}
-            className={`slideshowDot${index === idx ? ' active' : ''}`}
-            onClick={() => {
-              setIndex(idx);
-            }}
+        <div className="slide">
+          <img
+            className="sliderimg"
+            src="./images/choyunhwan/ella-olsson-lMcRyBx4G50-unsplash.jpg"
+            alt="밀키트"
           />
-        ))}
+        </div>
+        <div className="slide">
+          <img
+            className="sliderimg"
+            src="./images/choyunhwan/two.jpg"
+            alt="밀키트"
+          />
+        </div>
+        <div className="slide">
+          <img
+            className="sliderimg"
+            src="./images/choyunhwan/three.avif"
+            alt="비건타코"
+          />
+        </div>
+        {/* {slides.map((slideImage, index) => (
+          <div className="slide" key={index}>
+            <img className="sliderimg" src={slideImage.image} alt="" />
+          </div>
+        ))} */}
       </div>
     </div>
   );
