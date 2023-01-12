@@ -25,7 +25,7 @@ export default function Recipe() {
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
     fetch(
-      'http://10.58.52.95:3000/product?sortBy=price_high&sortBy=new&page=list_10&categoryId=3',
+      'http://10.58.52.243:3000/product?sortBy=price_high&sortBy=new&page=list_10&categoryId=3',
       {
         method: 'GET',
       }
@@ -113,7 +113,7 @@ export default function Recipe() {
                       {productList.map((product, index) => {
                         return (
                           <Link
-                            to={`/productDetail/${product.id}`}
+                            to={`/product/detail/${product.id}`}
                             key={product.id}
                           >
                             <ul className="test-product-items">
