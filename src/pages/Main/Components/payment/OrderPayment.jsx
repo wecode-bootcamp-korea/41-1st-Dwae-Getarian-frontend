@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './OrderPayment.scss';
-export default function Payment() {
+export default function Payment({ cart }) {
   const [payment, setPayment] = useState({
     address: '',
     phone_number: '',
@@ -16,7 +16,7 @@ export default function Payment() {
       body: JSON.stringify({
         payment: {
           payment_type: 'voucher',
-          total_cost: 30000.0,
+          total_cost: cart.payment.total_cost + 3000,
         },
 
         delivery_address: {
@@ -24,21 +24,20 @@ export default function Payment() {
           phone_number: setPayment.phone_number,
         },
 
-        products: [
-          {
-            id: 2,
-            name: '채시익식단',
-            price: 5500.0,
-            quantity: 1,
-          },
-
-          {
-            id: 3,
-            name: '채식식단',
-            price: 5000.0,
-            quantity: 1,
-          },
-        ],
+        // products: [
+        //   {
+        //     id: cart.products.id,
+        //     name: cart.products.name,
+        //     price: cart.products.price,
+        //     quantity: cart.products.quantity,
+        //   },
+        //   {
+        //     id: 3,
+        //     name: '채식식단',
+        //     price: 5000.0,
+        //     quantity: 1,
+        //   },
+        // ],
       }),
     })
       //요청
@@ -54,15 +53,24 @@ export default function Payment() {
       <ul className="pay">
         <li>
           <p>상품 금액</p>
-          <p>0원</p>
+          <p>
+            {cart.payment.total_cost.reduce((acc, cur, i) => {
+              return acc + cur;
+            }, 0)}
+            원
+          </p>
         </li>
         <li>
-          <p>상품 할인</p>
-          <p>-0원</p>
+          <p>포인트 사용</p>
+          <p>{cart.payment.total_cost + 3000}points</p>
         </li>
         <li>
           <p>배송비</p>
-          <p>0원</p>
+          <p>3000원</p>
+        </li>
+        <li>
+          <p>남은 포인트</p>
+          <p>{cart.payment.total_cost - cart.payment.total_cost - 3000}</p>
         </li>
       </ul>
       <ul className="total">

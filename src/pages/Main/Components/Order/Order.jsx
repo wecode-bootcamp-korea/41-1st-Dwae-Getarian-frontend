@@ -7,23 +7,28 @@ export default function Order() {
     address: '',
     phone_number: '',
   });
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    fetch('http://10.58.52.243:3000/product')
+      .then(result => result.json())
+      .then(data => setCart(data));
+  }, []);
   const onChange = e => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
-  useEffect(() => {
-    fetch('http://http://10.58.52.243:3000/cart/items/user', {
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
-      .then(result => result.json())
-      .then(data => setCartItems(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://http://10.58.52.243:3000/cart/items/user', {
+  //     headers: {
+  //       'Content-Type': 'application/json;charset=utf-8',
+  //       Authorization: localStorage.getItem('token'),
+  //     },
+  //   })
+  //     .then(result => result.json())
+  //     .then(data => setCart(data));
+  // }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -122,11 +127,11 @@ export default function Order() {
           <div className="cartBox">
             <div className="cartBoxTitle">
               <span>주문상품</span>
-              <span>총{cartItems.length}건</span>
+              <span>총{cart.length}건</span>
             </div>
 
             <div className="cartBoxDetail">
-              {cartItems.map(item => {
+              {cart.map(item => {
                 return <OrderedItems key={item.id} item={item} />;
               })}
             </div>
@@ -134,7 +139,7 @@ export default function Order() {
         </div>
       </div>
       <div className="payment">
-        <OrderPayment />
+        <OrderPayment cart={cart} />
       </div>
     </div>
   );

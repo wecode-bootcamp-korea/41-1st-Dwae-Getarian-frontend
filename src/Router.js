@@ -11,11 +11,12 @@ import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import Best from './components/Best/Best';
-import Order from './pages/Main/Components/Order';
+import Order from './pages/Main/Components/Order/Order';
 import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
 import Login from './pages/Login/Login';
+import Footer from './components/Footer/Footer';
 
 const Router = () => {
   const [product, setProduct] = useState([]);
@@ -91,6 +92,7 @@ const Router = () => {
         />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

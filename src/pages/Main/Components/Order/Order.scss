@@ -3,6 +3,7 @@
   padding-left: 10vw;
   display: flex;
   justify-content: space-evenly;
+  padding-top: 100px;
   .infoInput {
     .paymentTitle {
       width: 45vw;
@@ -66,8 +67,9 @@
   .cartBoxinBox {
     .cartBox {
       padding: 24px 20px 24px;
-      width: 700px;
+      width: 100%;
       border-top: 1px solid #e6e6e6;
+      overflow: auto;
 
       .cartBoxTitle {
         display: flex;
@@ -76,6 +78,7 @@
       .cartBoxDetail {
         display: flex;
         overflow: auto;
+        height: 180px;
       }
     }
   }
