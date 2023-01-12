@@ -15,7 +15,12 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://jsonplaceholder.typicode.com/users')
+    fetch('http://http://10.58.52.243:3000/cart/items/user', {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+    })
       .then(result => result.json())
       .then(data => setCartItems(data));
   }, []);
@@ -117,7 +122,7 @@ export default function Order() {
           <div className="cartBox">
             <div className="cartBoxTitle">
               <span>주문상품</span>
-              <span>총{}건</span>
+              <span>총{cartItems.length}건</span>
             </div>
 
             <div className="cartBoxDetail">

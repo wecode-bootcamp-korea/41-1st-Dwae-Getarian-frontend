@@ -4,8 +4,7 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  overflow: auto;
   .userBuyItem {
-    border: 1px solid black;
   }
 }
