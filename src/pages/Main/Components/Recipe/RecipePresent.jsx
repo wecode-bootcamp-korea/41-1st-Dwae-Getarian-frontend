@@ -9,7 +9,7 @@ export default function RecipePresent({ presentRef, present, convertPrice }) {
   const limit = searchParams.get('limit');
 
   useEffect(() => {
-    fetch(`http://10.58.52.95:3000/product?${searchParams.toString()}`)
+    fetch(`http://10.58.52.243:3000/product?${searchParams.toString()}`)
       .then(response => response.json())
       .then(data => setPresentItems(data));
   }, [offset, limit]);
@@ -32,7 +32,7 @@ export default function RecipePresent({ presentRef, present, convertPrice }) {
           {presentItems.map(presentItem => {
             return (
               <Link
-                to={`/productDetail/${presentItem.id}`}
+                to={`/product/detail/${presentItem.id}`}
                 key={presentItem.id}
               >
                 <div className="teawear-item-container">
