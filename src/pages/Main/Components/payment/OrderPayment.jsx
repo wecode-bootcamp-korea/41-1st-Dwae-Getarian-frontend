@@ -32,7 +32,6 @@ export default function Payment({ cart }) {
         //     quantity: cart.products.quantity,
         //   },
         //   {
-        //     id: 3,
         //     name: '채식식단',
         //     price: 5000.0,
         //     quantity: 1,
@@ -47,22 +46,19 @@ export default function Payment({ cart }) {
         console.log(data);
       });
   }
-
+  const totalpay = cart.product.reduce((acc, cur) => {
+    return (acc += cur.price * cur.quantity);
+  }, 0);
   return (
     <div className="payment">
       <ul className="pay">
         <li>
           <p>상품 금액</p>
-          <p>
-            {cart.payment.total_cost.reduce((acc, cur, i) => {
-              return acc + cur;
-            }, 0)}
-            원
-          </p>
+          <p>{totalpay}원</p>
         </li>
         <li>
-          <p>포인트 사용</p>
-          <p>{cart.payment.total_cost + 3000}points</p>
+          <p>포인트 결제</p>
+          <p>-{totalpay + 3000}points</p>
         </li>
         <li>
           <p>배송비</p>
@@ -70,7 +66,7 @@ export default function Payment({ cart }) {
         </li>
         <li>
           <p>남은 포인트</p>
-          <p>{cart.payment.total_cost - cart.payment.total_cost - 3000}</p>
+          <p>{100000 - (totalpay + 3000)}</p>
         </li>
       </ul>
       <ul className="total">

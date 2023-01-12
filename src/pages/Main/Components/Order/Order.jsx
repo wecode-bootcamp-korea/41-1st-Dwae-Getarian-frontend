@@ -8,27 +8,22 @@ export default function Order() {
     phone_number: '',
   });
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    fetch('http://10.58.52.243:3000/product')
-      .then(result => result.json())
-      .then(data => setCart(data));
-  }, []);
   const onChange = e => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
-  // useEffect(() => {
-  //   fetch('http://http://10.58.52.243:3000/cart/items/user', {
-  //     headers: {
-  //       'Content-Type': 'application/json;charset=utf-8',
-  //       Authorization: localStorage.getItem('token'),
-  //     },
-  //   })
-  //     .then(result => result.json())
-  //     .then(data => setCart(data));
-  // }, []);
+  useEffect(() => {
+    fetch('http://http://10.58.52.243:3000/cart/items/user', {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(result => result.json())
+      .then(data => setCart(data));
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
