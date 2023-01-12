@@ -1,10 +1,9 @@
 .collection {
-  background-color: #f6f6f6;
-
+  margin: 100px 0;
   .eventBox {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+
     .todayDiscount {
       display: flex;
       flex-direction: column;
@@ -20,7 +19,7 @@
         padding: 15px;
         font-size: 26px;
         font-weight: 500;
-        color: white;
+        color: #fff;
       }
       .discountPrice {
         margin-left: 0;
@@ -31,16 +30,16 @@
     .attendanceStory {
       margin-left: 20px;
       .checkAttendence {
+        object-fit: fill;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        background: url('https://images.unsplash.com/photo-1541894323-8b2bf33b83dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
-            50%,
+        background: url('../../../../../../public/images/mypage.jpg') 50%,
           50% no-repeat;
         height: 273.734px;
         width: 579.953px;
-        font-size: 500;
-        color: green;
+        font-weight: 500;
+        color: white;
         .attendencePeriodBox {
           display: flex;
           flex-direction: column;
@@ -55,7 +54,7 @@
         width: 579.953px;
         margin-top: 21.5px;
         background-color: yellow;
-        background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dHJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+        background-image: url('../../../../../../public/images/brand.jpg');
         background-size: cover;
         display: flex;
         justify-content: center;

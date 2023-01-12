@@ -4,8 +4,8 @@ export default function Notice() {
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
-      if (index > -60) {
-        setIndex(prev => prev - 24);
+      if (index > -20) {
+        setIndex(prev => prev - 18);
       } else {
         setIndex(0);
       }
@@ -22,7 +22,13 @@ export default function Notice() {
       <div className="alertContent">
         {notice.map((value, i) => {
           return (
-            <p style={{ transform: `translateY(${index}px)` }} key={i}>
+            <p
+              className="styleP"
+              style={{
+                transform: `translateY(${index}px)`,
+              }}
+              key={i}
+            >
               {value.notice}
             </p>
           );
