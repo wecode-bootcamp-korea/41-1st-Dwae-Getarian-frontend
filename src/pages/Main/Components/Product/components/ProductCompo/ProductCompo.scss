@@ -6,14 +6,14 @@
     width: 100%;
     height: 380px;
   }
-  .productMealkitImg {
-    background: url('https://images.unsplash.com/photo-1610415946035-bad6fc9f5b8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')
-      no-repeat center;
+  .productFoodImg {
+    background: url('https://images.unsplash.com/photo-1503810473512-f64b56827964?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')
+      no-repeat center 80%;
     background-size: cover;
   }
-  .productFoodImg {
-    background: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=853&q=80')
-      no-repeat center;
+  .productMealkitImg {
+    background: url('https://images.unsplash.com/photo-1613152834526-30fd8ebd8b61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80')
+      no-repeat center 30%;
     background-size: cover;
   }
   .productMealkitImg,
