@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Nav from '../../../../../../components/Nav/Nav';
 import ProductCompo from '../ProductCompo/ProductCompo';
 
 export default function ProductMeaKit() {
@@ -8,17 +9,20 @@ export default function ProductMeaKit() {
   };
 
   return (
-    <div>
-      <ProductCompo
-        name="productMealkitImg"
-        title="MealKit"
-        content="Vegeterian Food"
-        bubble="787"
-        product={product}
-        setProduct={setProduct}
-        convertPrice={convertPrice}
-        dis="none"
-      />
-    </div>
+    <>
+      <Nav />
+      <div>
+        <ProductCompo
+          name="productMealkitImg"
+          title="MealKit"
+          content="MealKit"
+          bubble="787"
+          product={product}
+          setProduct={setProduct}
+          convertPrice={convertPrice}
+          dis="none"
+        />
+      </div>
+    </>
   );
 }

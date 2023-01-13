@@ -1,0 +1,80 @@
+.searchContainer {
+  width: 100vw;
+  height: 100vw;
+  margin: 0;
+  padding: 50px 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  .searchDisplay {
+    background-color: #fff;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: scroll;
+
+    .search {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .searchInput {
+        width: 100%;
+        position: relative;
+        input {
+          font-size: 16px;
+          width: 100%;
+          margin: 0 auto;
+          padding: 15px;
+          border: #2d6806 3px solid;
+          box-sizing: border-box;
+          outline: none;
+        }
+        .searchIcon {
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          font-size: 25px;
+          color: #2d6806;
+          transform: translateY(-50%);
+        }
+      }
+      .searchDelete {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        .cross {
+          font-size: 20px;
+        }
+      }
+
+      .searchList {
+        width: 100%;
+      }
+    }
+  }
+  .searchListItem {
+    ul {
+      li {
+      }
+    }
+  }
+  .searchItemImg {
+    height: 200px;
+    height: 200px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+.searchDisplay::-webkit-scrollbar {
+  display: none;
+}

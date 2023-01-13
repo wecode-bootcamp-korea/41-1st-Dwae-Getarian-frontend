@@ -1,0 +1,29 @@
+.searchItem {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  .searchItemName {
+    width: 200px;
+    text-align: left;
+    position: relative;
+    li {
+      position: absolute;
+      padding: 10px 0;
+      bottom: 0;
+    }
+  }
+  .searchItemImg {
+    width: 200px;
+    // height: 300px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
