@@ -9,7 +9,7 @@ export default function RecipePresent({ presentRef, present, convertPrice }) {
   const limit = searchParams.get('limit');
 
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/product?${searchParams.toString()}`)
+    fetch(`http://10.58.52.243:3001/product?${searchParams.toString()}`)
       .then(response => response.json())
       .then(data => setPresentItems(data));
   }, [offset, limit]);
@@ -39,7 +39,7 @@ export default function RecipePresent({ presentRef, present, convertPrice }) {
                   <div>
                     <img
                       className="teawear-item-img"
-                      src={presentItem.image}
+                      src={presentItem.thumbnail_image}
                       alt="이미지"
                     />
                     <p className="teawear-item-name">{presentItem.name}</p>

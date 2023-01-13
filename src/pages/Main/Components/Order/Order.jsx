@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Nav from '../../../../components/Nav/Nav';
 import OrderPayment from '../payment/OrderPayment';
 import Footer from '../../../../components/Footer/Footer';
 import './Order.scss';
@@ -70,6 +71,7 @@ export default function Order() {
 
   return (
     <>
+      <Nav />
       <div className="orderPage">
         <div className="infoInput">
           <div className="paymentTitle">

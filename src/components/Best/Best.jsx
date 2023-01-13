@@ -9,7 +9,7 @@ export default function Best() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.52.243:3001/product?sortBy=price_high&limit=10')
+    fetch('http://10.58.52.243:3001/product')
       .then(result => result.json())
       .then(data => setItems(data));
   }, []);
