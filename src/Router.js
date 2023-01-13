@@ -6,91 +6,44 @@ import ProductDetail from './pages/Main/Components/Product/components/ProductDet
 import ProductFood from './pages/Main/Components/Product/components/ProductFood/ProductFood';
 import Recipe from './pages/Main/Components/Recipe/Recipe';
 import Review from './pages/Main/Components/Review/Review';
-// import Search from './pages/Main/Components/search/Search';
+import Search from './pages/Main/Components/search/Search';
 import Nav from './components/Nav/Nav';
 import Brand from './pages/Main/Components/Brand/Brand';
 import ProductMeaKit from './pages/Main/Components/Product/components/ProductMealKit/ProductMeaKit';
 import Best from './components/Best/Best';
 import Order from './pages/Main/Components/Order/Order';
-import My from './pages/Login/My/My';
 import ActivityList from './pages/Login/My/ActivityList/ActivityList';
+import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
+import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 import Footer from './components/Footer/Footer';
 
 const Router = () => {
-  const [product, setProduct] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [checkList, setCheckList] = useState([]);
-  const convertPrice = price => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+      <Routes>
         <Route path="/" element={<Main />} />
-        <Route
-          path="/product"
-          element={
-            <ProductFood
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/product" element={<ProductFood />} />
         <Route path="/mypage" element={<My />} />
         <Route path="/mypage/activityList" element={<ActivityList />} />
         <Route path="/mypage/benefits" element={<Benefits />} />
-        <Route
-          path="/productMealkit"
-          element={
-            <ProductMeaKit
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/mypage/orderReservation" element={<MyReservation />} />
+        <Route path="/productMealkit" element={<ProductMeaKit />} />
         <Route path="/present" element={<Recipe />} />
         <Route path="/review" element={<Review />} />
-        {/* <Route path="/search" element={<Search />} /> */}
-        <Route
-          path="/product/detail/:id"
-          element={
-            <ProductDetail
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-            />
-          }
-        />
+        <Route path="/search" element={<Search />} />
+        <Route path="/product/detail/:id" element={<ProductDetail />} />
         <Route path="/brand" element={<Brand />} />
         <Route path="/best" element={<Best />} />
         <Route path="/order" element={<Order />} />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              product={product}
-              setProduct={setProduct}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-              checkList={checkList}
-              setCheckList={setCheckList}
-            />
-          }
-        />
-        <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

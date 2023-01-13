@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "register": 16,
+      "completion": 3,
+      "preparation": 1,
+      "delivery": 5,
+      "delivery_completed": 164
+    }
+  ]
+}

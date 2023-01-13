@@ -46,19 +46,19 @@ export default function Payment({ cart }) {
         console.log(data);
       });
   }
-  const totalpay = cart.product.reduce((acc, cur) => {
-    return (acc += cur.price * cur.quantity);
-  }, 0);
+  // const totalpay = cart.product.reduce((acc, cur) => {
+  //   return (acc += cur.price * cur.quantity);
+  // }, 0);
   return (
     <div className="payment">
       <ul className="pay">
         <li>
           <p>상품 금액</p>
-          <p>{totalpay}원</p>
+          <p>23000원</p>
         </li>
         <li>
           <p>포인트 결제</p>
-          <p>-{totalpay + 3000}points</p>
+          <p>-26000points</p>
         </li>
         <li>
           <p>배송비</p>
@@ -66,7 +66,7 @@ export default function Payment({ cart }) {
         </li>
         <li>
           <p>남은 포인트</p>
-          <p>{100000 - (totalpay + 3000)}</p>
+          <p>{100000 - 26000}원</p>
         </li>
       </ul>
       <ul className="total">
@@ -74,7 +74,7 @@ export default function Payment({ cart }) {
         <li className="orderPay">0원</li>
       </ul>
       <div onClick={handleSubmit} className="order">
-        0원 주문하기
+        주문하기
       </div>
     </div>
   );
