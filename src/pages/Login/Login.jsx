@@ -2,7 +2,7 @@ import React from 'react';
 import '../Login/Login.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const navigation = useNavigate();
@@ -24,7 +24,7 @@ export default function Login() {
   };
 
   const handleClick = e => {
-    fetch('http://10.58.52.243:3000/user/login', {
+    fetch('http://10.58.52.243:3001/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -82,11 +82,11 @@ export default function Login() {
             type="password"
             className="login-pw"
             name="password"
-            placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)"
+            placeholder="비밀번호 입력 (영문, 숫자 조합)"
             value={form.password || ''}
             onChange={onLogin}
           />
-          {!pwPwValid && '비밀번호는 영문, 숫자 조합 4글자 이상입니다.'}
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 6글자 이상입니다.'}
           <div className="save-id">
             <img src="/images/checked.png" className="save-id-pic" />
             <span className="save-id-li">아이디 저장</span>
