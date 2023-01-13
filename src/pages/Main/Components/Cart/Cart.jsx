@@ -24,7 +24,7 @@ export default function Cart(
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/cart/items/user`, {
+    fetch(`http://10.58.52.243:3001/cart/items/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -34,7 +34,7 @@ export default function Cart(
       .then(res => res.json())
       .then(res => setCart(res));
   }, []);
-
+  console.log(cart);
   const handleQuantity = (type, id, quantity) => {
     const found = cart.filter(el => el.id === id)[0];
     const idx = cart.indexOf(found);
