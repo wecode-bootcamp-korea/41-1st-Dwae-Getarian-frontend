@@ -43,7 +43,6 @@ const Router = () => {
         <Route path="/best" element={<Best />} />
         <Route path="/order" element={<Order />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
