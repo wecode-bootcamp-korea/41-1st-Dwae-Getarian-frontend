@@ -8,7 +8,7 @@ export default function ProductListImg({ product, setProduct, cart, setCart }) {
     <div className="productListItemsImg">
       <Link to={`/product/detail/${product.id}`}>
         <img
-          src={product.image} //thumbnail_image
+          src={product.thumbnail_image} //thumbnail_image
           alt="image"
         />
       </Link>

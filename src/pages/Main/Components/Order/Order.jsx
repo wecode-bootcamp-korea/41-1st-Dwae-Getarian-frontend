@@ -15,7 +15,7 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://http://10.58.52.243:3000/cart/items/user', {
+    fetch('http://http://10.58.52.243:3001/cart/items/user', {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),

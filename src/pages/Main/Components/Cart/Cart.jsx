@@ -55,7 +55,7 @@ export default function Cart(
   };
 
   const handleRemove = id => {
-    fetch('http://10.58.52.243:3000/cart/items', {
+    fetch('http://10.58.52.243:3001/cart/items', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
