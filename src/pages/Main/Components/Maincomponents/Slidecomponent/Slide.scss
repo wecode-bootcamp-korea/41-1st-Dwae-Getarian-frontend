@@ -1,17 +1,17 @@
 .slideshowImg {
   margin: 0;
-
+  width: 100vw;
+  overflow: hidden;
   .slideshowSlider {
     white-space: nowrap;
 
     .slide {
       display: inline-block;
       background-size: cover;
-      width: 100%;
 
       .sliderimg {
         height: 500px;
-        width: 100%;
+
         object-fit: cover;
       }
     }
