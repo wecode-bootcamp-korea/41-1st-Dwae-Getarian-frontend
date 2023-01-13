@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './OrderPayment.scss';
+
 export default function Payment({ cart }) {
   const [payment, setPayment] = useState({
     address: '',
@@ -8,7 +9,8 @@ export default function Payment({ cart }) {
   });
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('http://10.58.52.95:3001/order/items/4', {
+    alert('결제가 완료되었습니다.');
+    fetch('http://10.58.52.243:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

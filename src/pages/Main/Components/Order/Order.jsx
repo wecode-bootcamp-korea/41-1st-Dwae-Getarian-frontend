@@ -16,7 +16,7 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://http://10.58.52.243:3000/cart/items/user', {
+    fetch('http://10.58.52.243:3001/order/user', {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),
@@ -28,7 +28,8 @@ export default function Order() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch('http://10.58.52.95:3001/order/items/4', {
+    alert('결제가 완료되었습니다.');
+    fetch('http://10.58.52.243:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -44,21 +45,21 @@ export default function Order() {
           phone_number: form.phone_number,
         },
 
-        products: [
-          {
-            id: 2,
-            name: '채시익식단',
-            price: 5500.0,
-            quantity: 1,
-          },
+        // products: [
+        //   {
+        //     id: 2,
+        //     name: '채시익식단',
+        //     price: 5500.0,
+        //     quantity: 1,
+        //   },
 
-          {
-            id: 3,
-            name: '채식식단',
-            price: 5000.0,
-            quantity: 1,
-          },
-        ],
+        //   {
+        //     id: 3,
+        //     name: '채식식단',
+        //     price: 5000.0,
+        //     quantity: 1,
+        //   },
+        // ],
       }),
     })
       .then(response => response.json())
@@ -124,11 +125,11 @@ export default function Order() {
             <div className="cartBox">
               <div className="cartBoxTitle">
                 <span>주문상품</span>
-                <span>총{cart.length}건</span>
+                <span>총{cart.product.length}건</span>
               </div>
 
               <div className="cartBoxDetail">
-                {cart.map(item => {
+                {cart.products.map(item => {
                   return <OrderedItems key={item.id} item={item} />;
                 })}
               </div>
