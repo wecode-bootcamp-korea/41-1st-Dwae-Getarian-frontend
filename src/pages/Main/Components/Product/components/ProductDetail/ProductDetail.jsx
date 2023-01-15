@@ -6,7 +6,6 @@ import { FiPlus, FiMinus } from 'react-icons/fi';
 import './ProductDetail.scss';
 import ProductDetailBottom from './productDetailBottom/ProductDetailBottom';
 import { Link } from 'react-router-dom';
-import Nav from '../../../../../../components/Nav/Nav';
 
 export default function ProductDetail({}) {
   const { id } = useParams();
@@ -92,7 +91,6 @@ export default function ProductDetail({}) {
   return (
     detailProduct && (
       <>
-        <Nav />
         <div className="productDetailPageTop">
           <div className="productDetailLeft">
             <img src={detailProduct.thumbnail_image} alt="thumbnail_image" />

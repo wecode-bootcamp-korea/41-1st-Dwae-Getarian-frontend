@@ -2,7 +2,7 @@
   font-size: 12px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 0 100px;
   padding-top: 100px;
   .cart {
@@ -53,6 +53,6 @@
     }
   }
   .payment {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
