@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './payment.scss';
 
 const SHIPPING_FEE = 3000;
-export default function Payment({ cart, total, setTotal, found }) {
+export default function Payment({ cart, total, setTotal, found, handlePost }) {
   console.log(found);
   useEffect(() => {
     if (found) {
@@ -41,7 +42,11 @@ export default function Payment({ cart, total, setTotal, found }) {
         <li className="expectation">결제 예상 금액</li>
         <li className="orderPay">{total + SHIPPING_FEE}원</li>
       </ul>
-      <div className="order">0원 주문하기</div>
+      <Link to="/order">
+        <div className="order" onClick={handlePost}>
+          {total + SHIPPING_FEE}원 주문하기
+        </div>
+      </Link>
     </div>
   );
 }
