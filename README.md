@@ -1,5 +1,5 @@
 
-![header](https://capsule-render.vercel.app/api?type=cylinder&color=random&height=150&section=header&text=Le%20chou&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=cylinder&color=2D6806&height=150&section=header&text=Le%20chou&fontSize=90)
 
 Product Manager : 류건호(B)
 Project Manmager : 권나현(F)
