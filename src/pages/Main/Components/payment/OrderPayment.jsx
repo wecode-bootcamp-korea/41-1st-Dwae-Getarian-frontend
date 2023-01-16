@@ -51,7 +51,7 @@ export default function Payment({ cart }) {
   //   return (acc += cur.price * cur.quantity);
   // }, 0);
   return (
-    <div className="payment">
+    <div className="payment2">
       <ul className="pay">
         <li>
           <p>상품 금액</p>

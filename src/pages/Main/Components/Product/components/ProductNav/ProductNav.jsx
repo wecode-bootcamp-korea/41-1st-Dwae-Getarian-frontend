@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductNav.scss';
 
-export default function ProductNav({ categoryNumber }) {
+export default function ProductNav({ categoryNumber, select }) {
   return (
     <ul className="productNav">
       Product
@@ -13,10 +13,18 @@ export default function ProductNav({ categoryNumber }) {
         </Link>
         <ul className="vegetarianType">
           <ul>
-            <li onClick={() => categoryNumber('vegan')}>VEGAN</li>
-            <li onClick={() => categoryNumber('lacto')}>LOCTO</li>
-            <li onClick={() => categoryNumber('ovo')}>OVO</li>
-            <li onClick={() => categoryNumber('lacto_ovo')}>LACTO_OVO</li>
+            {BOLD_ITEMS &&
+              BOLD_ITEMS.map((item, idx) => {
+                return (
+                  <li
+                    key={idx}
+                    onClick={() => categoryNumber(item.name)}
+                    className={select === item.name ? 'boldItem' : ''}
+                  >
+                    {item.name}
+                  </li>
+                );
+              })}
           </ul>
         </ul>
       </li>
@@ -29,3 +37,10 @@ export default function ProductNav({ categoryNumber }) {
     </ul>
   );
 }
+const BOLD_ITEMS = [
+  { id: 1, name: 'VEGAN' },
+  { id: 2, name: 'LACTO' },
+  { id: 3, name: 'OVO' },
+  { id: 4, name: 'LACTO_OVO' },
+  { id: 5, name: 'PESCO' },
+];
