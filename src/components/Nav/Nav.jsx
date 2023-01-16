@@ -8,6 +8,7 @@ import './Nav.scss';
 
 export default function Nav() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  // logout
   const [isLogin, setIsLogin] = useState(null);
   const [cart, setCart] = useState([]);
   const [search, setSearch] = useState(false);
