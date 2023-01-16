@@ -7,7 +7,9 @@ import Search from '../../pages/Main/Components/search/Search';
 import './Nav.scss';
 
 export default function Nav() {
-  const [scrollPosition, setScrollPosition] = useState(0); // 스크롤 포지션 스테이트 생성
+  const [scrollPosition, setScrollPosition] = useState(0);
+  // logout!!
+  const [isLogin, setIsLogin] = useState(null);
   const [cart, setCart] = useState([]);
   const [search, setSearch] = useState(false);
 
