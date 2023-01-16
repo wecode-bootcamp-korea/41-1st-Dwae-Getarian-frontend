@@ -8,6 +8,7 @@ export default function ProductList({
   productSort,
   setProductSort,
   categoryNumber,
+  select,
 }) {
   const sortProduct = type => {
     const newProduct = [...productSort];
@@ -42,16 +43,43 @@ export default function ProductList({
           </div>
           <div className={'productListQuantityCategory ' + dis}>
             <ul>
+              {BOLD_ITEMS &&
+                BOLD_ITEMS.map((item, idx) => {
+                  return (
+                    <li
+                      key={idx}
+                      onClick={() => categoryNumber(item.name)}
+                      className={select === item.name ? 'boldItem' : ''}
+                    >
+                      {item.name}
+                    </li>
+                  );
+                })}
+
               {/* <li
-                className={select ? 'boldItem' : ''}
-                onClick={() => categoryNumber('total')}
+                onClick={() => categoryNumber('vegan', 1)}
+                className={select ? 'boldItem ' : ''}
               >
-                TOTAL
+                VEGAN
+              </li>
+              <li
+                onClick={() => categoryNumber('lacto', 2)}
+                className={select ? 'boldItem ' : ''}
+              >
+                LOCTO
+              </li>
+              <li
+                onClick={() => categoryNumber('ovo', 3)}
+                className={select ? 'boldItem ' : ''}
+              >
+                OVO
+              </li>
+              <li
+                onClick={() => categoryNumber('lacto_ovo', 4)}
+                className={select ? 'boldItem ' : ''}
+              >
+                LACTO_OVO
               </li> */}
-              <li onClick={() => categoryNumber('vegan')}>VEGAN</li>
-              <li onClick={() => categoryNumber('lacto')}>LOCTO</li>
-              <li onClick={() => categoryNumber('ovo')}>OVO</li>
-              <li onClick={() => categoryNumber('lacto_ovo')}>LACTO_OVO</li>
             </ul>
           </div>
         </div>
@@ -59,3 +87,10 @@ export default function ProductList({
     </div>
   );
 }
+const BOLD_ITEMS = [
+  { id: 1, name: 'VEGAN' },
+  { id: 2, name: 'LACTO' },
+  { id: 3, name: 'OVO' },
+  { id: 4, name: 'LACTO_OVO' },
+  { id: 5, name: 'PESCO' },
+];

@@ -1,0 +1,43 @@
+.bestMain {
+  width: 100vw;
+  height: 550px;
+  position: relative;
+  background-image: url('../../../public/images/choyunhwan/bestmain.jpg');
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  object-fit: fill;
+
+  .bestFont {
+    position: absolute;
+    font-size: 60px;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: -5px;
+    color: white;
+  }
+}
+.btnBox {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px;
+  .bestBtn {
+    width: 105px;
+    height: 40px;
+    background-color: #6c801a;
+    border-radius: 150px;
+    border-style: none;
+    margin-left: 290px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+.bestExplain {
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  width: 60%;
+}

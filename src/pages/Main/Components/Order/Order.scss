@@ -1,0 +1,83 @@
+.orderPage {
+  width: 100vw;
+  padding-left: 10vw;
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  .infoInput {
+    .paymentTitle {
+      width: 45vw;
+      font-size: 24px;
+      font-weight: 500;
+      padding: 24px;
+      border-bottom: 2px solid black;
+    }
+    .deliveryInfoTitle {
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      .infoTtile {
+        font-size: 18px;
+        font-weight: 500;
+        height: 60px;
+      }
+      .infoBtn {
+        padding: 10px;
+        border: 1px solid black;
+        border-style: none;
+        border-radius: 16px;
+        font-size: 16px;
+      }
+    }
+    .orderBox {
+      .infoContainer {
+        .infoTitle {
+          display: inline-block;
+          width: 10%;
+          height: 60px;
+        }
+        .infoTitleInput {
+          width: 90%;
+          height: 60px;
+        }
+      }
+    }
+    .saveSpot {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .delivery {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e6e6e6;
+    margin: 5vw 0;
+
+    padding: 24px 20px 24px 20px;
+    .deliveryTitle {
+      font-size: 14px;
+      margin-left: 3%;
+    }
+    .deliveryRequest {
+      width: 90%;
+      margin-left: 3%;
+      height: 40px;
+    }
+  }
+  .cartBoxinBox {
+    .cartBox {
+      padding: 24px 20px 24px;
+      width: 700px;
+      border-top: 1px solid #e6e6e6;
+
+      .cartBoxTitle {
+        display: flex;
+        justify-content: space-between;
+      }
+      .cartBoxDetail {
+        display: flex;
+        overflow: auto;
+      }
+    }
+  }
+}

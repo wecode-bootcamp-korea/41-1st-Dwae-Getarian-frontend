@@ -10,9 +10,9 @@ export default function ProductMeaKit() {
   return (
     <div>
       <ProductCompo
-        name="productFoodImg"
+        name="productMealkitImg"
         title="MealKit"
-        content="Vegeterian Food"
+        content="MealKit"
         bubble="787"
         product={product}
         setProduct={setProduct}

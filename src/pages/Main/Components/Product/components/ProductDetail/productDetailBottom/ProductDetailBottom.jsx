@@ -78,7 +78,7 @@ export default function ProductDetailBottom() {
   );
 }
 const menuArr = [
-  { id: 1, name: '상품정보제공고시', content: '/image/a.png' },
-  { id: 2, name: '배송/교환/반품 안내', content: '/image/b.png' },
-  { id: 3, name: '배송/교환/반품 유의사항', content: '/image/c.png' },
+  { id: 1, name: '상품정보제공고시', content: '/images/a.png' },
+  { id: 2, name: '배송/교환/반품 안내', content: '/images/b.png' },
+  { id: 3, name: '배송/교환/반품 유의사항', content: '/images/c.png' },
 ];

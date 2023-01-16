@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TfiClose } from 'react-icons/tfi';
 import './SignUp.scss';
 import GenderOption from './GenderOption';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [form, setForm] = useState({
@@ -10,36 +11,30 @@ export default function SignUp() {
     email: '',
     password: '',
     address: '',
+    postcode: '',
     mobile_number: '',
   });
+
+  console.log(form);
+
+  const navigate = useNavigate();
 
   const [whatGender, setGender] = useState(0);
 
+  console.log(whatGender);
+
   const [startDate, setState] = useState('');
 
-  const [disable, setDisabled] = useState(false);
+  console.log(startDate);
 
-  const [filledInput, setFilledInput] = useState({
-    name: '',
-    email: '',
-    password: '',
-    address: '',
-    mobile_number: '',
-    postcode: '',
-    date_of_birth: '',
-    gender_id: '',
-  });
+  const pwCondition = /^[A-Za-z0-9]{6,20}$/;
+  const idCondition =
+    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-  console.log(filledInput);
-  const fillIn = e => {
-    const { value } = e.target;
-    setFilledInput(e.target.value);
-    if (filledInput.includes(e.target.value)) {
-      setDisabled(false);
-    }
-  };
-
-  // const onDisabled = () => {};
+  const idIdValid = idCondition.test(form.email);
+  console.log(idIdValid);
+  const pwPwValid = pwCondition.test(form.password);
+  console.log(pwPwValid);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -51,7 +46,7 @@ export default function SignUp() {
   };
 
   const handleClick = () => {
-    fetch('http://10.58.52.134:3000/user/signup', {
+    fetch('http://10.58.52.76:3001/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -61,16 +56,12 @@ export default function SignUp() {
         email: form.email,
         password: form.password,
         address: form.address,
-        postcode: '',
+        postcode: form.postcode,
         phone_number: form.mobile_number,
         gender_id: whatGender,
         date_of_birth: startDate,
       }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
+    }).then(response => response.json());
   };
 
   return (
@@ -80,7 +71,11 @@ export default function SignUp() {
           <div className="header-box-inner">
             <h1 className="header-box-login-title">회원가입</h1>
             <button type="button" className="header-box-btn">
-              <TfiClose />
+              <TfiClose
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
             </button>
           </div>
         </div>
@@ -92,72 +87,70 @@ export default function SignUp() {
             className="signin-full-name"
             placeholder="이름"
             name="name"
-            value={form.name}
+            value={form.name || ''}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
             className="signin-email"
             placeholder="이메일"
             name="email"
-            value={form.email}
+            value={form.email || ''}
             onChange={handleChange}
-            onInput={fillIn}
           />
+          {!idIdValid && '이메일은 @, . 을 포함해야합니다.'}
           <input
             type="password"
             className="signin-pw"
             placeholder="비밀번호"
             name="password"
-            value={form.password}
+            value={form.password || ''}
             onChange={handleChange}
-            onInput={fillIn}
           />
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 6글자 이상입니다.'}
           <input
             type="text"
             className="signin-postcode"
             placeholder="우편번호"
             name="postcode"
-            value={form.postcode}
+            value={form.postcode || ''}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
             className="signin-address"
             placeholder="주소"
             name="address"
-            value={form.signin_address}
+            value={form.address || ''}
             onChange={handleChange}
-            onInput={fillIn}
           />
           <input
             type="text"
             className="signin-phone"
             placeholder="핸드폰 번호"
             name="mobile_number"
-            value={form.mobile_number}
+            value={form.mobile_number || ''}
             onChange={handleChange}
           />
-          <GenderOption setGender={setGender} onInput={fillIn} />
+          <GenderOption setGender={setGender} />
           <p className="birth-text">생년월일</p>
           <input
             type="date"
             className="signin-birth"
             onChange={e => setState(e.target.value)}
-            onInput={fillIn}
           />
-          <div className="signin-btn-box">
-            <button
-              type="button"
-              className="signin-btn"
-              onClick={handleClick}
-              disabled={true}
-            >
-              회원가입
-            </button>
-          </div>
+          <Link to="/main/login">
+            <div className="signin-btn-box">
+              <button
+                type="button"
+                className="signin-btn"
+                onClick={handleClick}
+                disabled={!(idIdValid && pwPwValid)}
+              >
+                회원가입
+              </button>
+            </div>
+          </Link>
         </form>
       </section>
     </>

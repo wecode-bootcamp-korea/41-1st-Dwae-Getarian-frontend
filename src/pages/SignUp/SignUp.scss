@@ -61,6 +61,7 @@
     .signin-postcode,
     .signin-phone {
       @include signup-box;
+      margin-top: 15px;
     }
 
     .signin_gender,
@@ -89,11 +90,12 @@
         font-size: 18px;
         border-radius: 6px;
         cursor: pointer;
+
+        &:disabled {
+          background-color: rgb(212, 210, 210);
+          color: white;
+        }
       }
     }
-  }
-  &:focus {
-    border-color: #0000ff;
-    color: #252525;
   }
 }

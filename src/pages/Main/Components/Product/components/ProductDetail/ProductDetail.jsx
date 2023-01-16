@@ -5,19 +5,17 @@ import { BsFacebook, BsHeart } from 'react-icons/bs';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import './ProductDetail.scss';
 import ProductDetailBottom from './productDetailBottom/ProductDetailBottom';
+import { Link } from 'react-router-dom';
 
-export default function ProductDetail({
-  cart,
-  setCart,
-  product,
-  setProduct,
-  convertPrice,
-}) {
+export default function ProductDetail({}) {
   const { id } = useParams();
 
-  const [totalPrice, setTotalPrice] = useState(product.price);
   const [detailProduct, setDetailProduct] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(detailProduct.price);
   const [count, setCount] = useState(1);
+  const convertPrice = price => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
   // useEffect(() => {
   //   fetch('/data/mock.json', { method: 'GET' })
   //     .then(res => res.json())
@@ -28,7 +26,7 @@ export default function ProductDetail({
   //     );
   // }, [id]);
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/product/detail/${id}`)
+    fetch(`http://10.58.52.76:3001/product/detail/${id}`)
       .then(res => res.json())
       .then(data =>
         setDetailProduct(data.find(product => product.id === parseInt(id)))
@@ -43,55 +41,52 @@ export default function ProductDetail({
       setCount(count - 1);
     }
   };
-  const setQuantity = (id, quantity) => {
-    const found = cart.filter(el => el.id === id)[0];
-    const idx = cart.indexOf(found);
+  // const setQuantity = (id, quantity) => {
+  //   const found = cart.filter(el => el.id === id)[0];
+  //   const idx = cart.indexOf(found);
 
-    const cartItem = {
-      id: detailProduct.id,
-      img: detailProduct.thumbnail_image,
-      name: detailProduct.name,
-      price: detailProduct.price,
-      quantity: quantity,
-    };
-    setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
-  };
+  //   const cartItem = {
+  //     id: detailProduct.id,
+  //     img: detailProduct.thumbnail_image,
+  //     name: detailProduct.name,
+  //     price: detailProduct.price,
+  //     quantity: quantity,
+  //   };
+  //   setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
+  // };
 
-  const handleCart = () => {
-    const cartItem = {
-      id: detailProduct.id,
-      img: detailProduct.thumbnail_image,
-      name: detailProduct.name,
-      price: detailProduct.price,
-      quantity: count,
-    };
-    const found = cart.find(el => el.id === cartItem.id);
-    if (found) setQuantity(cartItem.id, found.quantity + count);
-    else setCart([...cart, cartItem]);
-  };
+  // const handleCart = () => {
+  //   const cartItem = {
+  //     id: detailProduct.id,
+  //     img: detailProduct.thumbnail_image,
+  //     name: detailProduct.name,
+  //     price: detailProduct.price,
+  //     quantity: count,
+  //   };
+  //   const found = cart.find(el => el.id === cartItem.id);
+  //   if (found) setQuantity(cartItem.id, found.quantity + count);
+  //   else setCart([...cart, cartItem]);
+  // };
 
   useEffect(() => {
     setTotalPrice(detailProduct.price * count);
   }, [count]);
-  console.log(cart);
-  // function cartPost() {
-  //   fetch(
-  //     `http://10.58.52.95:3001/cart/items/"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NzM0MTUyOTl9.kfVq-lQuVJy_iGdFcB1QgwMQpBe76Qk4yCJg-OQ6ACs"`,
-  //     {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json;charset=utf-8',
-  //         // Authorization: localStorage.getItem('Token'),
-  //       },
-  //       body: JSON.stringify({
-  //         product_id: id,
-  //         quantity: count,
-  //       }),
-  //     }
-  //   ).then(res => {
-  //     console.log(res);
-  //   });
-  // }
+
+  function cartPost() {
+    fetch(`http://10.58.52.243:3000/cart/items`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        productId: id,
+        quantity: count,
+      }),
+    }).then(res => {
+      res.json();
+    });
+  }
   console.log(detailProduct);
   return (
     detailProduct && (
@@ -141,12 +136,13 @@ export default function ProductDetail({
             <div className="productDetailButtons">
               <button className="productDetailGift">선물하기</button>
 
-              <button className="productDetailCart" onClick={handleCart}>
-                {/* onClick={cartPost} */}
+              <button className="productDetailCart" onClick={cartPost}>
+                {/* onClick={handleCart} */}
                 장바구니
               </button>
-
-              <button className="productDetailBuy">바로구매</button>
+              <Link to="/order">
+                <button className="productDetailBuy">바로구매</button>
+              </Link>
             </div>
           </div>
         </div>

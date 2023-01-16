@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="footerLoginContainer">
         <form className="footerLogin">
           <div className="goToSns">
-            <Link to="/Login">
+            <Link to="/login">
               <button className="footerLoginBtn">로그인</button>
             </Link>
             <AiOutlineFacebook className="facebook" />

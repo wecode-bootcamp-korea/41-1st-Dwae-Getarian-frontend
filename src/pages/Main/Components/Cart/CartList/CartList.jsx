@@ -6,12 +6,10 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 export default function CartList({
   cart,
-  convertPrice,
   handleQuantity,
   handleRemove,
   handleCheckList,
   checkList,
-  setCheckList,
 }) {
   return (
     <div className="cartList">
@@ -24,8 +22,7 @@ export default function CartList({
       </div>
       <div className="cartListItem">
         <div className="cartListItemImg">
-          {/* cart.product_image */}
-          <img src={cart.img} alt="카트이미지" />
+          <img src={cart.image} alt="카트이미지" />
         </div>
         {/* cart.product_name */}
         <p>{cart.name}</p>
@@ -40,7 +37,7 @@ export default function CartList({
         />
       </div>
       <div className="cartListPrice">
-        <p>{convertPrice(cart.price * cart.quantity)}원</p>
+        <p>{cart.price * cart.quantity}원</p>
       </div>
       <div className="cartListBtn">
         <button>바로구매</button>

@@ -5,7 +5,7 @@ export default function BestItem({ item }) {
   return (
     <Link className="linkFontStyle" to={`/product/detail/${item.id}`}>
       <div className="best">
-        <img className="bestMenu" src={item.image} alt="베스트메뉴" />
+        <img className="bestMenu" src={item.thumbnail_image} alt="베스트메뉴" />
         <div className="font" />
       </div>
     </Link>

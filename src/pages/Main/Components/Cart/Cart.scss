@@ -2,8 +2,9 @@
   font-size: 12px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
-  margin: 30px 100px;
+  justify-content: space-evenly;
+  margin: 0 100px;
+  padding-top: 100px;
   .cart {
     width: 100%;
     margin-right: 30px;
@@ -52,6 +53,6 @@
     }
   }
   .payment {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
