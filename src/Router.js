@@ -17,18 +17,11 @@ import My from './pages/Login/My/My';
 import Benefits from './pages/MySubPage/Benefits/Benefits';
 import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 import Login from './pages/Login/Login';
-<<<<<<< HEAD
-import Invoices from './pages/Login/Invoices';
-import Invoice from './pages/Login/Invoice';
-import SentInvoices from './pages/Login/SentInvoices';
-=======
 import SignUp from './pages/SignUp/SignUp';
->>>>>>> master
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
