@@ -25,7 +25,7 @@ export default function Recipe() {
   //--------------데이터 통신 로직----------------//
   useEffect(() => {
     fetch(
-      'http://10.58.52.243:3001/product?sortBy=price_high&sortBy=new&page=list_10&categoryId=3',
+      'http://10.58.52.76:3001/product?sortBy=price_high&sortBy=new&page=list_10&categoryId=3',
       {
         method: 'GET',
       }

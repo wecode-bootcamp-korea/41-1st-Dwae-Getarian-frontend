@@ -5,9 +5,32 @@
   align-items: center;
   .page-btn {
     border-radius: 100%;
-    border: none;
-    background-color: transparent;
-    margin-top: 20px;
-    margin-right: 30px;
+  }
+  .gradient-btn {
+    margin-right: 15px;
+    display: inline-block;
+    padding: 1em 2em;
+    color: #b2876f;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 0.678rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(
+      to right,
+      rgba(#b2876f, 0) 25%,
+      rgba(#b2876f, 0.8) 75%
+    );
+    background-position: 1% 50%;
+    background-size: 400% 300%;
+    border: 1px solid #b2876f;
+    transition: 700ms ease-in-out;
+
+    &:hover {
+      color: white;
+      color: #fff;
+      background-position: 99% 50%;
+    }
   }
 }

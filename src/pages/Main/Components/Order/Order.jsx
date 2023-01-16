@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Nav from '../../../../components/Nav/Nav';
 import OrderPayment from '../payment/OrderPayment';
 import Footer from '../../../../components/Footer/Footer';
 import './Order.scss';
@@ -17,20 +16,19 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://10.58.52.243:3001/order/user', {
+    fetch('http://10.58.52.76:3001/order/user', {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),
       },
     })
       .then(result => result.json())
-      .then(data => setCart(data));
+      .then(data => setCart(data.products));
   }, []);
-
+  console.log(cart, 'cart');
   const handleSubmit = e => {
     e.preventDefault();
-    alert('결제가 완료되었습니다.');
-    fetch('http://10.58.52.243:3001/order/items/4', {
+    fetch('http://10.58.52.76:3001/order/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -69,80 +67,113 @@ export default function Order() {
       });
   };
 
+  const total = () => {
+    const totalP = [0];
+    for (let i = 0; i < cart.products.length; i++) {
+      const result = cart[i].price * cart[i].quantity;
+      totalP.push(result);
+    }
+    const sum = totalP.reduce((x, y) => x + y);
+    return sum;
+  };
+
   return (
-    <>
-      <Nav />
-      <div className="orderPage">
-        <div className="infoInput">
-          <div className="paymentTitle">
-            <span>결제하기</span>
-          </div>
-          <div className="deliveryInfoTitle">
-            <span className="infoTitle">배송지 정보</span>
-            <button className="infoBtn">주문 고객과 동일</button>
-          </div>
-
-          <form className="orderBox" onSubmit={handleSubmit}>
-            <div className="infoContainer">
-              <span className="infoTitle">받는 분</span>
-              <input className="infoTitleInput" type="text" for="Recipient" />
-            </div>
-            <div className="infoContainer">
-              <label className="infoTitle" for="phone">
-                연락처
-              </label>
-              <input
-                type="text"
-                name="phone_number"
-                onChange={onChange}
-                value={form.phone_number}
-                className="infoTitleInput"
-                placeholder="'-'없이 휴대번호 입력"
-              />
-            </div>
-            <div className="infoContainer">
-              <label className="infoTitle" for="address">
-                배송지
-              </label>
-              <input
-                name="address"
-                onChange={onChange}
-                value={form.address}
-                className="infoTitleInput"
-                type="text"
-                placeholder="상세주소 입력"
-              />
-            </div>
-            <div className="saveSpot">
-              <input type="checkbox" id="cb1" />
-              <label for="cb1">기본배송지로 저장</label>
-            </div>
-          </form>
-
-          <div className="delivery">
-            <p className="deliveryTitle">배송 요청사항</p>
-            <input className="deliveryRequest displayNone" type="text" />
-          </div>
-          <div className="cartBoxinBox">
-            <div className="cartBox">
-              <div className="cartBoxTitle">
-                <span>주문상품</span>
-                <span>총{cart.product.length}건</span>
-              </div>
-
-              <div className="cartBoxDetail">
-                {cart.products.map(item => {
-                  return <OrderedItems key={item.id} item={item} />;
-                })}
-              </div>
-            </div>
-          </div>
+    <div className="orderPage">
+      <div className="infoInput">
+        <div className="paymentTitle">
+          <span>결제하기</span>
         </div>
-        <div className="payment">
-          <OrderPayment cart={cart} />
+        <div className="deliveryInfoTitle">
+          <span className="infoTitle">배송지 정보</span>
+          <button className="infoBtn">주문 고객과 동일</button>
+        </div>
+
+        <form className="orderBox" onSubmit={handleSubmit}>
+          <div className="infoContainer">
+            <span className="infoTitle">받는 분</span>
+            <input className="infoTitleInput" type="text" for="Recipient" />
+          </div>
+          <div className="infoContainer">
+            <label className="infoTitle" for="phone">
+              연락처
+            </label>
+            <input
+              type="text"
+              name="phone_number"
+              onChange={onChange}
+              value={form.phone_number}
+              className="infoTitleInput"
+              placeholder="'-'없이 휴대번호 입력"
+            />
+          </div>
+          <div className="infoContainer">
+            <label className="infoTitle" for="address">
+              배송지
+            </label>
+            <input
+              name="address"
+              onChange={onChange}
+              value={form.address}
+              className="infoTitleInput"
+              type="text"
+              placeholder="상세주소 입력"
+            />
+          </div>
+          <div className="saveSpot">
+            <input type="checkbox" id="cb1" />
+            <label for="cb1">기본배송지로 저장</label>
+          </div>
+        </form>
+
+        <div className="delivery">
+          <p className="deliveryTitle">배송 요청사항</p>
+          <input className="deliveryRequest displayNone" type="text" />
+        </div>
+        <div className="cartBoxinBox">
+          <div className="cartBox">
+            <div className="cartBoxTitle">
+              <span>주문상품</span>
+              <span>총{cart.length}건</span>
+            </div>
+
+            <div className="cartBoxDetail">
+              {cart.map(item => {
+                return <OrderedItems key={item.id} item={item} />;
+              })}
+            </div>
+          </div>
         </div>
       </div>
-      <Footer />
-    </>
+      <div className="payment">
+        <div className="payment">
+          <ul className="pay">
+            <li>
+              <p>상품 금액</p>
+              <p>{total}원</p>
+            </li>
+            <li>
+              <p>포인트 결제</p>
+              <p>-26000points</p>
+            </li>
+            <li>
+              <p>배송비</p>
+              <p>3000원</p>
+            </li>
+            <li>
+              <p>남은 포인트</p>
+              <p>{100000 - 26000}원</p>
+            </li>
+          </ul>
+          <ul className="total">
+            <li className="expectation">결제 예상 금액</li>
+            <li className="orderPay">0원</li>
+          </ul>
+          <div onClick={handleSubmit} className="order">
+            주문하기
+          </div>
+        </div>
+        {/* <OrderPayment /> */}
+      </div>
+    </div>
   );
 }

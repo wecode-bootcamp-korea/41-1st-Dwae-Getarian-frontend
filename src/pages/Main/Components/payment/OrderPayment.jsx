@@ -9,8 +9,7 @@ export default function Payment({ cart }) {
   });
   function handleSubmit(e) {
     e.preventDefault();
-    alert('결제가 완료되었습니다.');
-    fetch('http://10.58.52.243:3001/order/items/4', {
+    fetch('http://10.58.52.76:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

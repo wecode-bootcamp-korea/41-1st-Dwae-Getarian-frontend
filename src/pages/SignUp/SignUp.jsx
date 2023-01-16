@@ -46,7 +46,7 @@ export default function SignUp() {
   };
 
   const handleClick = () => {
-    fetch('http://10.58.52.243:3001/user/signup', {
+    fetch('http://10.58.52.76:3001/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

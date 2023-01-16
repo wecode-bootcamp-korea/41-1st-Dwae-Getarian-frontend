@@ -18,7 +18,7 @@ export default function Search({ handleSearch }) {
   // });
   function filterSearch(e) {
     if (e.key === 'Enter') {
-      fetch(`http://10.58.52.243:3001/product/search/?keyWord=${input}`, {
+      fetch(`http://10.58.52.76:3001/product/search/?keyWord=${input}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',

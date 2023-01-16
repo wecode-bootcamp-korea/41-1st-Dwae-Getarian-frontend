@@ -9,7 +9,7 @@ export default function RecipePresent({ presentRef, present, convertPrice }) {
   const limit = searchParams.get('limit');
 
   useEffect(() => {
-    fetch(`http://10.58.52.243:3001/product?${searchParams.toString()}`)
+    fetch(`http://10.58.52.76:3001/product?${searchParams.toString()}`)
       .then(response => response.json())
       .then(data => setPresentItems(data));
   }, [offset, limit]);
