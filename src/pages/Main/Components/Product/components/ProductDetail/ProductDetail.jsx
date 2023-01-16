@@ -73,7 +73,7 @@ export default function ProductDetail({}) {
   }, [count]);
 
   function cartPost() {
-    fetch(`http://10.58.52.76:3001/cart/items`, {
+    fetch(`http://10.58.52.243:3000/cart/items`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
