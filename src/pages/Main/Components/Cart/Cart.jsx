@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Nav from '../../../../components/Nav/Nav';
 import Payment from '../payment/Payment';
 import './Cart.scss';
 import CartList from './CartList/CartList';
@@ -125,51 +126,54 @@ export default function Cart() {
   };
   console.log(checkList);
   return (
-    <div className="cartContainer">
-      <div className="cart">
-        <h1>장바구니</h1>
-        <div className="cartBox">
-          <div className="cartBoxTop">
-            <div className="cartBoxCheck">
-              <label htmlFor="allcheck">전체선택</label>
-              <input
-                id="allcheck"
-                type="checkbox"
-                onChange={e => handleAllCheck(e.currentTarget.checked)}
-                checked={isAllChecked}
-              />
-            </div>
-          </div>
-          {cart.length === 0 ? (
-            <div className="not">
-              <h1>장바구니에 담긴 상품이 없습니다.</h1>
-            </div>
-          ) : (
-            cart.map(cart => {
-              return (
-                <CartList
-                  key={cart.id}
-                  cart={cart}
-                  convertPrice={convertPrice}
-                  handleQuantity={handleQuantity}
-                  handleRemove={handleRemove}
-                  handleCheckList={handleCheckList}
-                  checkList={checkList}
-                  setCheckList={setCheckList}
+    <div>
+      <Nav />
+      <div className="cartContainer">
+        <div className="cart">
+          <h1>장바구니</h1>
+          <div className="cartBox">
+            <div className="cartBoxTop">
+              <div className="cartBoxCheck">
+                <label htmlFor="allcheck">전체선택</label>
+                <input
+                  id="allcheck"
+                  type="checkbox"
+                  onChange={e => handleAllCheck(e.currentTarget.checked)}
+                  checked={isAllChecked}
                 />
-              );
-            })
-          )}
+              </div>
+            </div>
+            {cart.length === 0 ? (
+              <div className="not">
+                <h1>장바구니에 담긴 상품이 없습니다.</h1>
+              </div>
+            ) : (
+              cart.map(cart => {
+                return (
+                  <CartList
+                    key={cart.id}
+                    cart={cart}
+                    convertPrice={convertPrice}
+                    handleQuantity={handleQuantity}
+                    handleRemove={handleRemove}
+                    handleCheckList={handleCheckList}
+                    checkList={checkList}
+                    setCheckList={setCheckList}
+                  />
+                );
+              })
+            )}
+          </div>
         </div>
-      </div>
-      <div className="payment">
-        <Payment
-          total={total}
-          setTotal={setTotal}
-          found={found}
-          cart={cart}
-          handlePost={handlePost}
-        />
+        <div className="payment">
+          <Payment
+            total={total}
+            setTotal={setTotal}
+            found={found}
+            cart={cart}
+            handlePost={handlePost}
+          />
+        </div>
       </div>
     </div>
   );

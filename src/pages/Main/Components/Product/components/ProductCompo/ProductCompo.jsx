@@ -6,6 +6,7 @@ import ProductListItem from '../ProductListItem/PoductListItem/ProductListItem';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import Nav from '../../../../../../components/Nav/Nav';
 
 export default function ProductCompo({ name, title, content, bubble, dis }) {
   const [productSort, setProductSort] = useState([]);
@@ -51,6 +52,7 @@ export default function ProductCompo({ name, title, content, bubble, dis }) {
   console.log(categoryNum);
   return (
     <div>
+      <Nav />
       <div className="productCompo">
         <div className={name}>
           <h1>{content}</h1>
@@ -59,6 +61,7 @@ export default function ProductCompo({ name, title, content, bubble, dis }) {
           <div className="productCompoNav">
             <ProductNav
               bubble={bubble}
+              select={select}
               categoryNum={categoryNum}
               setCategoryNum={setCategoryNum}
               categoryNumber={categoryNumber}

@@ -55,31 +55,6 @@ export default function ProductList({
                     </li>
                   );
                 })}
-
-              {/* <li
-                onClick={() => categoryNumber('vegan', 1)}
-                className={select ? 'boldItem ' : ''}
-              >
-                VEGAN
-              </li>
-              <li
-                onClick={() => categoryNumber('lacto', 2)}
-                className={select ? 'boldItem ' : ''}
-              >
-                LOCTO
-              </li>
-              <li
-                onClick={() => categoryNumber('ovo', 3)}
-                className={select ? 'boldItem ' : ''}
-              >
-                OVO
-              </li>
-              <li
-                onClick={() => categoryNumber('lacto_ovo', 4)}
-                className={select ? 'boldItem ' : ''}
-              >
-                LACTO_OVO
-              </li> */}
             </ul>
           </div>
         </div>
