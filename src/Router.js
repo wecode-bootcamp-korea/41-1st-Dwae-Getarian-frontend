@@ -29,14 +29,6 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Nav />
-
-      <Routes>
-        <Route path="invoices" element={<Invoices />} />
-        <Route path="invoiceId" element={<Invoice />} />
-        <Route path="sent" element={<SentInvoices />} />
-        {/* <Route path="invoice" element={<Invoice />} />
-        <Route path=":invoiceId" element={<Invoices />} /> */}
-      </Routes>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
