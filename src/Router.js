@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Cart from './pages/Main/Components/Cart/Cart';
@@ -43,7 +43,6 @@ const Router = () => {
         <Route path="/best" element={<Best />} />
         <Route path="/order" element={<Order />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>
