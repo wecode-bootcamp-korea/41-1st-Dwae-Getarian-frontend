@@ -69,6 +69,7 @@ export default function Order() {
       .then(data => {
         localStorage.setItem('token', data.accessToken);
       });
+    alert('결제 완료');
   };
 
   const totalP = [0];
