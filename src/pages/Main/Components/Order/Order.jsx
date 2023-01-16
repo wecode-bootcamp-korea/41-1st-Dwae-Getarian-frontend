@@ -15,19 +15,19 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://http://10.58.52.76:3001/cart/items/user', {
+    fetch('http://10.58.52.76:3001/order/user', {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),
       },
     })
       .then(result => result.json())
-      .then(data => setCartItems(data));
+      .then(data => setCartItems(data.products));
   }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch('http://10.58.52.76:3001/order/items/4', {
+    fetch('http://10.58.52.76:3001/order/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

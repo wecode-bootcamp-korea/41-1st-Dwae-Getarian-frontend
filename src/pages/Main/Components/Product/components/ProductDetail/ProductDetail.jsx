@@ -16,15 +16,7 @@ export default function ProductDetail({}) {
   const convertPrice = price => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
-  // useEffect(() => {
-  //   fetch('/data/mock.json', { method: 'GET' })
-  //     .then(res => res.json())
-  //     .then(data =>
-  //       setDetailProduct(
-  //         data.product.find(product => product.id === parseInt(id))
-  //       )
-  //     );
-  // }, [id]);
+
   useEffect(() => {
     fetch(`http://10.58.52.76:3001/product/detail/${id}`)
       .then(res => res.json())
@@ -41,39 +33,13 @@ export default function ProductDetail({}) {
       setCount(count - 1);
     }
   };
-  // const setQuantity = (id, quantity) => {
-  //   const found = cart.filter(el => el.id === id)[0];
-  //   const idx = cart.indexOf(found);
-
-  //   const cartItem = {
-  //     id: detailProduct.id,
-  //     img: detailProduct.thumbnail_image,
-  //     name: detailProduct.name,
-  //     price: detailProduct.price,
-  //     quantity: quantity,
-  //   };
-  //   setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
-  // };
-
-  // const handleCart = () => {
-  //   const cartItem = {
-  //     id: detailProduct.id,
-  //     img: detailProduct.thumbnail_image,
-  //     name: detailProduct.name,
-  //     price: detailProduct.price,
-  //     quantity: count,
-  //   };
-  //   const found = cart.find(el => el.id === cartItem.id);
-  //   if (found) setQuantity(cartItem.id, found.quantity + count);
-  //   else setCart([...cart, cartItem]);
-  // };
 
   useEffect(() => {
     setTotalPrice(detailProduct.price * count);
   }, [count]);
 
   function cartPost() {
-    fetch(`http://10.58.52.243:3000/cart/items`, {
+    fetch(`http://10.58.52.76:3001/cart/items`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -94,7 +60,6 @@ export default function ProductDetail({}) {
         <div className="productDetailPageTop">
           <div className="productDetailLeft">
             <img src={detailProduct.thumbnail_image} alt="thumbnail_image" />
-            {/* detailProduct.thumbnail_image */}
           </div>
           <div className="productDetailRight">
             <span className="productDetailCategory">{detailProduct.type}</span>
@@ -137,7 +102,6 @@ export default function ProductDetail({}) {
               <button className="productDetailGift">선물하기</button>
 
               <button className="productDetailCart" onClick={cartPost}>
-                {/* onClick={handleCart} */}
                 장바구니
               </button>
               <Link to="/order">
