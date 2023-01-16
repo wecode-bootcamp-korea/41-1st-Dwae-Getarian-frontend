@@ -51,6 +51,7 @@ export default function Order() {
         products: cart,
       }),
     }).then(response => response.json());
+    alert('결제 성공!');
   };
 
   const totalP = [0];
