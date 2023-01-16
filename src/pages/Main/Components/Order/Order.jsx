@@ -29,7 +29,7 @@ export default function Order() {
         setCredit(data.payment.user_credit);
       });
   }, []);
-
+  console.log(credit);
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.52.76:3001/order/items', {

@@ -53,6 +53,7 @@ export default function ProductDetail({}) {
     }).then(res => {
       res.json();
     });
+    alert('장바구니에 상품이 담겼습니다.');
   }
   console.log(detailProduct);
   return (

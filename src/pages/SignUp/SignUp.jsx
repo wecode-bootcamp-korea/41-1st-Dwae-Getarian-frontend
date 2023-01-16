@@ -139,7 +139,7 @@ export default function SignUp() {
             className="signin-birth"
             onChange={e => setState(e.target.value)}
           />
-          <Link to="/main/login">
+          <Link to="/login">
             <div className="signin-btn-box">
               <button
                 type="button"
