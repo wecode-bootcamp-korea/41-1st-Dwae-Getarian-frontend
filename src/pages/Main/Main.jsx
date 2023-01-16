@@ -24,7 +24,6 @@ export default function Main() {
       <BestMenu />
       <MainEvent />
       <Recipe />
-      <Footer />
     </div>
   );
 }

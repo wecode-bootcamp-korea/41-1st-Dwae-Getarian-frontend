@@ -151,7 +151,6 @@ export default function Recipe() {
           />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

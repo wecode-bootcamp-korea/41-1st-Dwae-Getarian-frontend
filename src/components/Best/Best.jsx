@@ -38,7 +38,6 @@ export default function Best() {
           );
         })}
       </div>
-      <Footer />
     </div>
   );
 }
