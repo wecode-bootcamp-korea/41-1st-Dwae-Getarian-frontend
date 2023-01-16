@@ -15,7 +15,7 @@ export default function Cart() {
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.243:3001/cart/items/user`, {
+    fetch(`http://10.58.52.76:3001/cart/items/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -58,7 +58,7 @@ export default function Cart() {
   };
 
   const handleRemove = id => {
-    fetch('http://10.58.52.243:3001/cart/items', {
+    fetch('http://10.58.52.243:3000/cart/items', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

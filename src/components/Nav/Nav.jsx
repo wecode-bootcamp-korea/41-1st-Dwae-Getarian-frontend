@@ -18,7 +18,7 @@ export default function Nav() {
 
   // detail에서 받을 product도  cart변수를 작성해서 받아와야함.
   useEffect(() => {
-    fetch(`http://10.58.52.243:3001/cart/items/user`, {
+    fetch(`http://10.58.52.76:3001/cart/items/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

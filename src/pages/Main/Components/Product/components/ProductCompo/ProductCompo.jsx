@@ -38,7 +38,7 @@ export default function ProductCompo({ name, title, content, bubble, dis }) {
   //     .then(res => setProductSort(res.product));
   // }, []);
   useEffect(() => {
-    fetch(`http://10.58.52.243:3001/product/?categoryId=${categoryNum}`, {
+    fetch(`http://10.58.52.76:3001/product/?categoryId=${categoryNum}`, {
       method: 'GET',
     })
       .then(res => res.json())
