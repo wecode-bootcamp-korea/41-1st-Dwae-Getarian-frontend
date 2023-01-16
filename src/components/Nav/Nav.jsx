@@ -8,17 +8,18 @@ import './Nav.scss';
 
 export default function Nav() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  // logout!!
   const [isLogin, setIsLogin] = useState(null);
   const [cart, setCart] = useState([]);
   const [search, setSearch] = useState(false);
 
   const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+    // 스크롤 값 계속해서 가져오는 함수 생성
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop); // 스크롤의 위치값을 가져와 setState 함수에 전달
   };
 
-  // detail에서 받을 product도  cart변수를 작성해서 받아와야함.
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/cart/items/user`, {
+    fetch(`http://10.58.52.76:3001/cart/items/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -31,9 +32,10 @@ export default function Nav() {
   useEffect(() => {
     let lock = false;
     if (!lock) {
-      window.addEventListener('scroll', updateScroll);
+      window.addEventListener('scroll', updateScroll); // 스크롤할때마다 updateScroll 함수를 계속해서 실행시킴.
     }
     return () => {
+      // Clean up
       lock = true;
     };
   }, []);
@@ -41,19 +43,9 @@ export default function Nav() {
     setSearch(!search);
   };
 
-  useEffect(() => {
-    if (!!localStorage.getItem('token')) {
-      setIsLogin(true);
-    }
-  }, []);
-
-  const removeToken = () => {
-    localStorage.removeItem('token');
-    window.location.replace('/');
-  };
-
   return (
     <div className="nav-header">
+      {/* scrollPosition 스테이트에 저장돼있는 값이 200보다 작다면 nav-original 클래스를, 아니라면 nav-changed 를 클래스 네임으로 사용 */}
       <div className={scrollPosition < 200 ? 'nav-original' : 'nav-changed'}>
         <div className="vacant-container">
           <div className="nav-hover">
@@ -126,49 +118,18 @@ export default function Nav() {
                     </Link>
                   </div>
                   <Link
-                    onClick={() => removeToken()}
-                    className={
-                      isLogin
-                        ? 'nav-right-box-login nav-btns hovered-login-signup-btns'
-                        : 'nav-right-box-login nav-btns hovered-login-signup-btns nav-right-box-btn-hidden'
-                    }
-                    Link
-                    to="/"
-                  >
-                    로그아웃
-                  </Link>
-                  <Link
-                    className={
-                      isLogin
-                        ? 'nav-right-box-btn-hidden'
-                        : 'nav-right-box-login nav-btns hovered-login-signup-btns'
-                    }
+                    className="nav-right-box-login nav-btns hovered-login-signup-btns"
                     Link
                     to="/login"
                   >
                     로그인
                   </Link>
                   <Link
-                    className={
-                      isLogin
-                        ? 'nav-right-box-signup nav-btns hovered-login-signup-btns nav-right-box-btn-hidden'
-                        : 'nav-right-box-signup nav-btns hovered-login-signup-btns'
-                    }
+                    className="nav-right-box-signup nav-btns hovered-login-signup-btns"
                     Link
                     to="/signup"
                   >
                     회원가입
-                  </Link>
-                  <Link
-                    className={
-                      isLogin
-                        ? 'nav-right-box-mypage-visible nav-btns hovered-login-signup-btns'
-                        : 'nav-right-box-mypage nav-right-box-btn-hidden nav-btns hovered-login-signup-btns'
-                    }
-                    Link
-                    to="/mypage"
-                  >
-                    마이페이지
                   </Link>
                 </div>
               </div>
