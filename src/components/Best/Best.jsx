@@ -9,7 +9,7 @@ export default function Best() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3000/product')
+    fetch('http://10.58.52.76:3001/product')
       .then(result => result.json())
       .then(data => setItems(data));
   }, []);

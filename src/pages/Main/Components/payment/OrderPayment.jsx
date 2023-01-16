@@ -8,7 +8,7 @@ export default function Payment() {
   });
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('http://10.58.52.95:3001/order/items/4', {
+    fetch('http://10.58.52.76:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',

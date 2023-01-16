@@ -15,7 +15,7 @@ export default function Order() {
     });
   };
   useEffect(() => {
-    fetch('http://http://10.58.52.243:3000/cart/items/user', {
+    fetch('http://http://10.58.52.76:3001/cart/items/user', {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),
@@ -27,7 +27,7 @@ export default function Order() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch('http://10.58.52.95:3001/order/items/4', {
+    fetch('http://10.58.52.76:3001/order/items/4', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
