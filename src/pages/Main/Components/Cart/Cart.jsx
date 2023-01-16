@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Payment from '../payment/Payment';
 import './Cart.scss';
 import CartList from './CartList/CartList';
@@ -25,6 +24,7 @@ export default function Cart() {
       .then(res => res.json())
       .then(res => setCart(res));
   }, []);
+  console.log(cart);
 
   const handleQuantity = (type, id, quantity) => {
     const found = cart.filter(el => el.id === id)[0];
@@ -44,7 +44,7 @@ export default function Cart() {
       setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
     }
 
-    fetch('http://10.58.52.243:3001/cart/items', {
+    fetch('http://10.58.52.76:3001/cart/items', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -58,7 +58,7 @@ export default function Cart() {
   };
 
   const handleRemove = id => {
-    fetch('http://10.58.52.243:3000/cart/items', {
+    fetch('http://10.58.52.76:3001/cart/items', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -102,7 +102,7 @@ export default function Cart() {
   console.log(checkList);
 
   const handlePost = () => {
-    fetch('http://10.58.52.243:3001/order/items', {
+    fetch('http://10.58.52.76:3001/order/items', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -160,16 +160,6 @@ export default function Cart() {
               );
             })
           )}
-          {/* {cart.length === 0 ? (
-            ''
-          ) : (
-            <div className="cartBtn">
-              <button className="selectBtn">선택상품 주문</button>
-              <Link to="/order">
-                <button className="totalBtn">전체상품 주문</button>
-              </Link>
-            </div>
-          )} */}
         </div>
       </div>
       <div className="payment">
