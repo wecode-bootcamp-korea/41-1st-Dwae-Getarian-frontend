@@ -10,20 +10,27 @@ import { useSearchParams } from 'react-router-dom';
 export default function ProductCompo({ name, title, content, bubble, dis }) {
   const [productSort, setProductSort] = useState([]);
   const [categoryNum, setCategoryNum] = useState(1);
-
+  const [select, setSelect] = useState(true);
   const convertPrice = price => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
   const categoryNumber = type => {
-    if (type === 'vegan') {
+    if (type === 'VEGAN') {
       setCategoryNum(1);
-    } else if (type === 'lacto') {
+    } else if (type === 'LACTO') {
       setCategoryNum(2);
-    } else if (type === 'ovo') {
+    } else if (type === 'OVO') {
       setCategoryNum(3);
-    } else if (type === 'lacto_ovo') {
+    } else if (type === 'LACTO_OVO') {
       setCategoryNum(4);
+    } else if (type === 'PESCO') {
+      setCategoryNum(5);
     }
+    setSelect(type);
+    if (type === select) {
+      setSelect(!select);
+    }
+    console.log(select);
   };
   // useEffect(() => {
   //   fetch('/data/mock.json', { method: 'GET' })
@@ -31,7 +38,7 @@ export default function ProductCompo({ name, title, content, bubble, dis }) {
   //     .then(res => setProductSort(res.product));
   // }, []);
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/product/?categoryId=${categoryNum}`, {
+    fetch(`http://10.58.52.76:3001/product/?categoryId=${categoryNum}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -64,6 +71,7 @@ export default function ProductCompo({ name, title, content, bubble, dis }) {
                 bubble={bubble}
                 dis={dis}
                 convertPrice={convertPrice}
+                select={select}
                 productSort={productSort}
                 categoryNum={categoryNum}
                 setCategoryNum={setCategoryNum}

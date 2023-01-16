@@ -2,21 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Nav from '../../../../components/Nav/Nav';
 import Payment from '../payment/Payment';
 import './Cart.scss';
 import CartList from './CartList/CartList';
 
-export default function Cart(
-  {
-    // cart,
-    // setCart,
-    // convertPrice,
-    // checkList,
-    // setCheckList,
-  }
-) {
-  // const { id } = useParams();
+export default function Cart() {
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState([]);
   const [checkList, setCheckList] = useState([]);
@@ -25,7 +15,7 @@ export default function Cart(
   };
 
   useEffect(() => {
-    fetch(`http://10.58.52.243:3000/cart/items/user`, {
+    fetch(`http://10.58.52.76:3001/cart/items/user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -53,6 +43,18 @@ export default function Cart(
       if (quantity === 0) return;
       setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
     }
+
+    fetch('http://10.58.52.243:3001/cart/items', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        productId: id,
+        quantity: quantity,
+      }),
+    });
   };
 
   const handleRemove = id => {
@@ -99,63 +101,86 @@ export default function Cart(
   });
   console.log(checkList);
 
+  const handlePost = () => {
+    fetch('http://10.58.52.243:3001/order/items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        payment: {
+          paymentType: 'credit',
+          totalCost: total,
+        },
+        deliveryAddress: {
+          address: '위코드',
+          phoneNumber: '123456789',
+        },
+        totalCo2: 500.0,
+        // checkList(id값만 가지고 있음)가 cart의 아이디를 포함하고 있으면 그 아이디를 가지고있는 cart객체를 남겨라.
+        products: cart.filter(i => checkList.includes(i.id)),
+      }),
+    });
+  };
+  console.log(checkList);
   return (
-    <>
-      <Nav />
-      <div className="cartContainer">
-        <div className="cart">
-          <h1>장바구니</h1>
-          <div className="cartBox">
-            <div className="cartBoxTop">
-              <div className="cartBoxCheck">
-                <input
-                  type="checkbox"
-                  onChange={e => handleAllCheck(e.currentTarget.checked)}
-                  checked={isAllChecked}
-                />
-              </div>
+    <div className="cartContainer">
+      <div className="cart">
+        <h1>장바구니</h1>
+        <div className="cartBox">
+          <div className="cartBoxTop">
+            <div className="cartBoxCheck">
+              <label htmlFor="allcheck">전체선택</label>
+              <input
+                id="allcheck"
+                type="checkbox"
+                onChange={e => handleAllCheck(e.currentTarget.checked)}
+                checked={isAllChecked}
+              />
             </div>
-            {cart.length === 0 ? (
-              <div className="not">
-                <h1>장바구니에 담긴 상품이 없습니다.</h1>
-              </div>
-            ) : (
-              cart.map(cart => {
-                return (
-                  <CartList
-                    key={cart.id}
-                    cart={cart}
-                    convertPrice={convertPrice}
-                    handleQuantity={handleQuantity}
-                    handleRemove={handleRemove}
-                    handleCheckList={handleCheckList}
-                    checkList={checkList}
-                    setCheckList={setCheckList}
-                  />
-                );
-              })
-            )}
-            {cart.length === 0 ? (
-              ''
-            ) : (
-              <div className="cartBtn">
-                <button className="selectBtn">선택상품 주문</button>
-                <Link to="/order">
-                  <button className="totalBtn">전체상품 주문</button>
-                </Link>
-              </div>
-            )}
           </div>
-        </div>
-        <div className="payment">
-          <Payment
-            total={total}
-            setTotal={setTotal}
-            found={found}
-            cart={cart}
-          />
+          {cart.length === 0 ? (
+            <div className="not">
+              <h1>장바구니에 담긴 상품이 없습니다.</h1>
+            </div>
+          ) : (
+            cart.map(cart => {
+              return (
+                <CartList
+                  key={cart.id}
+                  cart={cart}
+                  convertPrice={convertPrice}
+                  handleQuantity={handleQuantity}
+                  handleRemove={handleRemove}
+                  handleCheckList={handleCheckList}
+                  checkList={checkList}
+                  setCheckList={setCheckList}
+                />
+              );
+            })
+          )}
+          {/* {cart.length === 0 ? (
+            ''
+          ) : (
+            <div className="cartBtn">
+              <button className="selectBtn">선택상품 주문</button>
+              <Link to="/order">
+                <button className="totalBtn">전체상품 주문</button>
+              </Link>
+            </div>
+          )} */}
         </div>
       </div>
-    </>
+      <div className="payment">
+        <Payment
+          total={total}
+          setTotal={setTotal}
+          found={found}
+          cart={cart}
+          handlePost={handlePost}
+        />
+      </div>
+    </div>
   );
 }
