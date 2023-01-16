@@ -86,7 +86,7 @@ export default function Login() {
             value={form.password || ''}
             onChange={onLogin}
           />
-          {!pwPwValid && '비밀번호는 영문, 숫자 조합 4글자 이상입니다.'}
+          {!pwPwValid && '비밀번호는 영문, 숫자 조합 6글자 이상입니다.'}
           <div className="save-id">
             <img src="/images/checked.png" className="save-id-pic" />
             <span className="save-id-li">아이디 저장</span>
