@@ -31,7 +31,7 @@ export default function Best() {
             <Link
               className="linkStyle"
               key={monster.id}
-              to={`/detail/${monster.id}`}
+              to={`/product/detail/${monster.id}`}
             >
               <BestProduct monster={monster} key={monster.id} />
             </Link>
