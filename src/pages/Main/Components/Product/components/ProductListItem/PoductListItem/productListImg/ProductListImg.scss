@@ -1,5 +1,8 @@
 .productListItemsImg {
   position: relative;
+  img {
+    object-fit: cover;
+  }
   .productListItemsImgCategory {
     position: absolute;
     top: 10px;
