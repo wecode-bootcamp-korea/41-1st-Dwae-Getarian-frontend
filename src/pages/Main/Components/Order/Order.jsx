@@ -9,6 +9,7 @@ export default function Order() {
     phone_number: '',
   });
   const [cart, setCart] = useState([]);
+  const [credit, setCredit] = useState([]);
   const onChange = e => {
     setForm({
       ...form,
@@ -23,9 +24,12 @@ export default function Order() {
       },
     })
       .then(result => result.json())
-      .then(data => setCart(data.products));
+      .then(data => {
+        setCart(data.products);
+        setCredit(data.payment.user_credit);
+      });
   }, []);
-  console.log(cart, 'cart');
+  console.log(cart);
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.52.76:3001/order/user', {
@@ -67,15 +71,12 @@ export default function Order() {
       });
   };
 
-  const total = () => {
-    const totalP = [0];
-    for (let i = 0; i < cart.products.length; i++) {
-      const result = cart[i].price * cart[i].quantity;
-      totalP.push(result);
-    }
-    const sum = totalP.reduce((x, y) => x + y);
-    return sum;
-  };
+  const totalP = [0];
+  for (let i = 0; i < cart.length; i++) {
+    const result = cart[i].price * cart[i].quantity;
+    totalP.push(result);
+  }
+  const sum = totalP.reduce((x, y) => x + y);
 
   return (
     <div className="orderPage">
@@ -148,25 +149,21 @@ export default function Order() {
         <div className="payment">
           <ul className="pay">
             <li>
-              <p>상품 금액</p>
-              <p>{total}원</p>
+              <p>포인트 금액</p>
+              <p>{credit}</p>
             </li>
             <li>
-              <p>포인트 결제</p>
-              <p>-26000points</p>
+              <p>상품 금액</p>
+              <p>{sum}원</p>
             </li>
             <li>
               <p>배송비</p>
               <p>3000원</p>
             </li>
-            <li>
-              <p>남은 포인트</p>
-              <p>{100000 - 26000}원</p>
-            </li>
           </ul>
           <ul className="total">
             <li className="expectation">결제 예상 금액</li>
-            <li className="orderPay">0원</li>
+            <li className="orderPay">{credit - (sum + 3000)}원</li>
           </ul>
           <div onClick={handleSubmit} className="order">
             주문하기
