@@ -18,6 +18,7 @@ import Benefits from './pages/MySubPage/Benefits/Benefits';
 import MyReservation from './pages/MySubPage/MyReservation/MyReservation';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
+import Footer from './components/Footer/Footer';
 
 const Router = () => {
   return (
@@ -43,6 +44,7 @@ const Router = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

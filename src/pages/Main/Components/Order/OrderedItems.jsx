@@ -5,7 +5,7 @@ export default function OrderedItems({ item }) {
     <div className="orderedItemsBox">
       <img className="userBuyItem" src={item.image} alt="userBuyImg" />
       <div>
-        <span>{item.name}</span>
+        <span className="userBuyItemName">{item.name}</span>
       </div>
     </div>
   );

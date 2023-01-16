@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import OrderPayment from '../payment/OrderPayment';
 import './Order.scss';
 import OrderedItems from './OrderedItems';
 import Nav from '../../../../components/Nav/Nav';
@@ -9,7 +8,8 @@ export default function Order() {
     address: '',
     phone_number: '',
   });
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [credit, setCredit] = useState([]);
   const onChange = e => {
     setForm({
       ...form,
@@ -24,50 +24,43 @@ export default function Order() {
       },
     })
       .then(result => result.json())
-      .then(data => setCartItems(data.products));
+      .then(data => {
+        setCart(data.products);
+        setCredit(data.payment.user_credit);
+      });
   }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetch('http://10.58.52.76:3001/order/user', {
+    fetch('http://10.58.52.76:3001/order/items', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
         payment: {
-          payment_type: 'voucher',
-          total_cost: 30000.0,
+          paymentType: 'voucher',
+          totalCost: total,
         },
-
-        delivery_address: {
+        deliveryAddress: {
           address: form.address,
-          phone_number: form.phone_number,
+          phoneNumber: form.phone_number,
         },
-
-        products: [
-          {
-            id: 2,
-            name: '채시익식단',
-            price: 5500.0,
-            quantity: 1,
-          },
-
-          {
-            id: 3,
-            name: '채식식단',
-            price: 5000.0,
-            quantity: 1,
-          },
-        ],
+        totalCo2: 500,
+        products: cart,
       }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        localStorage.setItem('token', data.accessToken);
-      });
+    }).then(response => response.json());
   };
 
+  const totalP = [0];
+  for (let i = 0; i < cart.length; i++) {
+    const result = cart[i].price * cart[i].quantity;
+    totalP.push(result);
+  }
+  const sum = totalP.reduce((x, y) => x + y);
+
+  const total = credit - (sum + 3000);
   return (
     <div>
       <Nav />
@@ -126,19 +119,42 @@ export default function Order() {
             <div className="cartBox">
               <div className="cartBoxTitle">
                 <span>주문상품</span>
-                <span>총{cartItems.length}건</span>
+                <span>총{cart.length}건</span>
               </div>
 
               <div className="cartBoxDetail">
-                {cartItems.map(item => {
+                {cart.map(item => {
                   return <OrderedItems key={item.id} item={item} />;
                 })}
               </div>
             </div>
           </div>
         </div>
-        <div className="payment">
-          <OrderPayment />
+        <div className="payment2">
+          <div className="payment">
+            <ul className="pay">
+              <li>
+                <p>포인트 금액</p>
+                <p>{credit}</p>
+              </li>
+              <li>
+                <p>상품 금액</p>
+                <p>{sum}원</p>
+              </li>
+              <li>
+                <p>배송비</p>
+                <p>3000원</p>
+              </li>
+            </ul>
+            <ul className="total">
+              <li className="expectation">결제 예상 금액</li>
+              <li className="orderPay">{total}원</li>
+            </ul>
+            <div onClick={handleSubmit} className="order">
+              주문하기
+            </div>
+          </div>
+          {/* <OrderPayment /> */}
         </div>
       </div>
     </div>
